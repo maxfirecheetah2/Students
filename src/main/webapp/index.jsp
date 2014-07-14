@@ -2,6 +2,7 @@
 <html>
 <head><title>Simple jsp page</title></head>
 <body>
+<h2>Header by Max</h2>
 <h1>Header by Vadim</h1>
 <h1>Header by Nikita</h1>
 <h1>Attempt N2</h1>
