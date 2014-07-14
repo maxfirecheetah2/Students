@@ -3,6 +3,7 @@
 <head><title>Simple jsp page</title></head>
 <body>
 <h1>Header by Vadim</h1>
+<h1>Header by Nikita</h1>
 <form action="test.form" method="get">
     <input type="text" name="name">
     <input type="submit">
