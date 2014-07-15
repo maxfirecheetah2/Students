@@ -8,7 +8,7 @@ import java.io.Serializable;
  * Created by Вадим on 15.07.2014.
  */
 @Entity
-@Table(name="user",schema = "", catalog = "ms")
+@Table(name="user",schema = "", catalog = "exadel")
 public class User implements Serializable {
 
     @Id
