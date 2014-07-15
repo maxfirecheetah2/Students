@@ -13,6 +13,8 @@
         <property name="show_sql">true</property>
 
         <mapping class="com.exadel.model.User"></mapping>
+        <mapping class="com.exadel.model.UserInfo"></mapping>
+        <mapping class="com.exadel.model.Feedback"></mapping>
 
     </session-factory>
 

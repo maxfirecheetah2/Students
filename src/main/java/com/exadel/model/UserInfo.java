@@ -1,15 +1,14 @@
 package com.exadel.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
-
+import java.sql.Date;
 
 /**
  * Created by Вадим on 15.07.2014.
  */
 @Entity
-@Table(name="user",schema = "", catalog = "exadel")
-public class User implements Serializable {
+@Table(name="info",schema = "", catalog = "exadel")
+public class UserInfo {
 
     private int id;
     private String login;
@@ -83,7 +82,6 @@ public class User implements Serializable {
     public void setSkype(String skype) {
         this.skype = skype;
     }
-
 
 
 }
