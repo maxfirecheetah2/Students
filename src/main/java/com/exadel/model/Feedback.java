@@ -12,28 +12,21 @@ import java.sql.Timestamp;
 public class Feedback {
 
     private int id;
-    private int acceptionDate;
-    private byte probationB4Acception;
-    private short courseWhenAccepted;
-    private String institution;
-    private String faculty;
-    private String speciality;
-    private short course;
-    private short group;
-    private short graduationYear;
-    private short currentPrj;
+    private String name;
+    private String surname;
+    private String middlename;
+    private String profLevel;
+    private String diligence;
+    private String sociability;
+    private String profProgress;
+    private String promotionNecessity;
+    private byte realPrj;
+    private byte realPrjNecessity;
     private byte billable;
-    private Date billableSince;
-    private String curPrjRole;
-    private Date whenAppointedRole;
-    private String teamLead;
-    private String prjManager;
+    private String text;
+    private Timestamp date;
     private int tutorId;
-    private String currentTechs;
-    private String futureTechs;
-    private byte wannaChangePrj;
-    private String enLevel;
-    private String enCourses;
+    private int studId;
 
     @Id
     @Column(name = "id")
@@ -41,98 +34,99 @@ public class Feedback {
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
 
-    @Column(name = "acception_date")
-    public int getAcceptionDate() {
-        return acceptionDate;
+    @Column(name = "name")
+    public String getName() {
+        return name;
     }
 
-    public void setAcceptionDate(int acceptionDate) {
-        this.acceptionDate = acceptionDate;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    @Column(name = "probation_b4_acception")
-    public byte getProbationB4Acception() {
-        return probationB4Acception;
+    @Column(name = "surname")
+    public String getSurname() {
+        return surname;
     }
 
-    public void setProbationB4Acception(byte probationB4Acception) {
-        this.probationB4Acception = probationB4Acception;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
-    @Column(name = "course_when_accepted")
-    public short getCourseWhenAccepted() {
-        return courseWhenAccepted;
+    @Column(name = "middlename")
+    public String getMiddlename() {
+        return middlename;
     }
 
-    public void setCourseWhenAccepted(short courseWhenAccepted) {
-        this.courseWhenAccepted = courseWhenAccepted;
+    public void setMiddlename(String middlename) {
+        this.middlename = middlename;
     }
 
-    @Column(name = "institution")
-    public String getInstitution() {
-        return institution;
+    @Column(name = "prof_level")
+    public String getProfLevel() {
+        return profLevel;
     }
 
-    public void setInstitution(String institution) {
-        this.institution = institution;
+    public void setProfLevel(String profLevel) {
+        this.profLevel = profLevel;
     }
 
-    @Column(name = "faculty")
-    public String getFaculty() {
-        return faculty;
+    @Column(name = "diligence")
+    public String getDiligence() {
+        return diligence;
     }
 
-    public void setFaculty(String faculty) {
-        this.faculty = faculty;
+    public void setDiligence(String diligence) {
+        this.diligence = diligence;
     }
 
-    @Column(name = "speciality")
-    public String getSpeciality() {
-        return speciality;
+    @Column(name = "sociability")
+    public String getSociability() {
+        return sociability;
     }
 
-    public void setSpeciality(String speciality) {
-        this.speciality = speciality;
+    public void setSociability(String sociability) {
+        this.sociability = sociability;
     }
 
-    @Column(name = "course")
-    public short getCourse() {
-        return course;
+    @Column(name = "prof_progress")
+    public String getProfProgress() {
+        return profProgress;
     }
 
-    public void setCourse(short course) {
-        this.course = course;
+    public void setProfProgress(String profProgress) {
+        this.profProgress = profProgress;
     }
 
-    @Column(name = "group")
-    public short getGroup() {
-        return group;
+    @Column(name = "promotion_necessity")
+    public String getPromotionNecessity() {
+        return promotionNecessity;
     }
 
-    public void setGroup(short group) {
-        this.group = group;
+    public void setPromotionNecessity(String promotionNecessity) {
+        this.promotionNecessity = promotionNecessity;
     }
 
-    @Column(name = "graduation_year")
-    public short getGraduationYear() {
-        return graduationYear;
+    @Column(name = "real_prj")
+    public byte getRealPrj() {
+        return realPrj;
     }
 
-    public void setGraduationYear(short graduationYear) {
-        this.graduationYear = graduationYear;
+    public void setRealPrj(byte realPrj) {
+        this.realPrj = realPrj;
     }
 
-    @Column(name = "current_prj")
-    public short getCurrentPrj() {
-        return currentPrj;
+    @Column(name = "real_prj_necessity")
+    public byte getRealPrjNecessity() {
+        return realPrjNecessity;
     }
 
-    public void setCurrentPrj(short currentPrj) {
-        this.currentPrj = currentPrj;
+    public void setRealPrjNecessity(byte realPrjNecessity) {
+        this.realPrjNecessity = realPrjNecessity;
     }
 
     @Column(name = "billable")
@@ -144,49 +138,22 @@ public class Feedback {
         this.billable = billable;
     }
 
-    @Column(name = "billable_since")
-    public Date getBillableSince() {
-        return billableSince;
+    @Column(name = "text")
+    public String getText() {
+        return text;
     }
 
-    public void setBillableSince(Date billableSince) {
-        this.billableSince = billableSince;
+    public void setText(String text) {
+        this.text = text;
     }
 
-    @Column(name = "cur_prj_role")
-    public String getCurPrjRole() {
-        return curPrjRole;
+    @Column(name = "date")
+    public Timestamp getDate() {
+        return date;
     }
 
-    public void setCurPrjRole(String curPrjRole) {
-        this.curPrjRole = curPrjRole;
-    }
-
-    @Column(name = "when_appointed_role")
-    public Date getWhenAppointedRole() {
-        return whenAppointedRole;
-    }
-
-    public void setWhenAppointedRole(Date whenAppointedRole) {
-        this.whenAppointedRole = whenAppointedRole;
-    }
-
-    @Column(name = "team_lead")
-    public String getTeamLead() {
-        return teamLead;
-    }
-
-    public void setTeamLead(String teamLead) {
-        this.teamLead = teamLead;
-    }
-
-    @Column(name = "prj_manager")
-    public String getPrjManager() {
-        return prjManager;
-    }
-
-    public void setPrjManager(String prjManager) {
-        this.prjManager = prjManager;
+    public void setDate(Timestamp date) {
+        this.date = date;
     }
 
     @Column(name = "tutor_id")
@@ -198,49 +165,14 @@ public class Feedback {
         this.tutorId = tutorId;
     }
 
-    @Column(name = "current_techs")
-    public String getCurrentTechs() {
-        return currentTechs;
+    @Column(name = "stud_id")
+    public int getStudId() {
+        return studId;
     }
 
-    public void setCurrentTechs(String currentTechs) {
-        this.currentTechs = currentTechs;
+    public void setStudId(int studId) {
+        this.studId = studId;
     }
 
-    @Column(name = "future_techs")
-    public String getFutureTechs() {
-        return futureTechs;
-    }
-
-    public void setFutureTechs(String futureTechs) {
-        this.futureTechs = futureTechs;
-    }
-
-    @Column(name = "wanna_change_prj")
-    public byte getWannaChangePrj() {
-        return wannaChangePrj;
-    }
-
-    public void setWannaChangePrj(byte wannaChangePrj) {
-        this.wannaChangePrj = wannaChangePrj;
-    }
-
-    @Column(name = "en_level")
-    public String getEnLevel() {
-        return enLevel;
-    }
-
-    public void setEnLevel(String enLevel) {
-        this.enLevel = enLevel;
-    }
-
-    @Column(name = "en_courses")
-    public String getEnCourses() {
-        return enCourses;
-    }
-
-    public void setEnCourses(String enCourses) {
-        this.enCourses = enCourses;
-    }
 
 }
