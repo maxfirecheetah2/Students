@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style/css/bootstrap.css">
-    <link rel="stylesheet" href="style/css/bootstrap-theme.css">
-    <link rel="stylesheet" href="style/css/indexStyle.css">
+    <link rel="stylesheet" type="text/css" href="style/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="style/css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="style/css/indexStyle.css">
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="style/js/bootstrap.min.js"></script>
 
