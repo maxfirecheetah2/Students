@@ -6,9 +6,13 @@
     <meta charset="utf-8">
     <title>UsersList</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../style/css/usersListStyle.css">
+
+    <link href="<c:url value="/resources/style/css/bootstrap.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/style/css/bootstrap-theme.css" />" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/style/css/usersListStyle.css"/>" >
+
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="../style/js/bootstrap.min.js"></script>
+    <script src="<c:url value="/resources/style/js/bootstrap.min.js" />"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $('.filterable .btn-filter').click(function () {
@@ -53,6 +57,7 @@
             });
         });
     </script>
+
 </head>
 <body>
 <div class="container">
