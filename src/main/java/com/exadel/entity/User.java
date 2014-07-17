@@ -1,4 +1,4 @@
-package com.exadel.model;
+package com.exadel.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -18,6 +18,7 @@ public class User implements Serializable {
     private String surname;
     private String email;
     private String skype;
+
 
     @Id
     @Column(name = "id")

@@ -1,14 +1,16 @@
-package com.exadel.model;
+package com.exadel.entity;
 
 import javax.persistence.*;
 import java.sql.Date;
 
+
+//TODO: rename!
 /**
  * Created by Вадим on 15.07.2014.
  */
 @Entity
 @Table(name="info",schema = "", catalog = "exadel")
-public class UserInfo {
+public class GeneralInfo {
 
     private int id;
     private int acceptionDate;

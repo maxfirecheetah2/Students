@@ -1,7 +1,6 @@
-package com.exadel.model;
+package com.exadel.entity;
 
 import javax.persistence.*;
-import java.sql.Date;
 import java.sql.Timestamp;
 
 /**
