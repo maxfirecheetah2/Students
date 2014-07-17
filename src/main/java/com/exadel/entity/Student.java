@@ -1,5 +1,7 @@
 package com.exadel.entity;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: X
@@ -7,5 +9,13 @@ package com.exadel.entity;
  * Time: 17:24
  * To change this template use File | Settings | File Templates.
  */
-public class Student {
+public class Student extends User {
+
+    private List<Feedback> feedbacks;
+    private GeneralInfo generalInfo;
+    private Practice practice;
+
+
+
+
 }
