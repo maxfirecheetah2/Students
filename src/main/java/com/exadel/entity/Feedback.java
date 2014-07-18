@@ -1,35 +1,67 @@
 package com.exadel.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
  * Created by Вадим on 15.07.2014.
  */
 @Entity
-@Table(name = "feedback", schema = "", catalog = "exadel")
-public class Feedback {
-
-    private int id;
-    private String name;
-    private String surname;
-    private String middlename;
-    private String profLevel;
-    private String diligence;
-    private String sociability;
-    private String profProgress;
-    private String promotionNecessity;
-    private byte realPrj;
-    private byte realPrjNecessity;
-    private byte billable;
-    private String text;
-    private Timestamp date;
-    private int tutorId;
-    private int studId;
+@Table(name = "feedback")
+public class Feedback implements Serializable {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private int id;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "surname")
+    private String surname;
+
+    @Column(name = "middlename")
+    private String middlename;
+
+    @Column(name = "prof_level")
+    private String profLevel;
+
+    @Column(name = "diligence")
+    private String diligence;
+
+    @Column(name = "sociability")
+    private String sociability;
+
+    @Column(name = "prof_progress")
+    private String profProgress;
+
+    @Column(name = "promotion_necessity")
+    private String promotionNecessity;
+
+    @Column(name = "real_prj")
+    private byte realPrj;
+
+    @Column(name = "real_prj_necessity")
+    private byte realPrjNecessity;
+
+    @Column(name = "billable")
+    private byte billable;
+
+    @Column(name = "text")
+    private String text;
+
+    @Column(name = "date")
+    private Timestamp date;
+
+    @Column(name = "tutor_id")
+    private int tutorId;
+
+    @ManyToOne
+    private Student student;
+
+
     public int getId() {
         return id;
     }
@@ -38,7 +70,6 @@ public class Feedback {
         this.id = id;
     }
 
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -47,7 +78,7 @@ public class Feedback {
         this.name = name;
     }
 
-    @Column(name = "surname")
+
     public String getSurname() {
         return surname;
     }
@@ -56,7 +87,7 @@ public class Feedback {
         this.surname = surname;
     }
 
-    @Column(name = "middlename")
+
     public String getMiddlename() {
         return middlename;
     }
@@ -65,7 +96,7 @@ public class Feedback {
         this.middlename = middlename;
     }
 
-    @Column(name = "prof_level")
+
     public String getProfLevel() {
         return profLevel;
     }
@@ -74,7 +105,7 @@ public class Feedback {
         this.profLevel = profLevel;
     }
 
-    @Column(name = "diligence")
+
     public String getDiligence() {
         return diligence;
     }
@@ -83,7 +114,7 @@ public class Feedback {
         this.diligence = diligence;
     }
 
-    @Column(name = "sociability")
+
     public String getSociability() {
         return sociability;
     }
@@ -92,7 +123,7 @@ public class Feedback {
         this.sociability = sociability;
     }
 
-    @Column(name = "prof_progress")
+
     public String getProfProgress() {
         return profProgress;
     }
@@ -101,7 +132,6 @@ public class Feedback {
         this.profProgress = profProgress;
     }
 
-    @Column(name = "promotion_necessity")
     public String getPromotionNecessity() {
         return promotionNecessity;
     }
@@ -110,7 +140,6 @@ public class Feedback {
         this.promotionNecessity = promotionNecessity;
     }
 
-    @Column(name = "real_prj")
     public byte getRealPrj() {
         return realPrj;
     }
@@ -119,7 +148,6 @@ public class Feedback {
         this.realPrj = realPrj;
     }
 
-    @Column(name = "real_prj_necessity")
     public byte getRealPrjNecessity() {
         return realPrjNecessity;
     }
@@ -128,7 +156,6 @@ public class Feedback {
         this.realPrjNecessity = realPrjNecessity;
     }
 
-    @Column(name = "billable")
     public byte getBillable() {
         return billable;
     }
@@ -137,7 +164,6 @@ public class Feedback {
         this.billable = billable;
     }
 
-    @Column(name = "text")
     public String getText() {
         return text;
     }
@@ -146,7 +172,7 @@ public class Feedback {
         this.text = text;
     }
 
-    @Column(name = "date")
+
     public Timestamp getDate() {
         return date;
     }
@@ -155,7 +181,7 @@ public class Feedback {
         this.date = date;
     }
 
-    @Column(name = "tutor_id")
+
     public int getTutorId() {
         return tutorId;
     }
@@ -164,14 +190,7 @@ public class Feedback {
         this.tutorId = tutorId;
     }
 
-    @Column(name = "stud_id")
-    public int getStudId() {
-        return studId;
-    }
 
-    public void setStudId(int studId) {
-        this.studId = studId;
-    }
 
 
 }

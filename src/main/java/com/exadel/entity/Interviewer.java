@@ -7,5 +7,7 @@ package com.exadel.entity;
  * Time: 16:19
  * To change this template use File | Settings | File Templates.
  */
-public class Interviewer {
+
+//TODO : Do we actually need such an entity?
+public class Interviewer extends User {
 }

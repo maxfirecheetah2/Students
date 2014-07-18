@@ -13,6 +13,7 @@
         <property name="show_sql">true</property>
 
         <mapping class="com.exadel.entity.User"></mapping>
+        <mapping class="com.exadel.entity.Student"></mapping>
         <mapping class="com.exadel.entity.GeneralInfo"></mapping>
         <mapping class="com.exadel.entity.Feedback"></mapping>
 
