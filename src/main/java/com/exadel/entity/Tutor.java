@@ -1,22 +1,35 @@
 package com.exadel.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 
 @Entity
 @Table(name = "tutor")
+@PrimaryKeyJoinColumn(name="id")
 public class Tutor extends User {
 
-    @OneToMany
-    private List <Feedback> feedback;
+    @OneToMany(mappedBy = "tutor")
+    private List <Feedback> feedbacks;
 
     @ManyToMany
-    private List <Student> studentList;
+    @JoinTable(name="feedback")
+    private List <Student> students;
 
+    public List<Student> getStudents() {
+        return students;
+    }
 
+    public void setStudents(List<Student> students) {
+        this.students = students;
+    }
 
+    public List<Feedback> getFeedbacks() {
+
+        return feedbacks;
+    }
+
+    public void setFeedbacks(List<Feedback> feedbacks) {
+        this.feedbacks = feedbacks;
+    }
 }

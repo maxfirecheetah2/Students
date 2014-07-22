@@ -227,6 +227,14 @@ public class GeneralInfo implements Serializable {
         this.prjManager = prjManager;
     }
 
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
     public String getCurrentTechs() {
         return currentTechs;
     }

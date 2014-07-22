@@ -35,9 +35,58 @@ public class Practice implements Serializable {
     private Date finish;
 
     @ManyToOne
+    @JoinColumn(name="student_id")
     private Student student;
 
+    public Student getStudent() {
+        return student;
+    }
 
+    public void setStudent(Student student) {
+        this.student = student;
+    }
 
+    public Date getFinish() {
 
+        return finish;
+    }
+
+    public void setFinish(Date finish) {
+        this.finish = finish;
+    }
+
+    public Date getStart() {
+
+        return start;
+    }
+
+    public void setStart(Date start) {
+        this.start = start;
+    }
+
+    public boolean isPracticeOrProbation() {
+
+        return practiceOrProbation;
+    }
+
+    public void setPracticeOrProbation(boolean practiceOrProbation) {
+        this.practiceOrProbation = practiceOrProbation;
+    }
+
+    public Date getAcceptedSince() {
+
+        return acceptedSince;
+    }
+
+    public void setAcceptedSince(Date acceptedSince) {
+        this.acceptedSince = acceptedSince;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

@@ -45,7 +45,6 @@ public class User implements Serializable {
         this.id = id;
     }
 
-
     public String getLogin() {
         return login;
     }
@@ -53,7 +52,6 @@ public class User implements Serializable {
     public void setLogin(String login) {
         this.login = login;
     }
-
 
     public String getPassword() {
         return password;
@@ -63,7 +61,6 @@ public class User implements Serializable {
         this.password = password;
     }
 
-
     public String getName() {
         return name;
     }
@@ -71,7 +68,6 @@ public class User implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
 
     public String getSurname() {
         return surname;
@@ -81,7 +77,6 @@ public class User implements Serializable {
         this.surname = surname;
     }
 
-
     public String getEmail() {
         return email;
     }
@@ -89,7 +84,6 @@ public class User implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-
 
     public String getSkype() {
         return skype;

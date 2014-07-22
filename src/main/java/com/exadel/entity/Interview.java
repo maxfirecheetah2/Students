@@ -22,18 +22,75 @@ public class Interview implements Serializable {
     private int id;
 
     @ManyToOne
+    @JoinColumn(name="student_id")
     private Student student;
 
     @ManyToMany
-    private List <Interviewer> interviewerList;
+    @JoinTable(name="interview_interviewer")
+    private List<Interviewer> interviewers;
 
-    @OneToMany
-    private List <Marks> skills;
+    @OneToMany(mappedBy = "interview")
+    private List <Mark> skills;
 
     @Column(name = "en_level")
     private String englishLevel;
 
     @Column(name = "text")
     private String text;
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getEnglishLevel() {
+
+        return englishLevel;
+    }
+
+    public void setEnglishLevel(String englishLevel) {
+        this.englishLevel = englishLevel;
+    }
+
+    public List<Mark> getSkills() {
+
+        return skills;
+    }
+
+    public void setSkills(List<Mark> skills) {
+        this.skills = skills;
+    }
+
+    public Student getStudent() {
+
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    public int getId() {
+
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public List<Interviewer> getInterviewers() {
+
+        return interviewers;
+    }
+
+    public void setInterviewers(List<Interviewer> interviewers) {
+        this.interviewers = interviewers;
+    }
+
+
 
 }

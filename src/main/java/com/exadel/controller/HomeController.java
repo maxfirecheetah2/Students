@@ -1,6 +1,6 @@
 package com.exadel.controller;
 
-import com.exadel.model.*;
+
 import com.exadel.util.HibernateUtil;
 import org.hibernate.Session;
 
@@ -22,17 +22,9 @@ public class HomeController extends HttpServlet {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
 
-        User one=new User();
 
-        one.setLogin("Inf1mum");
-        one.setPassword("vadim");
-        one.setName("Vadim");
-        one.setSurname("Lazuk");
-        one.setEmail("Aallal@mail.ru");
-        one.setSkype("mitym1");
 
-       session.save(one);
-       session.getTransaction().commit();
+        session.getTransaction().commit();
 
         RequestDispatcher dispatch = req.getRequestDispatcher("/WEB-INF/usersList.jsp");
         dispatch.forward(req, resp);
