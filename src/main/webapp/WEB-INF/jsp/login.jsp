@@ -8,13 +8,17 @@
     <link href="<c:url value="/resources/style/css/bootstrap-theme.css" />" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/style/css/indexStyle.css"/>" >
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="style/js/bootstrap.min.js"></script>
+    <script src="../../style/js/bootstrap.min.js"></script>
 
 </head>
 <body>
+
+<form name='loginForm' action="<c:url value='j_spring_security_check' />"
+      method='POST'>
+
 <div class="container">
     <div class="row">
-        <h1>Exadel staff application</h1>
+        <%--<h1>Exadel staff application</h1>--%>
         <hr>
         <div class="col-md-4 col-md-offset-7">
             <div class="panel panel-default">
@@ -58,6 +62,9 @@
         </div>
     </div>
 </div>
+</form>
+
+
 </body>
 </html>
 

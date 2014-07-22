@@ -77,6 +77,9 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
         <!--<url-pattern>/*</url-pattern>-->
     <!--</filter-mapping>-->
 
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
 
 
 </web-app>

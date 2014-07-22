@@ -10,10 +10,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
 
-    @RequestMapping(value = "/test.form",method = RequestMethod.GET)
-    public String test(@RequestParam("name") String param,Model model){
-        model.addAttribute("name",param);
-        System.out.println("Works!");
-        return "index";
+    @RequestMapping(value = "*",method = RequestMethod.GET)
+    public String test(){;
+        return "login";
     }
 }
