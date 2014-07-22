@@ -19,22 +19,22 @@ public class Student extends User {
     @OneToMany
     private List<Feedback> feedbacks;
 
-    @ManyToOne
+    @ManyToMany
+    private List<Tutor> tutorList;
+
+    @OneToOne
     private GeneralInfo generalInfo;
 
-//    @ManyToOne
-//    private Practice practice;
+    @OneToMany
+    private List<Practice> practiceList;
 
-    @Column(name = "test")
-    private String test;
+    @OneToMany
+    private List<Project> projectList;
 
-    public String getTest() {
-        return test;
-    }
+    @OneToMany
+    private List<Interview> interviewList;
 
-    public void setTest(String test) {
-        this.test = test;
-    }
+
 
 
 

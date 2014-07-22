@@ -1,5 +1,7 @@
 package com.exadel.entity;
 
+import javax.persistence.ManyToMany;
+import java.util.List;
 /**
  * Created with IntelliJ IDEA.
  * User: X
@@ -10,4 +12,7 @@ package com.exadel.entity;
 
 //TODO : Do we actually need such an entity?
 public class Interviewer extends User {
+
+    @ManyToMany
+    private List<Interview> interviewList;
 }

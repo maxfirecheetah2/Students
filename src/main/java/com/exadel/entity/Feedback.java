@@ -61,6 +61,9 @@ public class Feedback implements Serializable {
     @ManyToOne
     private Student student;
 
+    @ManyToOne
+    private Tutor tutor;
+
 
     public int getId() {
         return id;

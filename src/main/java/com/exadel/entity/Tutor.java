@@ -1,6 +1,7 @@
 package com.exadel.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.List;
@@ -12,6 +13,9 @@ public class Tutor extends User {
 
     @OneToMany
     private List <Feedback> feedback;
+
+    @ManyToMany
+    private List <Student> studentList;
 
 
 

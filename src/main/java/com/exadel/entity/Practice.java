@@ -22,22 +22,10 @@ public class Practice implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
 
-    @OneToOne
-    private Student student;
-
-    @ManyToMany
-    private List <Tutor> tutors;   //TODO : ManyToMany???
-
-    @ManyToMany
-    private List <Feedback> feedbacks;
-
-    @OneToOne
-    private Interview interview;
-
-    @Column(name = "acceptedSince") // can be null : null if not accepted
+    @Column(name = "accepted_since") // can be null : null if not accepted
     private Date acceptedSince;
 
-    @Column(name = "practiceOrProbation")
+    @Column(name = "practice_or_probation")
     private boolean practiceOrProbation; //true = practice false = probation
 
     @Column(name = "start")
@@ -45,6 +33,9 @@ public class Practice implements Serializable {
 
     @Column(name = "finish")
     private Date finish;
+
+    @ManyToOne
+    private Student student;
 
 
 

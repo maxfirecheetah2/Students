@@ -1,19 +1,41 @@
 package com.exadel.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+import com.exadel.model.*;
+import com.exadel.util.HibernateUtil;
+import org.hibernate.Session;
 
-@Controller
-public class HomeController {
 
-    @RequestMapping(value = "/test.form",method = RequestMethod.GET)
-    public String test(@RequestParam("name") String param,Model model){
-        model.addAttribute("name",param);
-        System.out.println("Works!");
-        return "index";
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.*;
+
+@WebServlet("/login")
+public class HomeController extends HttpServlet {
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+
+        User one=new User();
+
+        one.setLogin("Inf1mum");
+        one.setPassword("vadim");
+        one.setName("Vadim");
+        one.setSurname("Lazuk");
+        one.setEmail("Aallal@mail.ru");
+        one.setSkype("mitym1");
+
+       session.save(one);
+       session.getTransaction().commit();
+
+        RequestDispatcher dispatch = req.getRequestDispatcher("/WEB-INF/usersList.jsp");
+        dispatch.forward(req, resp);
+
     }
 }

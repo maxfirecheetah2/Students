@@ -1,7 +1,5 @@
 package com.exadel.entity;
 
-import org.hibernate.type.ListType;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -23,16 +21,16 @@ public class Interview implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
 
-    @OneToOne
+    @ManyToOne
     private Student student;
 
-    @ManyToOne
-    private List <Interviewer> interviewers;
+    @ManyToMany
+    private List <Interviewer> interviewerList;
 
-    @ManyToOne
-    private List <Skill> skills;
+    @OneToMany
+    private List <Marks> skills;
 
-    @Column(name = "en _level")
+    @Column(name = "en_level")
     private String englishLevel;
 
     @Column(name = "text")
