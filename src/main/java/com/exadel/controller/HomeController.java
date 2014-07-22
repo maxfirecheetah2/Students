@@ -22,11 +22,9 @@ public class HomeController extends HttpServlet {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
 
-
-
         session.getTransaction().commit();
 
-        RequestDispatcher dispatch = req.getRequestDispatcher("/WEB-INF/usersList.jsp");
+        RequestDispatcher dispatch = req.getRequestDispatcher("/WEB-INF/profilePage.jsp");
         dispatch.forward(req, resp);
 
     }
