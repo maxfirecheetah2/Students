@@ -1,51 +1,46 @@
-.dropdown-submenu {
-    position: relative;
+body {
+    padding-top: 30px;
 }
 
-.dropdown-submenu > .dropdown-menu {
-    top: 0;
-    left: 100%;
-    margin-top: -6px;
-    margin-left: -1px;
-    -webkit-border-radius: 0 6px 6px 6px;
-    -moz-border-radius: 0 6px 6px;
-    border-radius: 0 6px 6px 6px;
+.faq-cat-content {
+    margin-top: 25px;
 }
 
-.dropdown-submenu:hover > .dropdown-menu {
-    display: block;
+.faq-cat-tabs li a {
+    padding: 15px 10px 15px 10px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    color: #777777;
 }
 
-.dropdown-submenu > a:after {
-    display: block;
-    content: " ";
-    float: right;
-    width: 0;
-    height: 0;
-    border-color: transparent;
-    border-style: solid;
-    border-width: 5px 0 5px 5px;
-    border-left-color: #ccc;
-    margin-top: 5px;
-    margin-right: -10px;
+.nav-tabs li a:focus,
+.panel-heading a:focus {
+    outline: none;
 }
 
-.dropdown-submenu:hover > a:after {
-    border-left-color: #fff;
+.panel-heading a,
+.panel-heading a:hover,
+.panel-heading a:focus {
+    text-decoration: none;
+    color: #777777;
 }
 
-.dropdown-submenu.pull-left {
-    float: none;
+.faq-cat-content .panel-heading:hover {
+    background-color: #efefef;
 }
 
-.dropdown-submenu.pull-left > .dropdown-menu {
-    left: -100%;
-    margin-left: 10px;
-    -webkit-border-radius: 6px 0 6px 6px;
-    -moz-border-radius: 6px 0 6px 6px;
-    border-radius: 6px 0 6px 6px;
+.active-faq {
+    border-left: 5px solid #888888;
 }
 
+.panel-faq .panel-heading .panel-title span {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.filterable {
+    margin-top: 15px;
+}
 
 .filterable .panel-heading .pull-right {
     margin-top: -20px;
@@ -64,6 +59,23 @@
     color: #333;
 }
 
+
+.filterable .filters textarea[disabled] {
+    background-color: transparent;
+    border: none;
+    cursor: auto;
+    box-shadow: none;
+    padding: 0;
+    height: auto;
+}
+
+.filterable .filters textarea[disabled]{
+    color: #333;
+}
+
+textarea {
+    resize: none;
+}
 
 @media (min-width: 768px) {
     .affix-content .container {
@@ -122,6 +134,7 @@
         padding-top: 12px;
         padding-bottom: 12px;
     }
+}
 
 @media (min-width: 769px) {
     .affix-content .container {
@@ -186,5 +199,4 @@
     .sidebar-nav .navbar li a > .caret {
         margin-top: 8px;
     }
- }
 }
