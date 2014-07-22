@@ -6,15 +6,16 @@
     <session-factory>
         <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.password">12345</property>
+        <property name="hibernate.connection.password">280993</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/exadel</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="show_sql">true</property>
 
-        <mapping class="com.exadel.model.User"></mapping>
-        <mapping class="com.exadel.model.UserInfo"></mapping>
-        <mapping class="com.exadel.model.Feedback"></mapping>
+        <mapping class="com.exadel.entity.User"></mapping>
+        <mapping class="com.exadel.entity.Student"></mapping>
+        <mapping class="com.exadel.entity.GeneralInfo"></mapping>
+        <mapping class="com.exadel.entity.Feedback"></mapping>
 
     </session-factory>
 

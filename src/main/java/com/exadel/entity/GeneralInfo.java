@@ -1,42 +1,90 @@
-package com.exadel.model;
+package com.exadel.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
 
+
+//TODO: rename!
 /**
  * Created by Вадим on 15.07.2014.
  */
 @Entity
-@Table(name="info",schema = "", catalog = "exadel")
-public class UserInfo {
-
-    private int id;
-    private int acceptionDate;
-    private byte probationB4Acception;
-    private short courseWhenAccepted;
-    private String institution;
-    private String faculty;
-    private String speciality;
-    private short course;
-    private short group;
-    private short graduationYear;
-    private short currentPrj;
-    private byte billable;
-    private Date billableSince;
-    private String curPrjRole;
-    private Date whenAppointedRole;
-    private String teamLead;
-    private String prjManager;
-    private int tutorId;
-    private String currentTechs;
-    private String futureTechs;
-    private byte wannaChangePrj;
-    private String enLevel;
-    private String enCourses;
+@Table(name="info")
+public class GeneralInfo implements Serializable {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private int id;
+
+    @Column(name = "acception_date")
+    private int acceptionDate;
+
+    @Column(name = "probation_b4_acception")
+    private byte probationB4Acception;
+
+    @Column(name = "course_when_accepted")
+    private short courseWhenAccepted;
+
+    @Column(name = "institution")
+    private String institution;
+
+    @Column(name = "faculty")
+    private String faculty;
+
+    @Column(name = "speciality")
+    private String speciality;
+
+    @Column(name = "course")
+    private short course;
+
+    @Column(name = "group")
+    private short group;
+
+    @Column(name = "graduation_year")
+    private short graduationYear;
+
+    @Column(name = "current_prj")
+    private short currentPrj;
+
+    @Column(name = "billable")
+    private byte billable;
+
+    @Column(name = "billable_since")
+    private Date billableSince;
+
+    @Column(name = "cur_prj_role")
+    private String curPrjRole;
+
+    @Column(name = "when_appointed_role")
+    private Date whenAppointedRole;
+
+    @Column(name = "team_lead")
+    private String teamLead;
+
+    @Column(name = "prj_manager")
+    private String prjManager;
+
+    @Column(name = "tutor_id")
+    private int tutorId;         //TODO:
+
+    @Column(name = "current_techs")
+    private String currentTechs;
+
+    @Column(name = "future_techs")
+    private String futureTechs;
+
+    @Column(name = "wanna_change_prj")
+    private byte wannaChangePrj;
+
+    @Column(name = "en_level")
+    private String enLevel;
+
+    @Column(name = "en_courses")
+    private String enCourses;
+
+
     public int getId() {
         return id;
     }
@@ -45,7 +93,7 @@ public class UserInfo {
         this.id = id;
     }
 
-    @Column(name = "acception_date")
+
     public int getAcceptionDate() {
         return acceptionDate;
     }
@@ -54,7 +102,7 @@ public class UserInfo {
         this.acceptionDate = acceptionDate;
     }
 
-    @Column(name = "probation_b4_acception")
+
     public byte getProbationB4Acception() {
         return probationB4Acception;
     }
@@ -63,7 +111,7 @@ public class UserInfo {
         this.probationB4Acception = probationB4Acception;
     }
 
-    @Column(name = "course_when_accepted")
+
     public short getCourseWhenAccepted() {
         return courseWhenAccepted;
     }
@@ -72,7 +120,6 @@ public class UserInfo {
         this.courseWhenAccepted = courseWhenAccepted;
     }
 
-    @Column(name = "institution")
     public String getInstitution() {
         return institution;
     }
@@ -81,7 +128,6 @@ public class UserInfo {
         this.institution = institution;
     }
 
-    @Column(name = "faculty")
     public String getFaculty() {
         return faculty;
     }
@@ -90,7 +136,6 @@ public class UserInfo {
         this.faculty = faculty;
     }
 
-    @Column(name = "speciality")
     public String getSpeciality() {
         return speciality;
     }
@@ -99,7 +144,6 @@ public class UserInfo {
         this.speciality = speciality;
     }
 
-    @Column(name = "course")
     public short getCourse() {
         return course;
     }
@@ -108,7 +152,6 @@ public class UserInfo {
         this.course = course;
     }
 
-    @Column(name = "group")
     public short getGroup() {
         return group;
     }
@@ -117,7 +160,6 @@ public class UserInfo {
         this.group = group;
     }
 
-    @Column(name = "graduation_year")
     public short getGraduationYear() {
         return graduationYear;
     }
@@ -126,7 +168,6 @@ public class UserInfo {
         this.graduationYear = graduationYear;
     }
 
-    @Column(name = "current_prj")
     public short getCurrentPrj() {
         return currentPrj;
     }
@@ -135,7 +176,6 @@ public class UserInfo {
         this.currentPrj = currentPrj;
     }
 
-    @Column(name = "billable")
     public byte getBillable() {
         return billable;
     }
@@ -144,7 +184,6 @@ public class UserInfo {
         this.billable = billable;
     }
 
-    @Column(name = "billable_since")
     public Date getBillableSince() {
         return billableSince;
     }
@@ -153,7 +192,6 @@ public class UserInfo {
         this.billableSince = billableSince;
     }
 
-    @Column(name = "cur_prj_role")
     public String getCurPrjRole() {
         return curPrjRole;
     }
@@ -162,7 +200,6 @@ public class UserInfo {
         this.curPrjRole = curPrjRole;
     }
 
-    @Column(name = "when_appointed_role")
     public Date getWhenAppointedRole() {
         return whenAppointedRole;
     }
@@ -171,7 +208,6 @@ public class UserInfo {
         this.whenAppointedRole = whenAppointedRole;
     }
 
-    @Column(name = "team_lead")
     public String getTeamLead() {
         return teamLead;
     }
@@ -180,7 +216,6 @@ public class UserInfo {
         this.teamLead = teamLead;
     }
 
-    @Column(name = "prj_manager")
     public String getPrjManager() {
         return prjManager;
     }
@@ -189,7 +224,6 @@ public class UserInfo {
         this.prjManager = prjManager;
     }
 
-    @Column(name = "tutor_id")
     public int getTutorId() {
         return tutorId;
     }
@@ -198,7 +232,6 @@ public class UserInfo {
         this.tutorId = tutorId;
     }
 
-    @Column(name = "current_techs")
     public String getCurrentTechs() {
         return currentTechs;
     }
@@ -207,7 +240,6 @@ public class UserInfo {
         this.currentTechs = currentTechs;
     }
 
-    @Column(name = "future_techs")
     public String getFutureTechs() {
         return futureTechs;
     }
@@ -216,7 +248,6 @@ public class UserInfo {
         this.futureTechs = futureTechs;
     }
 
-    @Column(name = "wanna_change_prj")
     public byte getWannaChangePrj() {
         return wannaChangePrj;
     }
@@ -225,7 +256,6 @@ public class UserInfo {
         this.wannaChangePrj = wannaChangePrj;
     }
 
-    @Column(name = "en_level")
     public String getEnLevel() {
         return enLevel;
     }
@@ -234,7 +264,6 @@ public class UserInfo {
         this.enLevel = enLevel;
     }
 
-    @Column(name = "en_courses")
     public String getEnCourses() {
         return enCourses;
     }

@@ -1,4 +1,4 @@
-package com.exadel.model;
+package com.exadel.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -8,20 +8,35 @@ import java.io.Serializable;
  * Created by Вадим on 15.07.2014.
  */
 @Entity
-@Table(name="user",schema = "", catalog = "exadel")
+@Table(name = "user")
+@Inheritance(strategy=InheritanceType.JOINED)
 public class User implements Serializable {
-
-    private int id;
-    private String login;
-    private String password;
-    private String name;
-    private String surname;
-    private String email;
-    private String skype;
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private int id;
+
+    @Column(name = "login")
+    private String login;
+
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "surname")
+    private String surname;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "skype")
+    private String skype;
+
+
+
     public int getId() {
         return id;
     }
@@ -30,7 +45,7 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    @Column(name = "login")
+
     public String getLogin() {
         return login;
     }
@@ -39,7 +54,7 @@ public class User implements Serializable {
         this.login = login;
     }
 
-    @Column(name = "password")
+
     public String getPassword() {
         return password;
     }
@@ -48,7 +63,7 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    @Column(name = "name")
+
     public String getName() {
         return name;
     }
@@ -57,7 +72,7 @@ public class User implements Serializable {
         this.name = name;
     }
 
-    @Column(name = "surname")
+
     public String getSurname() {
         return surname;
     }
@@ -66,7 +81,7 @@ public class User implements Serializable {
         this.surname = surname;
     }
 
-    @Column(name = "email")
+
     public String getEmail() {
         return email;
     }
@@ -75,7 +90,7 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    @Column(name = "skype")
+
     public String getSkype() {
         return skype;
     }
