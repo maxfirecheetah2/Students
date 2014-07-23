@@ -55,11 +55,11 @@ public class Feedback implements Serializable {
     @Column(name = "date")
     private Timestamp date;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name="student_id")
     private Student student;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name="tutor_id")
     private Tutor tutor;
 

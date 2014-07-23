@@ -34,7 +34,7 @@ public class Practice implements Serializable {
     @Column(name = "finish")
     private Date finish;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name="student_id")
     private Student student;
 

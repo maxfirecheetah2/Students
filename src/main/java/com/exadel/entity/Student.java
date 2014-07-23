@@ -16,22 +16,22 @@ import java.util.List;
 @PrimaryKeyJoinColumn(name = "id")
 public class Student extends User {
 
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<Feedback> feedbacks;
 
-    @ManyToMany(mappedBy = "students")
+    @ManyToMany(mappedBy = "students",cascade = CascadeType.ALL)
     private List <Tutor> tutors;
 
     @OneToOne
     private GeneralInfo generalInfo;
 
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<Practice> practices;
 
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<Project> projects;
 
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<Interview> interviews;
 
     public List<Interview> getInterviews() {

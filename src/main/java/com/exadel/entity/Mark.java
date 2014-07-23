@@ -26,7 +26,7 @@ public class Mark implements Serializable{
     @Column(name = "value")
     private int value;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name="interview_id")
     private Interview interview;
 

@@ -21,15 +21,15 @@ public class Interview implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name="student_id")
     private Student student;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinTable(name="interview_interviewer")
     private List<Interviewer> interviewers;
 
-    @OneToMany(mappedBy = "interview")
+    @OneToMany(mappedBy = "interview",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List <Mark> skills;
 
     @Column(name = "en_level")

@@ -20,6 +20,10 @@ public class GeneralInfo implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
 
+    @OneToOne
+    @PrimaryKeyJoinColumn
+    private Student student;
+
     @Column(name = "acception_date")
     private int acceptionDate;
 
@@ -83,8 +87,7 @@ public class GeneralInfo implements Serializable {
     @Column(name = "en_courses")
     private String enCourses;
 
-    @OneToOne
-    private Student student;
+
 
 
 

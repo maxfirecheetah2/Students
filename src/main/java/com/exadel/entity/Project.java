@@ -23,7 +23,7 @@ public class Project implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name="student_id")
     private Student student;
 
