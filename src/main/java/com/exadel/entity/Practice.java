@@ -22,22 +22,10 @@ public class Practice implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
 
-    @OneToOne
-    private Student student;
-
-    @ManyToMany
-    private List <Tutor> tutors;   //TODO : ManyToMany???
-
-    @ManyToMany
-    private List <Feedback> feedbacks;
-
-    @OneToOne
-    private Interview interview;
-
-    @Column(name = "acceptedSince") // can be null : null if not accepted
+    @Column(name = "accepted_since") // can be null : null if not accepted
     private Date acceptedSince;
 
-    @Column(name = "practiceOrProbation")
+    @Column(name = "practice_or_probation")
     private boolean practiceOrProbation; //true = practice false = probation
 
     @Column(name = "start")
@@ -46,7 +34,59 @@ public class Practice implements Serializable {
     @Column(name = "finish")
     private Date finish;
 
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name="student_id")
+    private Student student;
 
+    public Student getStudent() {
+        return student;
+    }
 
+    public void setStudent(Student student) {
+        this.student = student;
+    }
 
+    public Date getFinish() {
+
+        return finish;
+    }
+
+    public void setFinish(Date finish) {
+        this.finish = finish;
+    }
+
+    public Date getStart() {
+
+        return start;
+    }
+
+    public void setStart(Date start) {
+        this.start = start;
+    }
+
+    public boolean isPracticeOrProbation() {
+
+        return practiceOrProbation;
+    }
+
+    public void setPracticeOrProbation(boolean practiceOrProbation) {
+        this.practiceOrProbation = practiceOrProbation;
+    }
+
+    public Date getAcceptedSince() {
+
+        return acceptedSince;
+    }
+
+    public void setAcceptedSince(Date acceptedSince) {
+        this.acceptedSince = acceptedSince;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

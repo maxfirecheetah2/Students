@@ -16,28 +16,74 @@ import java.util.List;
 @PrimaryKeyJoinColumn(name = "id")
 public class Student extends User {
 
-    @OneToMany
+    @OneToMany(mappedBy = "student",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<Feedback> feedbacks;
 
-    @ManyToOne
+    @ManyToMany(mappedBy = "students",cascade = CascadeType.ALL)
+    private List <Tutor> tutors;
+
+    @OneToOne
     private GeneralInfo generalInfo;
 
-//    @ManyToOne
-//    private Practice practice;
+    @OneToMany(mappedBy = "student",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private List<Practice> practices;
 
-    @Column(name = "test")
-    private String test;
+    @OneToMany(mappedBy = "student",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private List<Project> projects;
 
-    public String getTest() {
-        return test;
+    @OneToMany(mappedBy = "student",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private List<Interview> interviews;
+
+    public List<Interview> getInterviews() {
+        return interviews;
     }
 
-    public void setTest(String test) {
-        this.test = test;
+    public void setInterviews(List<Interview> interviews) {
+        this.interviews = interviews;
     }
 
+    public List<Project> getProjects() {
 
+        return projects;
+    }
 
+    public void setProjects(List<Project> projects) {
+        this.projects = projects;
+    }
 
+    public List<Practice> getPractices() {
 
+        return practices;
+    }
+
+    public void setPractices(List<Practice> practices) {
+        this.practices = practices;
+    }
+
+    public GeneralInfo getGeneralInfo() {
+
+        return generalInfo;
+    }
+
+    public void setGeneralInfo(GeneralInfo generalInfo) {
+        this.generalInfo = generalInfo;
+    }
+
+    public List<Tutor> getTutors() {
+
+        return tutors;
+    }
+
+    public void setTutors(List<Tutor> tutors) {
+        this.tutors = tutors;
+    }
+
+    public List<Feedback> getFeedbacks() {
+
+        return feedbacks;
+    }
+
+    public void setFeedbacks(List<Feedback> feedbacks) {
+        this.feedbacks = feedbacks;
+    }
 }

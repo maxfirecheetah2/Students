@@ -1,25 +1,34 @@
 package com.exadel.entity;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
-/**
- * Created with IntelliJ IDEA.
- * User: X
- * Date: 18.07.14
- * Time: 16:26
- * To change this template use File | Settings | File Templates.
- */
+
 @Entity
 @Table(name = "skill")
-public class Skill implements Serializable{
+public class Skill {
 
     @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name="id")
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
 
-    @Column(name = "name")
+    @Column(name="name")
     private String name;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getId() {
+
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

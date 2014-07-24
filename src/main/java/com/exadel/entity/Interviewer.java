@@ -1,5 +1,10 @@
 package com.exadel.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+import java.util.List;
 /**
  * Created with IntelliJ IDEA.
  * User: X
@@ -8,6 +13,19 @@ package com.exadel.entity;
  * To change this template use File | Settings | File Templates.
  */
 
-//TODO : Do we actually need such an entity?
+@Entity
+@Table(name = "interviewer")
+@PrimaryKeyJoinColumn(name="id")
 public class Interviewer extends User {
+
+    @ManyToMany(mappedBy = "interviewers")
+     private List<Interview> interviews;
+
+    public List<Interview> getInterviews() {
+        return interviews;
+    }
+
+    public void setInterviews(List<Interview> interviews) {
+        this.interviews = interviews;
+    }
 }

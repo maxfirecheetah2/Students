@@ -55,11 +55,13 @@ public class Feedback implements Serializable {
     @Column(name = "date")
     private Timestamp date;
 
-    @Column(name = "tutor_id")
-    private int tutorId;
-
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name="student_id")
     private Student student;
+
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name="tutor_id")
+    private Tutor tutor;
 
 
     public int getId() {
@@ -78,7 +80,6 @@ public class Feedback implements Serializable {
         this.name = name;
     }
 
-
     public String getSurname() {
         return surname;
     }
@@ -86,7 +87,6 @@ public class Feedback implements Serializable {
     public void setSurname(String surname) {
         this.surname = surname;
     }
-
 
     public String getMiddlename() {
         return middlename;
@@ -172,7 +172,6 @@ public class Feedback implements Serializable {
         this.text = text;
     }
 
-
     public Timestamp getDate() {
         return date;
     }
@@ -181,16 +180,19 @@ public class Feedback implements Serializable {
         this.date = date;
     }
 
-
-    public int getTutorId() {
-        return tutorId;
+    public Student getStudent() {
+        return student;
     }
 
-    public void setTutorId(int tutorId) {
-        this.tutorId = tutorId;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
+    public Tutor getTutor() {
+        return tutor;
+    }
 
-
-
+    public void setTutor(Tutor tutor) {
+        this.tutor = tutor;
+    }
 }

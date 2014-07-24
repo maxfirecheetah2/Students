@@ -3,6 +3,8 @@ package com.exadel.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
+
 
 
 //TODO: rename!
@@ -17,6 +19,10 @@ public class GeneralInfo implements Serializable {
     @Column(name = "id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
+
+    @OneToOne
+    @PrimaryKeyJoinColumn
+    private Student student;
 
     @Column(name = "acception_date")
     private int acceptionDate;
@@ -66,9 +72,6 @@ public class GeneralInfo implements Serializable {
     @Column(name = "prj_manager")
     private String prjManager;
 
-    @Column(name = "tutor_id")
-    private int tutorId;         //TODO:
-
     @Column(name = "current_techs")
     private String currentTechs;
 
@@ -83,6 +86,9 @@ public class GeneralInfo implements Serializable {
 
     @Column(name = "en_courses")
     private String enCourses;
+
+
+
 
 
     public int getId() {
@@ -224,12 +230,12 @@ public class GeneralInfo implements Serializable {
         this.prjManager = prjManager;
     }
 
-    public int getTutorId() {
-        return tutorId;
+    public Student getStudent() {
+        return student;
     }
 
-    public void setTutorId(int tutorId) {
-        this.tutorId = tutorId;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
     public String getCurrentTechs() {
