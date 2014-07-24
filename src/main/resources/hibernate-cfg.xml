@@ -1,0 +1,39 @@
+<?xml  version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="packagesToScan" value="com.exadel.entity" />
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.bytecode.use_reflection_optimizer">false</prop>
+                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
+                <prop key="hibernate.connection.username">root</prop>
+                <prop key="hibernate.connection.password">280993</prop>
+                <prop key="hibernate.connection.url">dbc:mysql://localhost:3306/exadel</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+            </props>
+        </property>
+
+    </bean>
+
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+
+
+
+  <!--<tx:annotation-driven transaction-manager="transactionManager" />-->
+    <!--<bean id="CSSDAO" class="dao.CSSDAOImpl">-->
+        <!--<property name="sessionFactory" ref="sessionFactory" />-->
+  <!--</bean>-->
+
+</beans>

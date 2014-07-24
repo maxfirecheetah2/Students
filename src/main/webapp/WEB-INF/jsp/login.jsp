@@ -13,12 +13,9 @@
 </head>
 <body>
 
-<form name='loginForm' action="<c:url value='j_spring_security_check' />"
-      method='POST'>
 
 <div class="container">
     <div class="row">
-        <%--<h1>Exadel staff application</h1>--%>
         <hr>
         <div class="col-md-4 col-md-offset-7">
             <div class="panel panel-default">
@@ -26,13 +23,13 @@
                     <span class="glyphicon glyphicon-lock"></span> Login
                 </div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form">
+                    <form class="form-horizontal" role="form" name="loginForm"  action="/j_spring_security_check" method="POST">
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-3 control-label">
-                                Email
+                            <label for="inputLogin3" class="col-sm-3 control-label">
+                                Login
                             </label>
                             <div class="col-sm-9">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required="">
+                                <input class="form-control" id="inputLogin3" name="j_username" placeholder="Login" required="">
                             </div>
                         </div>
                         <div class="form-group">
@@ -40,7 +37,7 @@
                                 Password
                             </label>
                             <div class="col-sm-9">
-                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password" required="">
+                                <input type="password" class="form-control" id="inputPassword3" name="j_password" placeholder="Password" required="">
                             </div>
                         </div>
                         <div class="form-group last">
@@ -62,8 +59,6 @@
         </div>
     </div>
 </div>
-</form>
-
 
 </body>
 </html>

@@ -13,8 +13,11 @@
 
 
     <import resource="mvc-view-config.xml"/>
-    <import resource="security-config.xml"/>
     <import resource="data-source.xml"/>
+    <import resource="hibernate-cfg.xml"/>
+    <import resource="security-config.xml"/>
+
+
 
 
 </beans>
