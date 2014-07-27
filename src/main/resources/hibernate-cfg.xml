@@ -1,13 +1,17 @@
 <?xml  version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/cache"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
     <bean id="sessionFactory"
           class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-        <property name="packagesToScan" value="com.exadel.entity" />
+        <property name="packagesToScan">
+            <list>
+                <value>com.exadel.entity</value>
+            </list>
+        </property>
         <property name="dataSource" ref="dataSource"></property>
         <property name="hibernateProperties">
             <props>
@@ -28,12 +32,18 @@
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
-
-
-
   <!--<tx:annotation-driven transaction-manager="transactionManager" />-->
-    <!--<bean id="CSSDAO" class="dao.CSSDAOImpl">-->
-        <!--<property name="sessionFactory" ref="sessionFactory" />-->
-  <!--</bean>-->
+
+
+
+
+    <!--<bean id="userDao" class="com.exadel.dao.daoImpl.UserDaoImpl"/>-->
+    <!--<bean id="userervice" class="com.exadel.service.serviceImpl.UserServiceImpl"/>-->
+
+
+    <bean id="studentDao" class="com.exadel.dao.daoImpl.StudentDaoImpl"/>
+    <bean id="studentService" class="com.exadel.service.serviceImpl.StudentServiceImpl"/>
+
+
 
 </beans>

@@ -44,7 +44,8 @@ public class GenericDaoImpl <T, PK extends Serializable> implements GenericDao <
 
     @Override
     public void update(T persistentObject) {
-         getCurrentSession().delete(persistentObject);
+//         getCurrentSession().delete(persistentObject);
+        //TODO:
     }
 
     @Override

@@ -62,7 +62,7 @@
 <body>
 <div class="container">
     <div class="row">
-        <h2>List of Exadel's staff</h2>
+        <%--<h2>List of Exadel's staff</h2>--%>
         <hr>
         <div class="col-sm-3 col-md-2 affix-sidebar">
             <div class="sidebar-nav">
