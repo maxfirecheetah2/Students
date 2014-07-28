@@ -31,21 +31,14 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     @Transactional
-    public Integer createStudent(Student student){
-        return getStudentDao().create(student);
+    public Integer saveStudent(Student student){
+        return getStudentDao().save(student);
     }
 
     @Override
     @Transactional//TODO: Propogation??
     public List<Student> getStudentList() {
-//        if(sessionFactory == null){
-//            System.out.println("sessionFactory is null!!!");
-//        }
-
-        if(studentDao == null){
-            System.out.println("studentDao is null!!!");
-        }
-        return getStudentDao().getAll();//!!!!!!!!!!!!!!!!
+        return getStudentDao().getAll();
     }
 
     @Override

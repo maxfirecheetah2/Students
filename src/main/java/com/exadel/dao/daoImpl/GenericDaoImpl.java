@@ -34,8 +34,9 @@ public class GenericDaoImpl <T, PK extends Serializable> implements GenericDao <
 
     }
 
+
     @Override
-    public PK create(T persistentObject) {
+    public PK save(T persistentObject) {
         return (PK) getCurrentSession().save(persistentObject);
     }
 
@@ -47,13 +48,12 @@ public class GenericDaoImpl <T, PK extends Serializable> implements GenericDao <
 
     @Override
     public void update(T persistentObject) {
-//         getCurrentSession().delete(persistentObject);
-        //TODO:
+        getCurrentSession().update(persistentObject);
     }
 
     @Override
-    public void createOrUpdate(T persistentObject) {
-          //TODO:
+    public void saveOrUpdate(T persistentObject) {
+        getCurrentSession().saveOrUpdate(persistentObject);
     }
 
     @Override

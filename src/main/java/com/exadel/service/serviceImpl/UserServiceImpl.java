@@ -23,8 +23,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public Integer createUser(User user){
-        return getUserDao().create(user);
+    public Integer saveUser(User user){
+        return getUserDao().save(user);
     }
 
     @Override
