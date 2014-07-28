@@ -11,6 +11,8 @@
 
     <security:http auto-config="true"> <!--PATH???-->
         <!-- Restrict URLs based on role -->
+        <security:intercept-url pattern="/resources/style/css/*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+        <security:intercept-url pattern="/login*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
         <security:intercept-url pattern="/login*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
         <security:intercept-url pattern="/logoutSuccess*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 
@@ -19,8 +21,9 @@
         <!-- Override default login and logout pages -->
         <security:form-login login-page="/login"
                              default-target-url="/students/list"
+                             always-use-default-target="true"
                              authentication-failure-url="/login?login_error=1" />
-        <security:logout logout-url="/logout" logout-success-url="/userList.jsp" />
+        <security:logout logout-url="/logout" logout-success-url="/login" />
 
     </security:http>
 

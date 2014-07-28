@@ -16,14 +16,6 @@ public class Feedback implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "name")
-    private String name;
-
-    @Column(name = "surname")
-    private String surname;
-
-    @Column(name = "middlename")
-    private String middlename;
 
     @Column(name = "prof_level")
     private String profLevel;
@@ -72,29 +64,6 @@ public class Feedback implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getMiddlename() {
-        return middlename;
-    }
-
-    public void setMiddlename(String middlename) {
-        this.middlename = middlename;
-    }
 
 
     public String getProfLevel() {
