@@ -18,17 +18,20 @@ public class GenericDaoImpl <T, PK extends Serializable> implements GenericDao <
 
     private Class<T> type;
 
-    protected Session getCurrentSession(){
-        return sessionFactory.getCurrentSession();
-    }
-
     public GenericDaoImpl(Class<T> type){
         this.type = type;
     }
 
+    protected Session getCurrentSession(){
+        return sessionFactory.getCurrentSession();
+    }
+
     @Override
     public T get(PK id) {
-        return null;  //TODO:
+
+        T object = (T)getCurrentSession().get(type,id);
+        return object;
+
     }
 
     @Override

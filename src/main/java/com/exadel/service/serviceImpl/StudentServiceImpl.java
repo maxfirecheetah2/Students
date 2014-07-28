@@ -20,6 +20,9 @@ public class StudentServiceImpl implements StudentService {
     @Qualifier("studentDao")
     private StudentDao studentDao;
 
+//    @Autowired
+//    private SessionFactory sessionFactory;
+
 
     private StudentDao getStudentDao(){
         return studentDao;
@@ -35,7 +38,14 @@ public class StudentServiceImpl implements StudentService {
     @Override
     @Transactional//TODO: Propogation??
     public List<Student> getStudentList() {
-        return getStudentDao().getAll();
+//        if(sessionFactory == null){
+//            System.out.println("sessionFactory is null!!!");
+//        }
+
+        if(studentDao == null){
+            System.out.println("studentDao is null!!!");
+        }
+        return getStudentDao().getAll();//!!!!!!!!!!!!!!!!
     }
 
     @Override
