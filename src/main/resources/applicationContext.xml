@@ -17,6 +17,7 @@
     <tx:annotation-driven/>
 
     <import resource="mvc-view-config.xml"/>
+    <!--Merge!-->
     <import resource="data-source.xml"/>
     <import resource="hibernate-cfg.xml"/>
     <import resource="security-config.xml"/>

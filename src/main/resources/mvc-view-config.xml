@@ -7,13 +7,23 @@
          http://www.springframework.org/schema/beans
          http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
+    <!--<bean class="com.exadel.util.TilesPlusDefaultViewResolver">-->
+        <!--<property name="jspResolver" ref="viewResolver"/>-->
+        <!--<property name="tilesResolver" ref="tilesViewResolver" />-->
+    <!--</bean>-->
+
+
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <!--<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>-->
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
+        <property name="order" value="1"/>
     </bean>
 
     <mvc:resources mapping="/resources/**" location="/resources/style/" />
+
+
+    <import resource="tiles-config/tiles-config.xml" />
 
 
 </beans>

@@ -33,7 +33,7 @@ public class StudentController {
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public ModelAndView studentList(){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("usersList");
+        modelAndView.setViewName("defaultTemplate");
         List<Student>list =  studentService.getStudentList();
         System.out.println(list);
         modelAndView.addObject("users", list);
