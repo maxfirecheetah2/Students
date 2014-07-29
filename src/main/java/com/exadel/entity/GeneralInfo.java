@@ -51,6 +51,24 @@ public class GeneralInfo implements Serializable {
     @Column(name = "graduation_year")
     private short graduationYear;
 
+    @Column(name = "gpa11_12s")
+    private double gpa1112S;
+
+    @Column(name = "gpa12_13w")
+    private double gpa1213W;
+
+    @Column(name = "gpa12_13s")
+    private double gpa1213S;
+
+    @Column(name = "gpa13_14w")
+    private double gpa1314W;
+
+    @Column(name = "gpa13_14s")
+    private double gpa1314S;
+
+    @Column(name = "list_last_prj")
+    private String listLastPrj;
+
     @Column(name = "current_prj")
     private short currentPrj;
 
@@ -87,7 +105,14 @@ public class GeneralInfo implements Serializable {
     @Column(name = "en_courses")
     private String enCourses;
 
+    @Column(name="absent")
+    private String absent;
 
+    @Column(name="training")
+    private String training;
+
+    @Column(name="certificates")
+    private String certificates;
 
 
 
@@ -278,5 +303,83 @@ public class GeneralInfo implements Serializable {
         this.enCourses = enCourses;
     }
 
+    public String getCertificates() {
+        return certificates;
+    }
 
+    public void setCertificates(String certificates) {
+        this.certificates = certificates;
+    }
+
+    public String getTraining() {
+
+        return training;
+    }
+
+    public void setTraining(String training) {
+        this.training = training;
+    }
+
+    public String getAbsent() {
+
+        return absent;
+    }
+
+    public void setAbsent(String absent) {
+        this.absent = absent;
+    }
+
+    public String getListLastPrj() {
+
+        return listLastPrj;
+    }
+
+    public void setListLastPrj(String listLastPrj) {
+        this.listLastPrj = listLastPrj;
+    }
+
+    public double getGpa1314S() {
+
+        return gpa1314S;
+    }
+
+    public void setGpa1314S(double gpa1314S) {
+        this.gpa1314S = gpa1314S;
+    }
+
+    public double getGpa1314W() {
+
+        return gpa1314W;
+    }
+
+    public void setGpa1314W(double gpa1314W) {
+        this.gpa1314W = gpa1314W;
+    }
+
+    public double getGpa1213S() {
+
+        return gpa1213S;
+    }
+
+    public void setGpa1213S(double gpa1213S) {
+        this.gpa1213S = gpa1213S;
+    }
+
+    public double getGpa1213W() {
+
+        return gpa1213W;
+    }
+
+    public void setGpa1213W(double gpa1213W) {
+        this.gpa1213W = gpa1213W;
+    }
+
+    public double getGpa1112S() {
+
+        return gpa1112S;
+    }
+
+    public void setGpa1112S(double gpa1112S) {
+        this.gpa1112S = gpa1112S;
+    }
 }
