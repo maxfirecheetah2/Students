@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public interface UserService {
 
-    public Integer createUser(User user);
+    public Integer saveUser(User user);
     public List<User> getUserList();
     public void delete(User user);
 

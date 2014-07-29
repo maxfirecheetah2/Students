@@ -9,10 +9,10 @@ import java.util.List;
 public interface GenericDao<T, PK extends Serializable>{
 
     T get(PK id);
-    PK create(T persistentObject);
+    PK save(T persistentObject);
     List<T> getAll();
     void update(T persistentObject);
-    void createOrUpdate(T persistentObject);
+    void saveOrUpdate(T persistentObject);
     void delete(T persistentObject);
 
 

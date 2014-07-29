@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public interface StudentService {
 
-    public Integer createStudent(Student student);
+    public Integer saveStudent(Student student);
     public List<Student> getStudentList();
     public void delete(Student student);
 

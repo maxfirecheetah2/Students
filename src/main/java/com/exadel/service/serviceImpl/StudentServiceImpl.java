@@ -20,6 +20,9 @@ public class StudentServiceImpl implements StudentService {
     @Qualifier("studentDao")
     private StudentDao studentDao;
 
+//    @Autowired
+//    private SessionFactory sessionFactory;
+
 
     private StudentDao getStudentDao(){
         return studentDao;
@@ -28,8 +31,8 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     @Transactional
-    public Integer createStudent(Student student){
-        return getStudentDao().create(student);
+    public Integer saveStudent(Student student){
+        return getStudentDao().save(student);
     }
 
     @Override

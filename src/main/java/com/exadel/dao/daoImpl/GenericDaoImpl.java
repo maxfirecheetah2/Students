@@ -18,21 +18,25 @@ public class GenericDaoImpl <T, PK extends Serializable> implements GenericDao <
 
     private Class<T> type;
 
-    protected Session getCurrentSession(){
-        return sessionFactory.getCurrentSession();
-    }
-
     public GenericDaoImpl(Class<T> type){
         this.type = type;
     }
 
-    @Override
-    public T get(PK id) {
-        return null;  //TODO:
+    protected Session getCurrentSession(){
+        return sessionFactory.getCurrentSession();
     }
 
     @Override
-    public PK create(T persistentObject) {
+    public T get(PK id) {
+
+        T object = (T)getCurrentSession().get(type,id);
+        return object;
+
+    }
+
+
+    @Override
+    public PK save(T persistentObject) {
         return (PK) getCurrentSession().save(persistentObject);
     }
 
@@ -44,13 +48,12 @@ public class GenericDaoImpl <T, PK extends Serializable> implements GenericDao <
 
     @Override
     public void update(T persistentObject) {
-//         getCurrentSession().delete(persistentObject);
-        //TODO:
+        getCurrentSession().update(persistentObject);
     }
 
     @Override
-    public void createOrUpdate(T persistentObject) {
-          //TODO:
+    public void saveOrUpdate(T persistentObject) {
+        getCurrentSession().saveOrUpdate(persistentObject);
     }
 
     @Override
