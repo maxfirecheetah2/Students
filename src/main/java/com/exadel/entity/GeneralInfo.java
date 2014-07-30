@@ -1,5 +1,7 @@
 package com.exadel.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
@@ -7,17 +9,18 @@ import java.util.List;
 
 
 
-//TODO: rename!
+
 /**
  * Created by Вадим on 15.07.2014.
  */
 @Entity
-@Table(name="info")
+@Table(name="general_info")
 public class GeneralInfo implements Serializable {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(generator = "gen")
+    @GenericGenerator(name = "gen", strategy = "foreign",parameters = @org.hibernate.annotations.Parameter(name = "property", value = "student"))
     private int id;
 
     @OneToOne
@@ -45,7 +48,7 @@ public class GeneralInfo implements Serializable {
     @Column(name = "course")
     private short course;
 
-    @Column(name = "group")
+    @Column(name = "`group`")
     private short group;
 
     @Column(name = "graduation_year")

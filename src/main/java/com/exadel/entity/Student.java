@@ -19,10 +19,10 @@ public class Student extends User {
     @OneToMany(mappedBy = "student",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<Feedback> feedbacks;
 
-    @ManyToMany(mappedBy = "students",cascade = CascadeType.ALL)//TODO:
+    @ManyToMany(mappedBy = "students",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List <Tutor> tutors;
 
-    @OneToOne(mappedBy = "student")
+    @OneToOne(mappedBy = "student",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private GeneralInfo generalInfo;
 
     @OneToMany(mappedBy = "student",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
