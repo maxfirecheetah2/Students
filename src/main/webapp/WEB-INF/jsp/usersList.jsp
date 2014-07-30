@@ -56,7 +56,7 @@
                                     Operation <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                                    <li><a href='<c:url=""/>'>View profile</a></li>
+                                    <li><a href='#'>View profile</a></li>
                                     <li><a href="#">Send Notification</a></li>
                                     <li><a href="#">Add feedback</a></li>
                                     <li class="divider"></li>

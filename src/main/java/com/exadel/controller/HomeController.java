@@ -11,7 +11,7 @@ public class HomeController {
     public String home(){
 
 
-        return "redirect : students/list";     //TODO:???
+        return "redirect:login";
     }
 
 

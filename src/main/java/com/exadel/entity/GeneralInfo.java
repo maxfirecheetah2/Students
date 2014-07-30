@@ -12,7 +12,7 @@ import java.util.List;
  * Created by Вадим on 15.07.2014.
  */
 @Entity
-@Table(name="info")
+@Table(name="general_Info")
 public class GeneralInfo implements Serializable {
 
     @Id
