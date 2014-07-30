@@ -4,6 +4,7 @@ import com.exadel.dao.GenericDao;
 import com.exadel.dao.StudentDao;
 import com.exadel.dao.UserDao;
 import com.exadel.entity.Student;
+import com.exadel.entity.User;
 import com.exadel.service.StudentService;
 import com.exadel.service.UserService;
 import org.hibernate.SessionFactory;
@@ -25,6 +26,10 @@ public class StudentController {
     @Qualifier("studentService")
     private StudentService studentService;
 
+    @Autowired
+    @Qualifier("userDao")
+    UserDao userDao;
+
     private StudentService getStudentService(){
         return studentService;
     }
@@ -37,6 +42,10 @@ public class StudentController {
         List<Student>list =  studentService.getStudentList();
         System.out.println(list);
         modelAndView.addObject("users", list);
+
+        User user = userDao.loadUserByUsername("maxfirecheetah");
+        System.out.println(user.getId() + " " +  user.getName() + " " + user.getRole().getName());
+
         return modelAndView;
     }
 

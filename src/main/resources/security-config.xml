@@ -16,7 +16,7 @@
         <security:intercept-url pattern="/login*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
         <security:intercept-url pattern="/logoutSuccess*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 
-        <security:intercept-url pattern="/**" access="ROLE_USER" />
+        <security:intercept-url pattern="/**" access="ROLE_ADMIN" />
 
         <!-- Override default login and logout pages -->
         <security:form-login login-page="/login"
@@ -28,12 +28,8 @@
     </security:http>
 
     <security:authentication-manager>
-        <security:authentication-provider>
-            <security:user-service>
-                <security:user name="admin" password="pass" authorities="ROLE_ADMIN,ROLE_USER"/>
-                <security:user name="user1" password="1111" authorities="ROLE_USER"/>
-                <security:user name="user2" password="2222" disabled="true" authorities="ROLE_USER"/>
-            </security:user-service>
+        <security:authentication-provider user-service-ref="authService">
+            <!--<security:password-encoder hash="sha-256"/>-->
         </security:authentication-provider>
     </security:authentication-manager>
 

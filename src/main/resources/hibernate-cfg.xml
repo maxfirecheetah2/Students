@@ -35,7 +35,7 @@
   <!--<tx:annotation-driven transaction-manager="transactionManager" />-->
 
 
-
+    <bean id="authService" class="com.exadel.service.serviceImpl.AuthService"/>
 
     <bean id="userDao" class="com.exadel.dao.daoImpl.UserDaoImpl"/>
     <bean id="userervice" class="com.exadel.service.serviceImpl.UserServiceImpl"/>

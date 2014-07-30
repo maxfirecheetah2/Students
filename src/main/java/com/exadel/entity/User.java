@@ -35,6 +35,9 @@ public class User implements Serializable {
     @Column(name = "skype")
     private String skype;
 
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private Role role;
 
 
     public int getId() {
@@ -94,5 +97,11 @@ public class User implements Serializable {
     }
 
 
+    public Role getRole() {
+        return role;
+    }
 
+    public void setRole(Role role) {
+        this.role = role;
+    }
 }
