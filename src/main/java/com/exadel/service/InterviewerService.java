@@ -1,7 +1,16 @@
 package com.exadel.service;
 
+import com.exadel.entity.Interview;
+import com.exadel.entity.Interviewer;
+
+import java.util.List;
+
 /**
  * Created by Вадим on 31.07.2014.
  */
 public interface InterviewerService {
+
+    public Integer saveInterviewer(Interviewer interviewer);
+    public List<Interviewer> getInterviewerList();
+    public void delete(Interviewer interviewer);
 }
