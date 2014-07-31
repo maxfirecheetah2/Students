@@ -1,3 +1,4 @@
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <div class="col-sm-3 col-md-2 affix-sidebar">
     <div class="sidebar-nav">
         <div class="navbar navbar-default" role="navigation">
@@ -17,18 +18,23 @@
                             <h4>
                                 <img alt="User Pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100" class="img-circle img-responsive">
                                 <br />
-                                Nik Seredinskiy
+                                ${user.name} ${user.surname}
                                 <br>
                                 <small>login as... <span class="caret"></span></small>
                             </h4>
                         </a>
+                        <a href="/logout"/> Logout</a>
+
                         <div class="collapse" id="toggleDemo0" style="height: 0px;">
                             <ul class="nav nav-list">
                                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> View my profile</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                                <li><a href='<c:url value="j_spring_security_logout"/>'><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                             </ul>
                         </div>
                     </li>
+
+                    <sec:authorize access="hasRole('ROLE_ADMIN')">
+
                     <li>
                         <a href="#" data-toggle="collapse" data-target="#toggleDemo" data-parent="#sidenav01" class="collapsed">
                             <span class="glyphicon glyphicon-list"></span> Lists 1 <span class="caret pull-right"></span>
@@ -54,8 +60,15 @@
                     </li>
                     <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Messages <span class="badge pull-right">42</span></a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-search"></span> Advanced Search</a></li>
+
+                    </sec:authorize>
+
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
     </div>
 </div>
+
+
+
+

@@ -10,6 +10,7 @@ import com.exadel.service.UserService;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -35,18 +36,16 @@ public class StudentController {
     }
 
 
+//    @Secured("hasRole('ROLE_ADMIN')")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public ModelAndView studentList(){
+
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("defaultTemplate");
         List<Student>list =  studentService.getStudentList();
-        System.out.println(list);
         modelAndView.addObject("users", list);
-
-        User user = userDao.loadUserByUsername("maxfirecheetah");
-        System.out.println(user.getId() + " " +  user.getName() + " " + user.getRole().getName());
-
         return modelAndView;
+
     }
 
 

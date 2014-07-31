@@ -7,16 +7,17 @@
                            http://www.springframework.org/schema/security
                            http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
-    <security:global-method-security secured-annotations="enabled" />
+    <security:global-method-security secured-annotations="enabled"   />
 
-    <security:http auto-config="true"> <!--PATH???-->
+    <security:http auto-config="true" use-expressions="true" >
         <!-- Restrict URLs based on role -->
-        <security:intercept-url pattern="/resources/style/css/*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
-        <security:intercept-url pattern="/login*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
-        <security:intercept-url pattern="/login*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
-        <security:intercept-url pattern="/logoutSuccess*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+        <security:intercept-url pattern="/resources/style/css/*" access="isAnonymous()" />
+        <security:intercept-url pattern="/login*" access="isAnonymous()" />
+        <security:intercept-url pattern="/login*" access="isAnonymous()" />
+        <security:intercept-url pattern="/logoutSuccess*" access="isAnonymous()" />
 
-        <security:intercept-url pattern="/**" access="ROLE_ADMIN" />
+        <security:intercept-url pattern="/**" access="hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR')" />
+        <!--<security:intercept-url pattern="/**" access="permitAll"/>-->
 
         <!-- Override default login and logout pages -->
         <security:form-login login-page="/login"
@@ -27,11 +28,15 @@
 
     </security:http>
 
+
     <security:authentication-manager>
         <security:authentication-provider user-service-ref="authService">
+
             <!--<security:password-encoder hash="sha-256"/>-->
         </security:authentication-provider>
     </security:authentication-manager>
+
+    <bean id="webexpressionHandler" class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" />
 
     <!--<security:jdbc-user-service data-source-ref="dataSource" />-->
 

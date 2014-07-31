@@ -29,8 +29,10 @@ public class AuthService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
 
         User user = getUserDao().loadUserByUsername(username);
-        List<GrantedAuthority> authList = new ArrayList<GrantedAuthority>(1);
+        List<GrantedAuthority> authList = new ArrayList<GrantedAuthority>();   //TODO:
         authList.add(new SimpleGrantedAuthority(user.getRole().getName()));
+
+        System.out.println(user.getLogin() + " " + user.getRole().getName());
 
         return new org.springframework.security.core.userdetails.User(
                 user.getLogin(),
