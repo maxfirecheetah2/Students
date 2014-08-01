@@ -15,6 +15,9 @@ public class Role {
 
     private String name;
 
+    @OneToMany(mappedBy = "role",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    List<User> users;
+
     public int getId() {
         return id;
     }

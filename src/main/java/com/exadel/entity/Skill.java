@@ -1,6 +1,7 @@
 package com.exadel.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -14,6 +15,17 @@ public class Skill {
 
     @Column(name="name")
     private String name;
+
+    @OneToMany(mappedBy = "skill")
+    private List<Mark> marks;
+
+    public List<Mark> getMarks() {
+        return marks;
+    }
+
+    public void setMarks(List<Mark> marks) {
+        this.marks = marks;
+    }
 
     public String getName() {
         return name;

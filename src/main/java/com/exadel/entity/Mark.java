@@ -20,15 +20,16 @@ public class Mark implements Serializable{
     @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
 
-    @Column(name = "skill_id")
-    private int skill_id;
-
     @Column(name = "value")
     private int value;
 
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name="interview_id")
     private Interview interview;
+
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name="skill_id")
+    private Skill skill;
 
     public Interview getInterview() {
         return interview;
@@ -46,12 +47,12 @@ public class Mark implements Serializable{
         this.value = value;
     }
 
-    public int getSkill_id() {
-        return skill_id;
+    public Skill getSkill() {
+        return skill;
     }
 
-    public void setSkill_id(int skill_id) {
-        this.skill_id = skill_id;
+    public void setSkill(Skill skill) {
+        this.skill = skill;
     }
 
     public int getId() {

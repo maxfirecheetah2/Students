@@ -30,7 +30,7 @@ public class Interview implements Serializable {
     private List<Interviewer> interviewers;
 
     @OneToMany(mappedBy = "interview",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    private List <Mark> skills;
+    private List <Mark> marks;
 
     @Column(name = "en_level")
     private String englishLevel;
@@ -55,13 +55,12 @@ public class Interview implements Serializable {
         this.englishLevel = englishLevel;
     }
 
-    public List<Mark> getSkills() {
-
-        return skills;
+    public List<Mark> getMarks() {
+        return marks;
     }
 
-    public void setSkills(List<Mark> skills) {
-        this.skills = skills;
+    public void setMarks(List<Mark> marks) {
+        this.marks = marks;
     }
 
     public Student getStudent() {

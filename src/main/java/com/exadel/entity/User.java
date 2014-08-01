@@ -36,7 +36,7 @@ public class User implements Serializable {
     private String skype;
 
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
+    @JoinColumn(name="role_id")
     private Role role;
 
 
