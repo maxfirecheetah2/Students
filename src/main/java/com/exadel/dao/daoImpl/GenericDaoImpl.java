@@ -60,4 +60,11 @@ public class GenericDaoImpl <T, PK extends Serializable> implements GenericDao <
     public void delete(T persistentObject) {
         getCurrentSession().delete(persistentObject);
     }
+
+    public List<Object> getDataColumn(String nameEntity,String nameColumn){
+
+        List<Object> data=(List<Object>)getCurrentSession().createQuery("select "+nameColumn+" from "+ nameEntity +" order by "+nameColumn).list();
+        return data;
+
+    }
 }

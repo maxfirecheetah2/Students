@@ -22,7 +22,7 @@ public class UserDaoImpl extends GenericDaoImpl<User, Integer> implements UserDa
         User user = (User) getCurrentSession().createQuery(hql)
                 .setString("login", login)
                 .uniqueResult();
-        Hibernate.initialize(user.getRole());
+        Hibernate.initialize(user.getRoles());
         return user;
     }
 
