@@ -1,9 +1,24 @@
-0r<?xml version="1.0" encoding="UTF-8" ?>
- <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-    <definition name="defaultTemplate" template="/WEB-INF/jsp/layout.jsp">
+
+    <definition name="basicLayout" template="/WEB-INF/jsp/layout.jsp">
         <put-attribute name="menu" value="/WEB-INF/jsp/menu.jsp" />
+        <put-attribute name="body" value=""/>
+    </definition>
+
+    <definition name="studentList" extends="basicLayout">
         <put-attribute name="body" value="/WEB-INF/jsp/usersList.jsp"/>
     </definition>
+
+    <definition name="studentProfile" extends="basicLayout">
+        <put-attribute name="body" value="/WEB-INF/jsp/profilePage.jsp"/>
+    </definition>
+
+    <definition name="createStudent"  extends="basicLayout">
+        <put-attribute name="body" value="/WEB-INF/jsp/createUser.jsp"/>
+    </definition>
+
+
 </tiles-definitions>

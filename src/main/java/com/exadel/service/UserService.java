@@ -15,5 +15,6 @@ public interface UserService {
     public Integer saveUser(User user);
     public List<User> getUserList();
     public void delete(User user);
+    public User getUserByLogin(String login);
 
 }

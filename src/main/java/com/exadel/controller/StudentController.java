@@ -12,43 +12,61 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
 
 @Controller
-@RequestMapping("/students")
-public class StudentController {
+@RequestMapping("/student")
+public class StudentController extends BaseController{
 
     @Autowired
     @Qualifier("studentService")
     private StudentService studentService;
 
-    @Autowired
-    @Qualifier("userDao")
-    UserDao userDao;
 
     private StudentService getStudentService(){
         return studentService;
     }
 
 
-//    @Secured("hasRole('ROLE_ADMIN')")
+//    @Secured("hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR')")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public ModelAndView studentList(){
 
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("defaultTemplate");
+        ModelAndView modelAndView = createGeneralModelAndView();
+        modelAndView.setViewName("studentList");
         List<Student>list =  studentService.getStudentList();
         modelAndView.addObject("users", list);
         return modelAndView;
 
     }
 
+    @Secured("hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR')")
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
+    public ModelAndView editStudent(@PathVariable int id,
+                       @RequestParam(value = "student", required = true) Student student){
+        ModelAndView modelAndView = createGeneralModelAndView();
+        return null;
+    }
 
+//    /{id}
+    @RequestMapping(value = "/profile", method = RequestMethod.GET)
+    public ModelAndView getProfile(){
+        ModelAndView modelAndView = createGeneralModelAndView();
+        modelAndView.setViewName("studentProfile");
+        return modelAndView;
+    }
+
+
+
+    //edit student
+    //
 
 
 

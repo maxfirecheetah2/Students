@@ -64,7 +64,7 @@
 </head>
 <body>
 
-<div class=pos>
+<div>
     <tiles:insertAttribute name="menu"/>
     <tiles:insertAttribute name="body"/>
 </div>

@@ -20,8 +20,8 @@
             <table class="table">
                 <thead>
                 <tr class="filters">
-                    <th><input type="text" class="form-control" placeholder="Surname" disabled></th>
                     <th><input type="text" class="form-control" placeholder="Name" disabled></th>
+                    <th><input type="text" class="form-control" placeholder="Surname" disabled></th>
                     <th><input type="text" class="form-control" placeholder="Hired" disabled></th>
                     <th><input type="text" class="form-control" placeholder="Faculty" disabled></th>
                     <th><input type="text" class="form-control" placeholder="Course" disabled></th>
@@ -38,14 +38,13 @@
                 <tbody>
                 <c:forEach items="${users}" var="user">
                     <tr>
-                        <td><c:out value="${user.surname}"/></td>
                         <td><c:out value="${user.name}"/></td>
+                        <td><c:out value="${user.surname}"/></td>
                         <td><c:out value="${user.acceptionDate}"/></td>
                         <td><c:out value="${user.faculty}"/></td>
                         <td><c:out value="${user.course}"/></td>
                         <td><c:out value="${user.group}"/></td>
                         <td><c:out value="${user.graduationYear}"/></td>
-                        <td>4</td>
                         <td><c:out value="${user.billable}"/></td>
                         <td><c:out value="${user.curPrjRole}"/></td>
                         <td><c:out value="${user.currentTechs}"/></td>

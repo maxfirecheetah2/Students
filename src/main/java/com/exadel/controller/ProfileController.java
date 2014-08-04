@@ -6,11 +6,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/profile")
-public class ProfileController {
+public class ProfileController extends BaseController{
 
 
-    public ModelAndView getProfile(){
-        return null;
-    }
+
 
 }
