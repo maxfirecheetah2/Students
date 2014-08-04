@@ -1,9 +1,16 @@
 package com.exadel.service.serviceImpl;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+import com.exadel.dao.GenericDao;
+import com.exadel.dao.daoImpl.GenericDaoImpl;
+
 /**
      * Created by Вадим on 04.08.2014.
      */
-    public static class Statistics {
+ public class Statistics {
 
         private ArrayList<String> fields=new ArrayList<String>();
         private ArrayList<Integer> values=new ArrayList<Integer>();
@@ -14,9 +21,8 @@ package com.exadel.service.serviceImpl;
 
         public Statistics(String nameEntity,String nameColumn){
 
-
-
-            List<Object> data=(List<Object>)session.createQuery("select "+nameColumn+" from "+ nameEntity +" order by "+nameColumn).list();
+            GenericDaoImpl<Object,Integer> G=new GenericDaoImpl<Object, Integer>(Object.class);
+            List<Object> data=G.getDataColumn(nameEntity,nameColumn);
 
             String temp=data.get(0).toString();
             int count=1;
@@ -61,7 +67,9 @@ package com.exadel.service.serviceImpl;
 
         }
 
-        public ArrayList<Integer> getValues() {
+
+
+    public ArrayList<Integer> getValues() {
             return values;
         }
 
