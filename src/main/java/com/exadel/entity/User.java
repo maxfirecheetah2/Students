@@ -2,6 +2,7 @@ package com.exadel.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 
 /**
@@ -35,9 +36,8 @@ public class User implements Serializable {
     @Column(name = "skype")
     private String skype;
 
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn(name="role_id")
-    private Role role;
+    @ManyToMany(mappedBy = "users",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private List<Role> roles;
 
 
     public int getId() {
@@ -97,11 +97,11 @@ public class User implements Serializable {
     }
 
 
-    public Role getRole() {
-        return role;
+    public List<Role> getRoles() {
+        return roles;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 }

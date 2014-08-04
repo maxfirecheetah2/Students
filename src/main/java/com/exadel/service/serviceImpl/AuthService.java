@@ -30,9 +30,10 @@ public class AuthService implements UserDetailsService {
 
         User user = getUserDao().loadUserByUsername(username);
         List<GrantedAuthority> authList = new ArrayList<GrantedAuthority>();   //TODO:
-        authList.add(new SimpleGrantedAuthority(user.getRole().getName()));
+      for(int i=0;i<user.getRoles().size();i++) {
+          authList.add(new SimpleGrantedAuthority(user.getRoles().get(i).getName()));
+      }
 
-        System.out.println(user.getLogin() + " " + user.getRole().getName());
 
         return new org.springframework.security.core.userdetails.User(
                 user.getLogin(),
