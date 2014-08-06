@@ -10,10 +10,17 @@ import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 @Controller
 public class LoginController extends BaseController{
 
+    @Autowired
+    @Qualifier("mailService")
+    private MailService mailService;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginLoad() {
         System.out.println("Login form is loading");
+
+     //   Send a composed mail
+       mailService.sendMail("elfavadim@mail.ru", "Test Subject", "Testing body");
+
         return "login";
     }
 

@@ -21,6 +21,7 @@
     <import resource="data-source.xml"/>
     <import resource="hibernate-cfg.xml"/>
     <import resource="security-config.xml"/>
+    <import resource="mail-config.xml"/>
 
 
 
