@@ -35,19 +35,19 @@ public class StudentController extends BaseController{
     }
 
 
-//    @Secured("hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR')")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public ModelAndView studentList(){
 
         ModelAndView modelAndView = createGeneralModelAndView();
         modelAndView.setViewName("studentList");
         List<Student> list =  studentService.getStudentList();
-        modelAndView.addObject("students", list);
+        modelAndView.addObject("users", list);
+        modelAndView.addObject("role", "student");
         return modelAndView;
 
     }
 
-//    @Secured("hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR')")
+
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
     public ModelAndView editStudent(@PathVariable int id,
                        @RequestParam(value = "student", required = true) Student student){
@@ -55,7 +55,6 @@ public class StudentController extends BaseController{
         return null;
     }
 
-//    /{id}
     @RequestMapping(value = "/profile", method = RequestMethod.GET)
     public ModelAndView getProfile(){
         ModelAndView modelAndView = createGeneralModelAndView();

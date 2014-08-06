@@ -1,19 +1,19 @@
 package com.exadel.entity;
 
 
-import com.sun.istack.internal.NotNull;
+import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- * Created by Вадим on 15.07.2014.
- */
+
 @Entity
-@Table(name = "user")
+@Table(name = "user", uniqueConstraints = @UniqueConstraint(columnNames={"id", "login", "email"}))
 @Inheritance(strategy=InheritanceType.JOINED)
 public class User implements Serializable {
 
@@ -25,25 +25,37 @@ public class User implements Serializable {
 
 
     @Column(name = "login")
+    @NotNull
+    @Size(min = 3, max = 30)
     private String login;
 
     @Column(name = "password")
+    @NotNull
+    @Size(min = 3, max = 30)
     private String password;
 
 
     @Column(name = "name")
+    @NotNull
+    @Size(min = 1, max = 30)
     private String name;
 
     @Column(name = "surname")
+    @NotNull
+    @Size(min = 1, max = 30)
     private String surname;
 
     @Column(name = "email")
+    @NotNull
+    @Email
     private String email;
 
     @Column(name = "skype")
+    @NotNull
     private String skype;
 
     @Column(name = "phone")
+    @NotNull
     private String phone;
 
 

@@ -9,6 +9,7 @@ import com.exadel.entity.dto.UserDTO;
 import com.exadel.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
@@ -34,8 +35,9 @@ public class UserServiceImpl implements UserService {
         return roleDao;
     }
 
-    @Override
+    @Secured("hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR')")
     @Transactional
+    @Override
     public Integer saveUser(UserDTO userDto){
 
         List<Integer> rolesId = userDto.getRoles();
@@ -49,23 +51,32 @@ public class UserServiceImpl implements UserService {
 
     }
 
-    @Override
+    @Secured("hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR')")
     @Transactional
+    @Override
+
     public List<User> getUserList() {
         return getUserDao().getAll();
     }
 
-    @Override
+    @Secured("hasAnyRole('ROLE_ADMIN')")
     @Transactional
+    @Override
     public void delete(User user) {
         getUserDao().delete(user);
     }
 
-    @Override
+
     @Transactional
+    @Override
     public User getUserByLogin(String login) {
         return getUserDao().loadUserByUsername(login);
     }
 
+    @Override
+    @Transactional
+    public List<User> getUsersByRole(Integer roleId){
+        return getRoleDao().getUsersByRole(roleId);
+    }
 
 }

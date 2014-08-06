@@ -2,7 +2,8 @@ package com.exadel.service.serviceImpl;
 
 import com.exadel.dao.GeneralInfoDao;
 import com.exadel.entity.GeneralInfo;
-import com.exadel.service.GeneralInfoService;
+import com.exadel.service.*;
+
 
 import java.util.List;
 

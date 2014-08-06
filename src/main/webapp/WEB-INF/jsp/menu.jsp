@@ -25,11 +25,11 @@
                                 <small>Login as... <span class="caret"></span></small>
                             </h4>
                         </a>
-                        <a href="/logout"/> Logout</a>
+                        <a href="/logout"/><span class="glyphicon glyphicon-log-out"></span> Logout</a>
 
                         <div class="collapse" id="toggleDemo0" style="height: 0px;">
                             <ul class="nav nav-list">
-                                <li><a href='<c:url value="/student/profile"/>'><span class="glyphicon glyphicon-user"></span> View my profile</a></li>
+                                <li><a href="<c:url value="/student/profile"/>"><span class="glyphicon glyphicon-user"></span> View my profile</a></li>
                                 <%--<li><a href='<c:url value="/j_spring_security_logout"/>'><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>--%>
                             </ul>
                         </div>
@@ -39,24 +39,26 @@
 
                     <li>
                         <a href="#" data-toggle="collapse" data-target="#toggleDemo" data-parent="#sidenav01" class="collapsed">
-                            <span class="glyphicon glyphicon-list"></span>User categories<span class="caret pull-right"></span>
+                            <span class="glyphicon glyphicon-list"></span> User categories<span class="caret pull-right"></span>
                         </a>
                         <div class="collapse" id="toggleDemo" style="height: 0px;">
                             <ul class="nav nav-list">
+
                                 <li><a href='<c:url value="/student/list"/>'><span class="glyphicon glyphicon-user"></span>Students</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-user"></span>Tutors</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-user"></span>Interviewers</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-user"></span>Moderators</a></li>
+                                <li><a href='<c:url value="/tutors"/>'><span class="glyphicon glyphicon-user"></span>Tutors</a></li>
+                                <li><a href='<c:url value="/interviewers"/>'><span class="glyphicon glyphicon-user"></span>Interviewers</a></li>
+                                <li><a href='<c:url value="/moderators"/>'><span class="glyphicon glyphicon-user"></span>Moderators</a></li>
+
                             </ul>
                         </div>
                     </li>
                     <li>
                         <a href="#" data-toggle="collapse" data-target="#toggleDemo2" data-parent="#sidenav01" class="collapsed">
-                            <span class="glyphicon glyphicon-list"></span>Actions<span class="caret pull-right"></span>
+                            <span class="glyphicon glyphicon-list"></span> Actions<span class="caret pull-right"></span>
                         </a>
                         <div class="collapse" id="toggleDemo2" style="height: 0px;">
                             <ul class="nav nav-list">
-                                <li><a href='<c:url value="/user"/>'><span class="glyphicon glyphicon-user"></span>Create user</a></li>
+                                <li><a href='<c:url value="/user"/>'><span class="glyphicon glyphicon-plus"></span> Create user</a></li>
 
                             </ul>
                         </div>

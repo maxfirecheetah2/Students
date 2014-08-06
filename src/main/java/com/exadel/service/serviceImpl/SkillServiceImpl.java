@@ -2,7 +2,8 @@ package com.exadel.service.serviceImpl;
 
 import com.exadel.dao.SkillDao;
 import com.exadel.entity.Skill;
-import com.exadel.service.SkillService;
+import com.exadel.service.*;
+
 
 import java.util.List;
 

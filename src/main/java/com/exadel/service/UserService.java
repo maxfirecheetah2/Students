@@ -18,5 +18,6 @@ public interface UserService {
     public List<User> getUserList();
     public void delete(User user);
     public User getUserByLogin(String login);
+    public List<User> getUsersByRole(Integer roleId);
 
 }
