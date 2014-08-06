@@ -23,32 +23,32 @@
                     <th><input type="text" class="form-control" placeholder="Name" disabled></th>
                     <th><input type="text" class="form-control" placeholder="Surname" disabled></th>
                     <th><input type="text" class="form-control" placeholder="Hired" disabled></th>
-                    <th><input type="text" class="form-control" placeholder="Faculty" disabled></th>
-                    <th><input type="text" class="form-control" placeholder="Course" disabled></th>
-                    <th><input type="text" class="form-control" placeholder="Group" disabled></th>
-                    <th><input type="text" class="form-control" placeholder="Graduation" disabled></th>
-                    <th><input type="text" class="form-control" placeholder="Hours a day" disabled></th>
-                    <th><input type="text" class="form-control" placeholder="Billable" disabled></th>
-                    <th><input type="text" class="form-control" placeholder="Role" disabled></th>
-                    <th><input type="text" class="form-control" placeholder="Techs" disabled></th>
-                    <th><input type="text" class="form-control" placeholder="English" disabled></th>
+                    <%--<th><input type="text" class="form-control" placeholder="Faculty" disabled></th>--%>
+                    <%--<th><input type="text" class="form-control" placeholder="Course" disabled></th>--%>
+                    <%--<th><input type="text" class="form-control" placeholder="Group" disabled></th>--%>
+                    <%--<th><input type="text" class="form-control" placeholder="Graduation" disabled></th>--%>
+                    <%--<th><input type="text" class="form-control" placeholder="Hours a day" disabled></th>--%>
+                    <%--<th><input type="text" class="form-control" placeholder="Billable" disabled></th>--%>
+                    <%--<th><input type="text" class="form-control" placeholder="Role" disabled></th>--%>
+                    <%--<th><input type="text" class="form-control" placeholder="Techs" disabled></th>--%>
+                    <%--<th><input type="text" class="form-control" placeholder="English" disabled></th>--%>
                     <th></th>
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${users}" var="user">
+                <c:forEach items="${students}" var="stud">
                     <tr>
-                        <td><c:out value="${user.name}"/></td>
-                        <td><c:out value="${user.surname}"/></td>
-                        <td><c:out value="${user.acceptionDate}"/></td>
-                        <td><c:out value="${user.faculty}"/></td>
-                        <td><c:out value="${user.course}"/></td>
-                        <td><c:out value="${user.group}"/></td>
-                        <td><c:out value="${user.graduationYear}"/></td>
-                        <td><c:out value="${user.billable}"/></td>
-                        <td><c:out value="${user.curPrjRole}"/></td>
-                        <td><c:out value="${user.currentTechs}"/></td>
-                        <td><c:out value="${user.enLevel}"/></td>
+                        <td><c:out value="${stud.name}"/></td>
+                        <td><c:out value="${stud.surname}"/></td>
+                        <td><c:out value="${stud.generalInfo.acceptionDate}"/></td>
+                        <%--<td><c:out value="${stud.faculty}"/></td>--%>
+                        <%--<td><c:out value="${user.course}"/></td>--%>
+                        <%--<td><c:out value="${user.group}"/></td>--%>
+                        <%--<td><c:out value="${user.graduationYear}"/></td>--%>
+                        <%--<td><c:out value="${user.billable}"/></td>--%>
+                        <%--<td><c:out value="${user.curPrjRole}"/></td>--%>
+                        <%--<td><c:out value="${user.currentTechs}"/></td>--%>
+                        <%--<td><c:out value="${user.enLevel}"/></td>--%>
                         <td>
                             <div class="dropdown">
                                 <a role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="/page.html">

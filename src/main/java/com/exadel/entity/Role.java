@@ -15,9 +15,15 @@ public class Role {
 
     private String name;
 
-    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    @JoinTable(name = "user_role")
+    @ManyToMany(mappedBy = "roles",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     List<User> users;
+
+    public Role(){}
+
+    public Role(int id, String name){
+        this.id = id;
+        this.name = name;
+    }
 
     public int getId() {
         return id;

@@ -7,8 +7,7 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
-
-
+//TODO:
 
 /**
  * Created by Вадим on 15.07.2014.
@@ -28,7 +27,7 @@ public class GeneralInfo implements Serializable {
     private Student student;
 
     @Column(name = "acception_date")
-    private int acceptionDate;
+    private Date acceptionDate;
 
     @Column(name = "probation_b4_acception")
     private byte probationB4Acception;
@@ -128,11 +127,11 @@ public class GeneralInfo implements Serializable {
     }
 
 
-    public int getAcceptionDate() {
+    public Date getAcceptionDate() {
         return acceptionDate;
     }
 
-    public void setAcceptionDate(int acceptionDate) {
+    public void setAcceptionDate(Date acceptionDate) {
         this.acceptionDate = acceptionDate;
     }
 

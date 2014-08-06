@@ -1,13 +1,17 @@
 package com.exadel.service.serviceImpl;
 
+import com.exadel.dao.RoleDao;
 import com.exadel.dao.UserDao;
 import com.exadel.dao.daoImpl.UserDaoImpl;
+import com.exadel.entity.Role;
 import com.exadel.entity.User;
+import com.exadel.entity.dto.UserDTO;
 import com.exadel.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
@@ -17,14 +21,32 @@ public class UserServiceImpl implements UserService {
     @Qualifier("userDao")
     private UserDao userDao;
 
+    @Autowired
+    @Qualifier("roleDao")
+    private RoleDao roleDao;
+
     private UserDao getUserDao(){
         return userDao;
     }
 
+
+    private RoleDao getRoleDao(){
+        return roleDao;
+    }
+
     @Override
     @Transactional
-    public Integer saveUser(User user){
-        return getUserDao().save(user);
+    public Integer saveUser(UserDTO userDto){
+
+        List<Integer> rolesId = userDto.getRoles();
+        List<Role> roles = new ArrayList<Role>();
+        for(Integer id : rolesId){
+            roles.add(getRoleDao().load(id));
+        }
+        User user = userDto.getUser();
+        user.setRoles(roles);
+        return getUserDao().save(userDto.getUser());
+
     }
 
     @Override

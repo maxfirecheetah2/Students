@@ -11,7 +11,7 @@
 
     <security:http auto-config="true" use-expressions="true">
         <!-- Restrict URLs based on role -->
-        <security:intercept-url pattern="/resources/style/css/*" access="isAnonymous()" />
+        <security:intercept-url pattern="/resources/style/css/*" access="permitAll" />
         <security:intercept-url pattern="/login*" access="isAnonymous()" />
         <security:intercept-url pattern="/login*" access="isAnonymous()" />
         <security:intercept-url pattern="/logoutSuccess*" access="isAnonymous()" />
@@ -31,7 +31,6 @@
 
     <security:authentication-manager>
         <security:authentication-provider user-service-ref="authService">
-
             <!--<security:password-encoder hash="sha-256"/>-->
         </security:authentication-provider>
     </security:authentication-manager>

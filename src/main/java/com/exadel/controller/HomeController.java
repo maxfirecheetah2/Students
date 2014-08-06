@@ -15,13 +15,6 @@ public class HomeController extends BaseController {
         return "redirect:login";
     }
 
-    @Secured("hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR')")
-    @RequestMapping(value = "/createUser")
-    public String createUser(@RequestParam User user){
-
-
-        return null;
-    }
 
 
 }

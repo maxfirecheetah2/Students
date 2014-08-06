@@ -50,18 +50,18 @@
                             </ul>
                         </div>
                     </li>
-                    <%--<li>--%>
-                        <%--<a href="#" data-toggle="collapse" data-target="#toggleDemo2" data-parent="#sidenav01" class="collapsed">--%>
-                            <%--<span class="glyphicon glyphicon-list"></span> Lists 2 <span class="caret pull-right"></span>--%>
-                        <%--</a>--%>
-                        <%--<div class="collapse" id="toggleDemo2" style="height: 0px;">--%>
-                            <%--<ul class="nav nav-list">--%>
-                                <%--<li><a href="#"><span class="glyphicon glyphicon-user"></span> Stuff department</a></li>--%>
-                                <%--<li><a href="#"><span class="glyphicon glyphicon-user"></span> Moderators</a></li>--%>
-                                <%--<li><a href="#"><span class="glyphicon glyphicon-user"></span> Admins</a></li>--%>
-                            <%--</ul>--%>
-                        <%--</div>--%>
-                    <%--</li>--%>
+                    <li>
+                        <a href="#" data-toggle="collapse" data-target="#toggleDemo2" data-parent="#sidenav01" class="collapsed">
+                            <span class="glyphicon glyphicon-list"></span>Actions<span class="caret pull-right"></span>
+                        </a>
+                        <div class="collapse" id="toggleDemo2" style="height: 0px;">
+                            <ul class="nav nav-list">
+                                <li><a href='<c:url value="/user"/>'><span class="glyphicon glyphicon-user"></span>Create user</a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+
                     <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Messages <span class="badge pull-right">42</span></a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-search"></span> Advanced Search</a></li>
 

@@ -23,7 +23,6 @@ public class BaseController{
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String login = auth.getName();
         User user = userService.getUserByLogin(login);
-        System.out.println(user.getRole());
         modelAndView.addObject("curUser", user);
         return modelAndView;
     }

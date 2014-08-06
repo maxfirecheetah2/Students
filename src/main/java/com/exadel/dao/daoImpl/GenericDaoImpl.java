@@ -34,6 +34,12 @@ public class GenericDaoImpl <T, PK extends Serializable> implements GenericDao <
 
     }
 
+    @Override
+    public T load(PK id) {
+        T object = (T)getCurrentSession().load(type,id);
+        return object;
+    }
+
 
     @Override
     public PK save(T persistentObject) {

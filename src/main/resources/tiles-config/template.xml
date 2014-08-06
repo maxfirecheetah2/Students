@@ -9,14 +9,14 @@
     </definition>
 
     <definition name="studentList" extends="basicLayout">
-        <put-attribute name="body" value="/WEB-INF/jsp/usersList.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/studentList.jsp"/>
     </definition>
 
     <definition name="studentProfile" extends="basicLayout">
         <put-attribute name="body" value="/WEB-INF/jsp/profilePage.jsp"/>
     </definition>
 
-    <definition name="createStudent"  extends="basicLayout">
+    <definition name="createUser"  extends="basicLayout">
         <put-attribute name="body" value="/WEB-INF/jsp/createUser.jsp"/>
     </definition>
 

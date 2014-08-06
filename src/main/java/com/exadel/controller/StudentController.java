@@ -41,13 +41,13 @@ public class StudentController extends BaseController{
 
         ModelAndView modelAndView = createGeneralModelAndView();
         modelAndView.setViewName("studentList");
-        List<Student>list =  studentService.getStudentList();
-        modelAndView.addObject("users", list);
+        List<Student> list =  studentService.getStudentList();
+        modelAndView.addObject("students", list);
         return modelAndView;
 
     }
 
-    @Secured("hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR')")
+//    @Secured("hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR')")
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
     public ModelAndView editStudent(@PathVariable int id,
                        @RequestParam(value = "student", required = true) Student student){
@@ -64,9 +64,6 @@ public class StudentController extends BaseController{
     }
 
 
-
-    //edit student
-    //
 
 
 

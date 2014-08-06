@@ -2,8 +2,11 @@ package com.exadel.service.serviceImpl;
 
 
 import com.exadel.dao.StudentDao;
+import com.exadel.entity.Role;
 import com.exadel.entity.Student;
+import com.exadel.entity.User;
 import com.exadel.service.StudentService;
+import org.hibernate.Hibernate;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -36,9 +39,13 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    @Transactional//TODO: Propogation??
+    @Transactional
     public List<Student> getStudentList() {
-        return getStudentDao().getAll();
+        List<Student> list = getStudentDao().getAll();
+        for(Student student : list){
+            Hibernate.initialize(student.getGeneralInfo());
+        }
+        return list;
     }
 
     @Override
@@ -46,6 +53,8 @@ public class StudentServiceImpl implements StudentService {
     public void delete(Student student) {
         getStudentDao().delete(student);
     }
+
+
 
 
 }

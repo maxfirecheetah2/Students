@@ -2,6 +2,7 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -176,7 +177,7 @@
 }
 
 .bootstrap-select {
-    width: 220px\0;
+    width: 220px;
 }
 
 .bootstrap-select.form-control:not([class*="span"]) {
@@ -472,41 +473,61 @@
 <body>
 <div class="container">
     <div class="row">
-        <h2>Create User</h2>
         <hr />
+
+        <form:form method="POST" commandName="userDto" action="user">
         <div class="col-sm-9 col-md-10">
-            <select class="selectpicker">
-                <option>Student</option>
-                <option>Tutor</option>
-                <option>Moderator</option>
-            </select>
+
+
         </div>
         <div class="col-md-8">
             <table class="table table-user-information">
-                <thead>
-                Basic user information:
-                </thead>
+
                 <tbody class="filters">
                 <tr>
-                    <td>Name:</td>
-                    <td><input type="text" class="form-control" value=""></td>
+                    <td>Login</td>
+                    <td><form:input path="user.login" type="text" class="form-control"/></td>
                 </tr>
                 <tr>
-                    <td>Surname:</td>
-                    <td><input type="text" class="form-control" value=""></td>
+                    <td>Name</td>
+                    <td><form:input path="user.name" type="text" class="form-control"/></td>
                 </tr>
                 <tr>
-                    <td>Skype:</td>
-                    <td><input type="text" class="form-control" value=""></td>
+                    <td>Surname</td>
+                    <td><form:input path="user.surname" type="text" class="form-control"/></td>
                 </tr>
                 <tr>
-                    <td>Email:</td>
-                    <td><input type="text" class="form-control" value="" /></td>
+                    <td>Skype</td>
+                    <td><form:input path="user.skype" type="text" class="form-control"/></td>
                 </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><form:input path="user.email" type="text" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td><form:input path="user.phone" type="text" class="form-control" /></td>
+                </tr>
+
                 </tbody>
+
+                <form:select path="roles" id="roleOptions">
+
+                    <form:option value="1">Student</form:option>
+                    <form:option value="2">Tutor</form:option>
+                    <form:option value="3">Interviewer</form:option>
+                    <form:option value="4">Moderator</form:option>
+
+
+                </form:select>
+
             </table>
-            <button type="button" class="btn btn-primary pull-right">Create</button>
+            <form:button type="submit"  class="btn btn-primary pull-right">Submit</form:button>
         </div>
+        </form:form>
+
+
+
     </div>
 </div>
 </body>

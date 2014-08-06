@@ -1,7 +1,11 @@
 package com.exadel.entity;
 
+
+import com.sun.istack.internal.NotNull;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -16,13 +20,16 @@ public class User implements Serializable {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy=GenerationType.AUTO)
+    @NotNull
     private int id;
+
 
     @Column(name = "login")
     private String login;
 
     @Column(name = "password")
     private String password;
+
 
     @Column(name = "name")
     private String name;
@@ -36,9 +43,17 @@ public class User implements Serializable {
     @Column(name = "skype")
     private String skype;
 
+    @Column(name = "phone")
+    private String phone;
 
-    @ManyToMany(mappedBy = "users",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name = "user_role")
     private List<Role> roles;
+
+    public User(){
+        roles = new ArrayList<Role>();
+    }
 
     public int getId() {
         return id;
@@ -94,6 +109,14 @@ public class User implements Serializable {
 
     public void setSkype(String skype) {
         this.skype = skype;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
 

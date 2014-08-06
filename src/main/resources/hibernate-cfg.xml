@@ -37,6 +37,8 @@
 
     <bean id="authService" class="com.exadel.service.serviceImpl.AuthService"/>
 
+    <bean id="roleDao" class="com.exadel.dao.daoImpl.RoleDaoImpl"/>
+
     <bean id="userDao" class="com.exadel.dao.daoImpl.UserDaoImpl"/>
     <bean id="userService" class="com.exadel.service.serviceImpl.UserServiceImpl"/>
 
