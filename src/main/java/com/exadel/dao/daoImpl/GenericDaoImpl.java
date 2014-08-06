@@ -49,6 +49,7 @@ public class GenericDaoImpl <T, PK extends Serializable> implements GenericDao <
     @Override
     public List<T> getAll() {
         Criteria crit = getCurrentSession().createCriteria(type);
+
         return crit.list();
     }
 

@@ -1,5 +1,7 @@
 package com.exadel.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -13,8 +15,17 @@ import java.util.List;
 
 @Entity
 @Table(name = "student")
-@PrimaryKeyJoinColumn(name = "id")
-public class Student extends User {
+public class Student  {
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(generator = "gen")
+    @GenericGenerator(name = "gen", strategy = "foreign",parameters = @org.hibernate.annotations.Parameter(name = "property", value = "user"))
+    private int id;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    User user;
 
     @OneToMany(mappedBy = "student",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<Feedback> feedbacks;
@@ -33,6 +44,8 @@ public class Student extends User {
 
     @OneToMany(mappedBy = "student",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<Interview> interviews;
+
+
 
     public List<Interview> getInterviews() {
         return interviews;
