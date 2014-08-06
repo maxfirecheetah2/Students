@@ -7,6 +7,7 @@ import com.exadel.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,9 +26,9 @@ public class UserController extends BaseController {
     @Qualifier("userService")
     private UserService userService;
 
-
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView createUser(@ModelAttribute("userDto") UserDTO userDto) {
+
         ModelAndView modelAndView = createGeneralModelAndView();
         userDto.getUser().setPassword("11111");
         userService.saveUser(userDto);

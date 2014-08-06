@@ -1,10 +1,8 @@
 package com.exadel.service.serviceImpl;
 
-import com.exadel.dao.RoleDao;
-import com.exadel.dao.UserDao;
+import com.exadel.dao.*;
 import com.exadel.dao.daoImpl.UserDaoImpl;
-import com.exadel.entity.Role;
-import com.exadel.entity.User;
+import com.exadel.entity.*;
 import com.exadel.entity.dto.UserDTO;
 import com.exadel.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +21,14 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     @Autowired
+    @Qualifier("interviewerDao")
+    private InterviewerDao interviewerDao;
+
+    @Autowired
+    @Qualifier("tutorDao")
+    private TutorDao tutorDao;
+
+    @Autowired
     @Qualifier("roleDao")
     private RoleDao roleDao;
 
@@ -35,7 +41,7 @@ public class UserServiceImpl implements UserService {
         return roleDao;
     }
 
-    @Secured("hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR')")
+    @Secured({"ROLE_ADMIN", "ROLE_MODERATOR"})
     @Transactional
     @Override
     public Integer saveUser(UserDTO userDto){
@@ -47,21 +53,24 @@ public class UserServiceImpl implements UserService {
         }
         User user = userDto.getUser();
         user.setRoles(roles);
-        return getUserDao().save(userDto.getUser());
+
+        getUserDao().save(userDto.getUser());
+        interviewerDao.save((Interviewer)user);
+        tutorDao.save((Tutor)user) ;
+        return 0;
 
     }
 
-    @Secured("hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR')")
     @Transactional
     @Override
-
+    @Secured({"ROLE_ADMIN", "ROLE_MODERATOR"})
     public List<User> getUserList() {
         return getUserDao().getAll();
     }
 
-    @Secured("hasAnyRole('ROLE_ADMIN')")
     @Transactional
     @Override
+    @Secured({"ROLE_ADMIN", "ROLE_MODERATOR"})
     public void delete(User user) {
         getUserDao().delete(user);
     }

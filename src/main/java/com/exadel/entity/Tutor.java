@@ -9,6 +9,7 @@ import java.util.List;
 @PrimaryKeyJoinColumn(name="id")
 public class Tutor extends User {
 
+
     @OneToMany(mappedBy = "tutor",fetch = FetchType.LAZY)
     private List <Feedback> feedbacks;
 

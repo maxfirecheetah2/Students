@@ -67,6 +67,7 @@ public class User implements Serializable {
         roles = new ArrayList<Role>();
     }
 
+
     public int getId() {
         return id;
     }

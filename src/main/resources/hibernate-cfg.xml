@@ -42,6 +42,9 @@
     <bean id="userDao" class="com.exadel.dao.daoImpl.UserDaoImpl"/>
     <bean id="userService" class="com.exadel.service.serviceImpl.UserServiceImpl"/>
 
+    <bean id="tutorDao" class="com.exadel.dao.daoImpl.TutorDaoImpl"/>
+    <bean id="interviewerDao" class="com.exadel.dao.daoImpl.InterviewerDaoImpl"/>
+
 
     <bean id="studentDao" class="com.exadel.dao.daoImpl.StudentDaoImpl"/>
     <bean id="studentService" class="com.exadel.service.serviceImpl.StudentServiceImpl"/>
