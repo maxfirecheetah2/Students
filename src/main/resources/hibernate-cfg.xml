@@ -18,7 +18,7 @@
                 <prop key="hibernate.bytecode.use_reflection_optimizer">false</prop>
                 <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
                 <prop key="hibernate.connection.username">root</prop>
-                <prop key="hibernate.connection.password">280993</prop>
+                <prop key="hibernate.connection.password">root</prop>
                 <prop key="hibernate.connection.url">dbc:mysql://localhost:3306/exadel</prop>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
                 <prop key="hibernate.show_sql">true</prop>

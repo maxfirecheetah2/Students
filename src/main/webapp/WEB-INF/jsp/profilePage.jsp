@@ -7,108 +7,15 @@
     <title>UserProfile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="<c:url value="/resources/style/css/bootstrap.css" />" rel="stylesheet">
-    <link href="<c:url value="/resources/style/css/bootstrap-theme.css" />" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/style/css/profilePageStyle.css"/>">
+   <link rel="stylesheet" href="<c:url value="/resources/style/css/profilePageStyle.css"/> ">
 
-    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="<c:url value="/resources/style/js/bootstrap.min.js" />"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.filterable .btn-filter').click(function () {
-                var $panel = $(this).parents('.filterable'),
-                        $filters = $panel.find('.filters input'),
-                        $tbody = $panel.find('.table tbody'),
-                        $fltrs = $panel.find('.filters textarea');
-                if ($filters.prop('disabled') == true) {
-                    $filters.prop('disabled', false);
-                    $fltrs.prop('disabled', false);
-                    $filters.first().focus();
-                } else {
-                    $filters.val('').prop('disabled', true);
-                    $fltrs.val('').prop('disabled', true);
-                    $tbody.find('.no-result').remove();
-                    $tbody.find('tr').show();
-                }
-            });
-        });
-    </script>
-
-
-    <style type="text/css">
-        .user-row {
-            margin-bottom: 14px;
-        }
-
-        .user-row:last-child {
-            margin-bottom: 0;
-        }
-
-        .dropdown-user {
-            margin: 13px 0;
-            padding: 5px;
-            height: 100%;
-        }
-
-        .dropdown-user:hover {
-            cursor: pointer;
-        }
-
-        .table-user-information > tbody > tr {
-            border-top: 1px solid rgb(221, 221, 221);
-        }
-
-        .table-user-information > tbody > tr:first-child {
-            border-top: 0;
-        }
-
-
-        .table-user-information > tbody > tr > td {
-            border-top: 0;
-        }
-    </style>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            var panels = $('.user-infos');
-            var panelsButton = $('.dropdown-user');
-            panels.hide();
-
-            //Click dropdown
-            panelsButton.click(function () {
-                //get data-for attribute
-                var dataFor = $(this).attr('data-for');
-                var idFor = $(dataFor);
-
-                //current button
-                var currentButton = $(this);
-                idFor.slideToggle(400, function () {
-                    //Completed slidetoggle
-                    if (idFor.is(':visible')) {
-                        currentButton.html('<i class="glyphicon glyphicon-chevron-up text-muted"></i>');
-                    }
-                    else {
-                        currentButton.html('<i class="glyphicon glyphicon-chevron-down text-muted"></i>');
-                    }
-                })
-            });
-
-
-            $('[data-toggle="tooltip"]').tooltip();
-
-            $('button').click(function (e) {
-                e.preventDefault();
-            });
-        });
-    </script>
-
+    <script src="<c:url value="/resources/style/js/editFields.js" />"></script>
 </head>
 
 <body>
 <div class="container">
 <div class="row">
-<hr/>
-<input type="hidden" name="id" value="${userForEdit.id}"/>
 
 <div class="col-sm-9 col-md-10">
 <div class="tabbable">
@@ -141,8 +48,8 @@
                 <div class="row">
                     <div class="col-md-3 col-lg-3 " align="center">
                         <img alt="User Pic"
-                             src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100"
-                             class="img-circle">
+                             src="http://s020.radikal.ru/i717/1408/ae/013315d9d171.jpg"
+                             class="img-circle" height="100" width="100" >
                     </div>
                     <div class=" col-md-9 col-lg-9 ">
                         <table class="table table-user-information">

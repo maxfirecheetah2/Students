@@ -20,10 +20,10 @@
         <property name="order" value="1"/>
     </bean>
 
-    <mvc:resources mapping="/resources/**" location="/resources/style/" />
-
-
     <import resource="tiles-config/tiles-config.xml" />
 
+    <mvc:resources mapping="/resources/**" location="/resources/" />
+
+    <mvc:annotation-driven />
 
 </beans>
