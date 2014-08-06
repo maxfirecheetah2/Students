@@ -2,7 +2,9 @@ package com.exadel.service.serviceImpl;
 
 import com.exadel.dao.InterviewerDao;
 import com.exadel.entity.Interviewer;
-import com.exadel.service.InterviewerService;
+import com.exadel.service.*;
+import org.springframework.security.access.annotation.Secured;
+
 
 import java.util.List;
 
@@ -17,16 +19,19 @@ public class InterviewerServiceImpl implements InterviewerService {
         return interviewerDao;
     }
 
+    @Secured("hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR','ROLE_INTERVIEWER')")
     @Override
     public Integer saveInterviewer(Interviewer interviewer) {
         return getInterviewerDao().save(interviewer);
     }
 
+    @Secured("hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR','ROLE_INTERVIEWER')")
     @Override
     public List<Interviewer> getInterviewerList() {
         return getInterviewerDao().getAll();
     }
 
+    @Secured("hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR','ROLE_INTERVIEWER')")
     @Override
     public void delete(Interviewer interviewer) {
            getInterviewerDao().delete(interviewer);

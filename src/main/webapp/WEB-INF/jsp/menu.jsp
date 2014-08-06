@@ -44,9 +44,9 @@
                         <div class="collapse" id="toggleDemo" style="height: 0px;">
                             <ul class="nav nav-list">
                                 <li><a href='<c:url value="/student/list"/>'><span class="glyphicon glyphicon-user"></span>Students</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-user"></span>Tutors</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-user"></span>Interviewers</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-user"></span>Moderators</a></li>
+                                <li><a href='<c:url value="/tutors"/>'><span class="glyphicon glyphicon-user"></span>Tutors</a></li>
+                                <li><a href='<c:url value="/interviewers"/>'><span class="glyphicon glyphicon-user"></span>Interviewers</a></li>
+                                <li><a href='<c:url value="/moderators"/>'><span class="glyphicon glyphicon-user"></span>Moderators</a></li>
                             </ul>
                         </div>
                     </li>

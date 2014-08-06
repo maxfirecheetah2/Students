@@ -2,7 +2,8 @@ package com.exadel.service.serviceImpl;
 
 import com.exadel.dao.MarkDao;
 import com.exadel.entity.Mark;
-import com.exadel.service.MarkService;
+import com.exadel.service.*;
+
 
 import java.util.List;
 

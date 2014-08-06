@@ -2,7 +2,7 @@ package com.exadel.service.serviceImpl;
 
 import com.exadel.dao.PracticeDao;
 import com.exadel.entity.Practice;
-import com.exadel.service.PracticeService;
+import com.exadel.service.*;
 
 import java.util.List;
 

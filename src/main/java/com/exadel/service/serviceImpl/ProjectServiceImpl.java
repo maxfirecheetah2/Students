@@ -2,7 +2,7 @@ package com.exadel.service.serviceImpl;
 
 import com.exadel.dao.ProjectDao;
 import com.exadel.entity.Project;
-import com.exadel.service.ProjectService;
+import com.exadel.service.*;
 
 import java.util.List;
 
