@@ -28,6 +28,7 @@
     <li><a href="#tab6" data-toggle="tab">Projects</a></li>
     <li><a href="#tab7" data-toggle="tab">Recreation</a></li>
     <li><a href="#tab8" data-toggle="tab">Feedbacks</a></li>
+    <li><a href="#tab9" data-toggle="tab">Interviews</a></li>
 </ul>
 <br/>
 
@@ -399,8 +400,8 @@
                          alt="User Pic">
                 </div>
                 <div class="col-xs-8 col-sm-9 col-md-10 col-lg-10">
-                    <strong>User1</strong><br>
-                    <span class="text-muted">User level: Administrator</span>
+                    <strong>Alfred</strong><br>
+                    <span class="text-muted">User level: Butler</span>
                 </div>
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 dropdown-user" data-for=".user1">
                     <i class="glyphicon glyphicon-chevron-down text-muted"></i>
@@ -408,10 +409,36 @@
             </div>
             <div class="row user-infos user1">
                 <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1">
-                    <textarea class="form-control" disabled>Feedback bla-bla-bla</textarea>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="pole">Label:</label>
+                            <input id="pole" class="form-control" disabled value="Yoy bitch, Mr.White">
+                        </div>
+                        <div class="form-group">
+                            <label for="pole2">Label:</label>
+                            <input id="pole2" class="form-control" disabled value="Yoy bitch, Mr.White">
+                        </div>
+                        <div class="form-group">
+                            <label for="pole3">Label:</label>
+                            <input id="pole3" class="form-control" disabled value="Yoy bitch, Mr.White">
+                        </div>
+                        <div class="form-group">
+                            <label for="pole4">Label:</label>
+                            <input id="pole4" class="form-control" disabled value="Yoy bitch, Mr.White">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="feedback">Feedback:</label>
+                        <textarea id="feedback" class="form-control" disabled>Feedback bla-bla-bla</textarea>
+                        </div>
                 </div>
             </div>
-
+        </div>
+    </div>
+</div>
+<div class="tab-pane" id="tab9">
+    <div class="panel panel-info filterable">
+        <div class="panel-body">
             <div class="row user-row">
                 <div class="col-xs-3 col-sm-2 col-md-1 col-lg-1">
                     <img class="img-circle"
@@ -419,16 +446,36 @@
                          alt="User Pic">
                 </div>
                 <div class="col-xs-8 col-sm-9 col-md-10 col-lg-10">
-                    <strong>User2</strong><br>
-                    <span class="text-muted">User level: Administrator</span>
+                    <strong>Alfred</strong><br>
+                    <span class="text-muted">User level: Butler</span>
                 </div>
-                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 dropdown-user" data-for=".user2">
+                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 dropdown-user" data-for=".inter1">
                     <i class="glyphicon glyphicon-chevron-down text-muted"></i>
                 </div>
             </div>
-            <div class="row user-infos user2">
+            <div class="row user-infos inter1">
                 <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1">
-                    <textarea class="form-control" disabled>Feedback bla-bla-bla</textarea>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="skill">Label:</label>
+                            <input id="skill" class="form-control" disabled value="Time to cool">
+                        </div>
+                        <div class="form-group">
+                            <label for="skill2">Label:</label>
+                            <input id="skill2" class="form-control" disabled value="Time to cool">
+                        <div class="form-group">
+                            <label for="skill3">Label:</label>
+                            <input id="skill3" class="form-control" disabled value="Time to cool">
+                        </div>
+                        <div class="form-group">
+                            <label for="skill4">Label:</label>
+                            <input id="skill4" class="form-control" disabled value="Time to cool ">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="note">Note:</label>
+                        <textarea id="note" class="form-control" disabled>Note bla-bla-bla</textarea>
+                    </div>
                 </div>
             </div>
         </div>

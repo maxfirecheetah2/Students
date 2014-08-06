@@ -50,8 +50,4 @@ public class HomeController extends BaseController {
         modelAndView.setViewName("studentList");
         return modelAndView;
     }
-
-
-
-
 }

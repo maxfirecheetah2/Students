@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService {
         return roleDao;
     }
 
-    @Secured("hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR')")
+    //@Secured("hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR')")
     @Transactional
     @Override
     public Integer saveUser(UserDTO userDto){

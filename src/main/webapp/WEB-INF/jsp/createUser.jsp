@@ -17,9 +17,10 @@
 <body>
 <div class="container">
     <div class="row">
-        <hr />
+        <hr>
         <form:form method="POST" commandName="userDto" action="user">
             <div class="col-md-8">
+                <div class="well well-lg">
                 <table class="table table-user-information">
                     <tbody class="filters">
                     <tr>
@@ -61,9 +62,11 @@
                     </tr>
                     </tbody>
                 </table>
+                </div>
                 <form:button type="submit" class="btn btn-primary pull-right">Submit</form:button>
-            </div>
         </form:form>
+        </div>
+        </div>
     </div>
 </div>
 </body>
