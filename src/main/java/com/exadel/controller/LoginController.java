@@ -1,25 +1,41 @@
 package com.exadel.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PostAuthorize;
+import com.exadel.service.serviceImpl.PdfDocumentService;
+import com.exadel.service.serviceImpl.StatisticsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
+
+import java.util.ArrayList;
 
 @Controller
 public class LoginController extends BaseController{
 
-    @Autowired
-    @Qualifier("mailService")
-    private MailService mailService;
+   // @Autowired
+   // @Qualifier("mailService")
+   // private MailService mailService;
+
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginLoad() {
         System.out.println("Login form is loading");
 
-     //   Send a composed mail
-       mailService.sendMail("elfavadim@mail.ru", "Test Subject", "Testing body");
+     //   mailService.sendMail("elfavadim@mail.ru", "Test blablabla","eptaaaaaaaaaaaaa" );
+
+        ArrayList<String> headers=new ArrayList<String>();
+        headers.add("password");
+        headers.add("name");
+        headers.add("login");
+
+
+        ArrayList<StatisticsService> listStatistics=new ArrayList<StatisticsService>();
+        listStatistics.add(new StatisticsService("User","password"));
+        listStatistics.add(new StatisticsService("User","name"));
+        listStatistics.add(new StatisticsService("User","login"));
+
+
+        new PdfDocumentService("c:/temp/Test1.pdf", headers,listStatistics);
+
 
         return "login";
     }

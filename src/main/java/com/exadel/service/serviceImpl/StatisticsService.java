@@ -1,7 +1,12 @@
 package com.exadel.service.serviceImpl;
 
-import com.devcolibri.persistence.*;
+import com.exadel.dao.daoImpl.GenericDaoImpl;
+import com.exadel.entity.User;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +14,10 @@ import java.util.List;
 /**
  * Created by Вадим on 04.08.2014.
  */
+
 public class StatisticsService {
+
+
 
    private ArrayList<String> fields=new ArrayList<String>();
    private ArrayList<String> values=new ArrayList<String>();
@@ -21,11 +29,7 @@ public class StatisticsService {
 
     public StatisticsService(String nameEntity, String nameColumn){
 
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-
-
-        List<Object> data=(List<Object>)session.createQuery("select "+nameColumn+" from "+ nameEntity +" order by "+nameColumn).list();
+        List<Object> data=new GenericDaoImpl<User,Integer>(User.class).getDataColumn(nameEntity,nameColumn);
 
         String temp=data.get(0).toString();
         int count=1;
@@ -37,8 +41,8 @@ public class StatisticsService {
             }
             else{
                 fields.add(temp);
-                values.add(new Integer(count).toString());
-                percents.add(new Double(count*100/data.size()).toString()+"%");
+                values.add(Integer.toString(count));
+                percents.add(Double.toString(count * 100 / data.size())+"%");
 
                 count=1;
                 temp=data.get(i).toString();
@@ -54,27 +58,28 @@ public class StatisticsService {
              } else {
 
                  fields.add(temp);
-                 values.add(new Integer(c).toString());
-                 percents.add(new Double(c*100/data.size()).toString()+"%");
+                 values.add(Integer.toString(c));
+                 percents.add(Double.toString(c * 100 / data.size())+"%");
                  break;
 
              }
          }
         if(c==data.size()){
             fields.add(temp);
-            values.add(new Integer(data.size()).toString());
-            percents.add(new Double(100)+"%");
+            values.add(Integer.toString(data.size()));
+            percents.add(Double.toString(100)+"%");
         }
 
         fields.add("Total ");
-        values.add(new Integer(data.size()).toString());
-        percents.add(new Double(100).toString()+"%");
+        values.add(Integer.toString(data.size()));
+        percents.add(Double.toString(100)+"%");
 
 
 
-        session.getTransaction().commit();
+
 
     }
+
 
     public ArrayList<String> getValues() {
         return values;

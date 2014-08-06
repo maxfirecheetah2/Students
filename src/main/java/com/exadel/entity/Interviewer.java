@@ -1,9 +1,8 @@
 package com.exadel.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import java.util.List;
 /**
  * Created with IntelliJ IDEA.
@@ -15,11 +14,20 @@ import java.util.List;
 
 @Entity
 @Table(name = "interviewer")
-@PrimaryKeyJoinColumn(name="id")
-public class Interviewer extends User {
+public class Interviewer {
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(generator = "gen")
+    @GenericGenerator(name = "gen", strategy = "foreign",parameters = @org.hibernate.annotations.Parameter(name = "property", value = "user"))
+    private int id;
 
     @ManyToMany(mappedBy = "interviewers")
      private List<Interview> interviews;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    User user;
 
     public List<Interview> getInterviews() {
         return interviews;
