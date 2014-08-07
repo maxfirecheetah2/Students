@@ -7,7 +7,7 @@
     <title>UserProfile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-   <link rel="stylesheet" href="<c:url value="/resources/style/css/profilePageStyle.css"/> ">
+    <link rel="stylesheet" href="<c:url value="/resources/style/css/profilePageStyle.css"/> ">
 
     <script src="<c:url value="/resources/style/js/bootstrap.min.js" />"></script>
     <script src="<c:url value="/resources/style/js/editFields.js" />"></script>
@@ -50,7 +50,7 @@
                     <div class="col-md-3 col-lg-3 " align="center">
                         <img alt="User Pic"
                              src="http://s020.radikal.ru/i717/1408/ae/013315d9d171.jpg"
-                             class="img-circle" height="100" width="100" >
+                             class="img-circle" height="100" width="100">
                     </div>
                     <div class=" col-md-9 col-lg-9 ">
                         <table class="table table-user-information">
@@ -430,7 +430,7 @@
                     <div class="col-md-6">
                         <label for="feedback">Feedback:</label>
                         <textarea id="feedback" class="form-control" disabled>Feedback bla-bla-bla</textarea>
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -458,18 +458,19 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="skill">Label:</label>
-                            <input id="skill" class="form-control" disabled value="Time to cool">
+                            <input id="skill" class="form-control" disabled value="i'm batman">
                         </div>
                         <div class="form-group">
                             <label for="skill2">Label:</label>
-                            <input id="skill2" class="form-control" disabled value="Time to cool">
-                        <div class="form-group">
-                            <label for="skill3">Label:</label>
-                            <input id="skill3" class="form-control" disabled value="Time to cool">
+                            <input id="skill2" class="form-control" disabled value="i'm batman">
                         </div>
                         <div class="form-group">
-                            <label for="skill4">Label:</label>
-                            <input id="skill4" class="form-control" disabled value="Time to cool ">
+                            <label for="skill3">Label:</label>
+                            <input id="skill3" class="form-control" disabled value="i'm batman">
+                        </div>
+                        <div class="form-group">
+                            <label for="skill5">Label:</label>
+                            <input id="skill5" class="form-control" disabled value="i'm batman">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -480,7 +481,6 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 
 </div>
