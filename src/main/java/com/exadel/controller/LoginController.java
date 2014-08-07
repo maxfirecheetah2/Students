@@ -22,7 +22,7 @@ public class LoginController extends BaseController{
 
      //   mailService.sendMail("elfavadim@mail.ru", "Test blablabla","eptaaaaaaaaaaaaa" );
 
-        ArrayList<String> headers=new ArrayList<String>();
+       /* ArrayList<String> headers=new ArrayList<String>();
         headers.add("password");
         headers.add("name");
         headers.add("login");
@@ -34,7 +34,7 @@ public class LoginController extends BaseController{
         listStatistics.add(new StatisticsService("User","login"));
 
 
-        new PdfDocumentService("c:/temp/Test1.pdf", headers,listStatistics);
+        new PdfDocumentService("c:/temp/Test1.pdf", headers,listStatistics);*/
 
 
         return "login";
