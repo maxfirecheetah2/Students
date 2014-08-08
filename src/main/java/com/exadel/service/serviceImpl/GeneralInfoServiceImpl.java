@@ -32,4 +32,9 @@ public class GeneralInfoServiceImpl implements GeneralInfoService {
     public void delete(GeneralInfo generalInfo) {
        getGeneralInfoDao().delete(generalInfo);
     }
+
+    @Override
+    public void saveOrUpdate(GeneralInfo persistentObject) {
+        getGeneralInfoDao().saveOrUpdate(persistentObject);
+    }
 }

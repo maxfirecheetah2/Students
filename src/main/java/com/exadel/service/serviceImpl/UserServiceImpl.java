@@ -29,35 +29,56 @@ public class UserServiceImpl implements UserService {
     private TutorDao tutorDao;
 
     @Autowired
+    @Qualifier("studentDao")
+    private StudentDao studentDao;
+
+    @Autowired
     @Qualifier("roleDao")
     private RoleDao roleDao;
 
-    private UserDao getUserDao(){
+    private UserDao getUserDao() {
         return userDao;
     }
 
 
-    private RoleDao getRoleDao(){
+    private RoleDao getRoleDao() {
         return roleDao;
     }
 
     @Secured({"ROLE_ADMIN", "ROLE_MODERATOR"})
     @Transactional
     @Override
-    public Integer saveUser(UserDTO userDto){
+    public Integer saveUser(UserDTO userDto) {
 
         List<Integer> rolesId = userDto.getRoles();
         List<Role> roles = new ArrayList<Role>();
-        for(Integer id : rolesId){
+        for (Integer id : rolesId) {
             roles.add(getRoleDao().load(id));
         }
-        User user = userDto.getUser();
-        user.setRoles(roles);
 
-        getUserDao().save(userDto.getUser());
-        interviewerDao.save((Interviewer)user);
-        tutorDao.save((Tutor)user) ;
-        return 0;
+        User user = userDto.getUser();
+        Integer id = userDao.save(user);
+        user.setRoles(roles);
+        for (Role role : roles) {
+            String roleName = role.getName();
+            if ("ROLE_INTERVIEWER".equals(roleName)) {
+                Interviewer interviewer = new Interviewer();
+                interviewer.setUser(user);
+                interviewerDao.save(interviewer);
+            }
+            if ("ROLE_TUTOR".equals(roleName)) {
+                Tutor tutor = new Tutor();
+                tutor.setUser(user);
+                tutorDao.save(tutor);
+            }
+            if ("ROLE_STUDENT".equals(roleName)) {
+                Student student = new Student();
+                student.setUser(user);
+                studentDao.save(student);
+            }
+
+        }
+        return id;
 
     }
 
@@ -84,7 +105,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public List<User> getUsersByRole(Integer roleId){
+    public List<User> getUsersByRole(Integer roleId) {
         return getRoleDao().getUsersByRole(roleId);
     }
 

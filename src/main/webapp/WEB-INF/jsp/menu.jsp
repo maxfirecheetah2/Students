@@ -38,7 +38,7 @@
                     <sec:authorize access="hasRole('ROLE_ADMIN')">
 
                     <li>
-                        <a href="#" data-toggle="collapse" data-target="#toggleDemo" data-parent="#sidenav01" class="collapsed">
+                        <a id="userCategories" href="#" data-toggle="collapse" data-target="#toggleDemo" data-parent="#sidenav01" class="collapsed">
                             <span class="glyphicon glyphicon-list"></span> User categories<span class="caret pull-right"></span>
                         </a>
                         <div class="collapse" id="toggleDemo" style="height: 0px;">

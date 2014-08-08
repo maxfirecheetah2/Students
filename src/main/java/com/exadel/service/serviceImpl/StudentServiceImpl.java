@@ -23,19 +23,9 @@ public class StudentServiceImpl implements StudentService {
     @Qualifier("studentDao")
     private StudentDao studentDao;
 
-//    @Autowired
-//    private SessionFactory sessionFactory;
-
 
     private StudentDao getStudentDao(){
         return studentDao;
-    }
-
-
-    @Override
-    @Transactional
-    public Integer saveStudent(Student student){
-        return getStudentDao().save(student);
     }
 
     @Override
@@ -54,7 +44,23 @@ public class StudentServiceImpl implements StudentService {
         getStudentDao().delete(student);
     }
 
+    @Override
+    @Transactional
+    public Student get(Integer id) {
+       return getStudentDao().get(id);
+    }
 
+    @Override
+    @Transactional
+    public void saveOrUpdate(Student persistentObject) {
+        getStudentDao().saveOrUpdate(persistentObject);
+    }
+
+    @Override
+    @Transactional
+    public void update(Student persistentObject) {
+        getStudentDao().update(persistentObject);
+    }
 
 
 }

@@ -1,7 +1,9 @@
 package com.exadel.controller;
 
+import com.exadel.entity.Tutor;
 import com.exadel.entity.User;
-import com.exadel.service.UserService;
+import com.exadel.service.*;
+import com.exadel.service.serviceImpl.TutorServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.access.annotation.Secured;
@@ -17,6 +19,14 @@ public class HomeController extends BaseController {
     @Autowired
     @Qualifier("userService")
     private UserService userService;
+
+    @Autowired
+    @Qualifier("tutorService")
+    private TutorService tutorService;
+
+    @Autowired
+    @Qualifier("interviewerService")
+    private InterviewerService interviewerService;
 
     @RequestMapping(value = "/",method = RequestMethod.GET)
     public String home(){

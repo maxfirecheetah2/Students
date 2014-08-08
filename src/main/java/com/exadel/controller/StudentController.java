@@ -3,19 +3,22 @@ package com.exadel.controller;
 import com.exadel.dao.GenericDao;
 import com.exadel.dao.StudentDao;
 import com.exadel.dao.UserDao;
+import com.exadel.entity.Feedback;
+import com.exadel.entity.GeneralInfo;
 import com.exadel.entity.Student;
 import com.exadel.entity.User;
+import com.exadel.service.FeedbackService;
+
+import com.exadel.service.*;
 import com.exadel.service.StudentService;
 import com.exadel.service.UserService;
+import com.exadel.service.serviceImpl.GeneralInfoServiceImpl;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -28,6 +31,10 @@ public class StudentController extends BaseController{
     @Autowired
     @Qualifier("studentService")
     private StudentService studentService;
+
+    @Autowired
+    @Qualifier("generalInfoService")
+    private GeneralInfoService generalInfoService;
 
 
     private StudentService getStudentService(){
@@ -48,19 +55,29 @@ public class StudentController extends BaseController{
     }
 
 
-    @RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
-    public ModelAndView editStudent(@PathVariable int id,
-                       @RequestParam(value = "student", required = true) Student student){
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public ModelAndView viewStudent(@PathVariable Integer id){
         ModelAndView modelAndView = createGeneralModelAndView();
-        return null;
-    }
-
-    @RequestMapping(value = "/profile", method = RequestMethod.GET)
-    public ModelAndView getProfile(){
-        ModelAndView modelAndView = createGeneralModelAndView();
+        Student student = studentService.get(id);
+        GeneralInfo generalInfo = new GeneralInfo();
+        student.setGeneralInfo(generalInfo);
+        System.out.println(student);
+//        generalInfo.setStudent(student);
+        modelAndView.addObject("student", student);
         modelAndView.setViewName("studentProfile");
         return modelAndView;
     }
+
+    @RequestMapping(value = "/edit", method = RequestMethod.POST)
+    public ModelAndView editStudent(@ModelAttribute("student") Student student){
+        ModelAndView modelAndView = createGeneralModelAndView();
+        System.out.println(student);
+        student.getGeneralInfo().setStudent(student);
+        studentService.update(student);
+        modelAndView.setViewName("studentProfile");
+        return modelAndView;
+    }
+
 
 
 

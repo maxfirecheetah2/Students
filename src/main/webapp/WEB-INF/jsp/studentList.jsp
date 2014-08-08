@@ -39,21 +39,24 @@
                 </thead>
                 <tbody>
 
-                <c:forEach items="${users}" var="user">
+                <c:forEach items="${users}" var="el">
                     <tr>
-
-
-                        <td><c:out value="${user.name}"/></td>
-                        <td><c:out value="${user.surname}"/></td>
-                        <td><c:out value="${user.skype}"/></td>
+                        <c:if test="${role != 'student'}">
+                            <td><c:out value="${el.name}"/></td>
+                            <td><c:out value="${el.surname}"/></td>
+                            <td><c:out value="${el.skype}"/></td>
+                        </c:if>
                         <c:if test="${role == 'student'}">
-                            <td><c:out value="${user.generalInfo.generalInfo.acceptionDate}"/></td>
-                            <td><c:out value="${user.generalInfo.faculty}"/></td>
-                            <td><c:out value="${user.generalInfo.course}"/></td>
-                            <td><c:out value="${user.generalInfo.billable}"/></td>
-                            <td><c:out value="${user.generalInfo.curPrjRole}"/></td>
-                            <td><c:out value="${user.generalInfo.currentTechs}"/></td>
-                            <td><c:out value="${user.generalInfo.enLevel}"/></td>
+                            <td><c:out value="${el.user.name}"/></td>
+                            <td><c:out value="${el.user.surname}"/></td>
+                            <td><c:out value="${el.user.skype}"/></td>
+                            <td><c:out value="${el.generalInfo.acceptionDate}"/></td>
+                            <td><c:out value="${el.generalInfo.faculty}"/></td>
+                            <td><c:out value="${el.generalInfo.course}"/></td>
+                            <td><c:out value="${el.generalInfo.billable}"/></td>
+                            <td><c:out value="${el.generalInfo.curPrjRole}"/></td>
+                            <td><c:out value="${el.generalInfo.currentTechs}"/></td>
+                            <td><c:out value="${el.generalInfo.enLevel}"/></td>
                         </c:if>
                         <td>
                             <div class="dropdown">
@@ -61,17 +64,18 @@
                                     Operation <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                                    <li><a href='#'>View profile</a></li>
-                                    <c:if test="${role == student}">
+
+                                    <c:if test="${role == 'student'}">
+                                        <li><a href='<c:url value="/student/${el.id}"/>'>View profile</a></li>
                                         <li><a href="#">Send Notification</a></li>
                                         <li><a href="#">Add feedback</a></li>
                                         <li><a href="#">Add interview</a></li>
                                     </c:if>
-                                    <c:if test="${role == tutor}">
+                                    <c:if test="${role == 'tutor'}">
                                         <li><a href="#">View students</a></li>
                                         <li><a href="#">View feedbacks</a></li>
                                     </c:if>
-                                    <c:if test="${role == interviewer}">
+                                    <c:if test="${role == 'interviewer'}">
                                         <li><a href="#">View students</a></li>
                                         <li><a href="#">View interviews</a></li>
                                     </c:if>

@@ -8,6 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "tutor")
+
 public class Tutor  {
 
     @Id
@@ -28,6 +29,22 @@ public class Tutor  {
     @PrimaryKeyJoinColumn
     User user;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public List<Student> getStudents() {
         return students;
     }
@@ -44,4 +61,6 @@ public class Tutor  {
     public void setFeedbacks(List<Feedback> feedbacks) {
         this.feedbacks = feedbacks;
     }
+
+
 }

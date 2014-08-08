@@ -12,4 +12,5 @@ public interface GeneralInfoService {
     public Integer saveGeneralInfo(GeneralInfo generalInfo);
     public List<GeneralInfo> getGeneralInfoList();
     public void delete(GeneralInfo generalInfo);
+    void saveOrUpdate(GeneralInfo persistentObject);
 }

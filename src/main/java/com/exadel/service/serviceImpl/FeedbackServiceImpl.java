@@ -35,4 +35,16 @@ public class FeedbackServiceImpl implements FeedbackService {
     public void delete(Feedback feedback) {
            getFeedbackDao().delete(feedback);
     }
+
+    @Override
+    public void update(Feedback persistentObject) {
+        getFeedbackDao().update(persistentObject);
+    }
+
+    @Override
+    public void saveOrUpdate(Feedback persistentObject) {
+        getFeedbackDao().saveOrUpdate(persistentObject);
+    }
+
+
 }
