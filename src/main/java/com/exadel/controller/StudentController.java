@@ -13,7 +13,6 @@ import com.exadel.service.*;
 import com.exadel.service.StudentService;
 import com.exadel.service.UserService;
 import com.exadel.service.serviceImpl.GeneralInfoServiceImpl;
-import com.exadel.util.StudentCopier;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -60,10 +59,9 @@ public class StudentController extends BaseController{
     public ModelAndView viewStudent(@PathVariable Integer id){
         ModelAndView modelAndView = createGeneralModelAndView();
         Student student = studentService.get(id);
-        GeneralInfo generalInfo = new GeneralInfo();
-        student.setGeneralInfo(generalInfo);
-        System.out.println(student);
-//        generalInfo.setStudent(student);
+        if(student.getGeneralInfo() == null) {
+            student.setGeneralInfo(new GeneralInfo());
+        }
         modelAndView.addObject("student", student);
         modelAndView.setViewName("studentProfile");
         return modelAndView;
@@ -72,10 +70,8 @@ public class StudentController extends BaseController{
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
     public ModelAndView editStudent(@ModelAttribute("student") Student student){
         ModelAndView modelAndView = createGeneralModelAndView();
-        Student stud = getStudentService().get(student.getId());
-        StudentCopier.copy(stud, student);
-        stud.getGeneralInfo().setStudent(stud);
-        studentService.update(stud);
+        student.getGeneralInfo().setStudent(student);
+        studentService.update(student);
         modelAndView.setViewName("studentProfile");
         return modelAndView;
     }
