@@ -45,6 +45,7 @@ public class UserServiceImpl implements UserService {
         return roleDao;
     }
 
+
     @Secured({"ROLE_ADMIN", "ROLE_MODERATOR"})
     @Transactional
     @Override

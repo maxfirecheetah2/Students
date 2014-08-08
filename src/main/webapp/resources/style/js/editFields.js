@@ -3,7 +3,8 @@ $(document).ready(function () {
         var $panel = $(this).parents('.filterable'),
             $filters = $panel.find('.filters input'),
             $tbody = $panel.find('.table tbody'),
-            $fltrs = $panel.find('.filters textarea');
+            $fltrs = $panel.find('.filters textarea'),
+            $btn = $panel.find('.btn-filter button');
         if ($filters.prop('disabled') == true) {
             $filters.prop('disabled', false);
             $fltrs.prop('disabled', false);

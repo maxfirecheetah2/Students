@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="<c:url value="/resources/style/css/bootstrap.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/style/css/bootstrap-theme.css" />" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/style/css/indexStyle.css"/>" >
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/style/css/indexStyle.css"/>">
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="../../style/js/bootstrap.min.js"></script>
 
@@ -23,21 +23,26 @@
                     <span class="glyphicon glyphicon-lock"></span> Login
                 </div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" name="loginForm"  action="/j_spring_security_check" method="POST">
+                    <form class="form-horizontal" role="form" name="loginForm" action="/j_spring_security_check"
+                          method="POST">
                         <div class="form-group">
                             <label for="inputLogin3" class="col-sm-3 control-label">
                                 Login
                             </label>
+
                             <div class="col-sm-9">
-                                <input class="form-control" id="inputLogin3" name="j_username" placeholder="Login" required="">
+                                <input class="form-control" id="inputLogin3" name="j_username" placeholder="Login"
+                                       required="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputPassword3" class="col-sm-3 control-label">
                                 Password
                             </label>
+
                             <div class="col-sm-9">
-                                <input type="password" class="form-control" id="inputPassword3" name="j_password" placeholder="Password" required="">
+                                <input type="password" class="form-control" id="inputPassword3" name="j_password"
+                                       placeholder="Password" required="">
                             </div>
                         </div>
                         <div class="form-group last">

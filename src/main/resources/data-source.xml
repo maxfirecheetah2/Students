@@ -8,7 +8,11 @@
     <property name="driverClassName" value="com.mysql.jdbc.Driver" />
     <property name="url" value="jdbc:mysql://localhost:3306/Exadel" />
     <property name="username" value="root" />
+<<<<<<< HEAD
     <property name="password" value="28093" />
+=======
+    <property name="password" value="root" />
+>>>>>>> 9f9ab130d2b830e9b63767c0738a352d3f69fb6f
 </bean>
 
 

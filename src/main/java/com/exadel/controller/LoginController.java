@@ -19,7 +19,7 @@ public class LoginController extends BaseController{
     public String loginLoad() {
         System.out.println("Login form is loading");
 
-     //   mailService.sendMail("elfavadim@mail.ru", "Test blablabla","eptaaaaaaaaaaaaa" );
+
 
 
         return "login";
