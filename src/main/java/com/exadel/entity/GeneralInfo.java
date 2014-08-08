@@ -14,7 +14,7 @@ import java.util.List;
  */
 @Entity
 @Table(name="general_info")
-public class GeneralInfo implements Serializable {
+public class GeneralInfo implements Serializable, Cloneable {
 
     @Id
     @Column(name = "id")
@@ -144,6 +144,10 @@ public class GeneralInfo implements Serializable {
         this.probationB4Acception = probationB4Acception;
     }
 
+    @Override
+    public GeneralInfo clone() throws CloneNotSupportedException {
+        return (GeneralInfo)super.clone();
+    }
 
     public short getCourseWhenAccepted() {
         return courseWhenAccepted;

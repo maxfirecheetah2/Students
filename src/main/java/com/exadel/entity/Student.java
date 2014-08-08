@@ -3,6 +3,7 @@ package com.exadel.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "student")
-public class Student  {
+public class Student implements Serializable, Cloneable {
 
     @Id
     @Column(name = "id")
@@ -45,7 +46,7 @@ public class Student  {
     @OneToMany(mappedBy = "student",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<Interview> interviews;
 
-
+    public Student(){}
 
     public int getId() {
         return id;
@@ -116,4 +117,11 @@ public class Student  {
     public void setFeedbacks(List<Feedback> feedbacks) {
         this.feedbacks = feedbacks;
     }
+
+    @Override
+    public Student clone() throws CloneNotSupportedException {
+        return (Student)super.clone();
+    }
+
+
 }
