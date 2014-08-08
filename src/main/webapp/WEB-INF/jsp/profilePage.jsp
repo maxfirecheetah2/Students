@@ -179,7 +179,6 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
 <%--<div class="tab-pane" id="tab3">--%>
     <%--<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">--%>
         <%--<div class="panel panel-info filterable">--%>
@@ -228,7 +227,7 @@
         <%--<div class="panel panel-info filterable">--%>
             <%--<div class="panel-heading">--%>
                 <%--<h3 class="panel-title">Skills information</h3>--%>
-=======
+
 <div class="tab-pane" id="tab8">
     <div class="panel panel-info filterable">
         <div class="panel-body">
@@ -321,7 +320,7 @@
         </div>
     </div>
 </div>
->>>>>>> 9f9ab130d2b830e9b63767c0738a352d3f69fb6f
+
 
                 <%--<div class="pull-right">--%>
                     <%--<button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>--%>
