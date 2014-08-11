@@ -1,4 +1,4 @@
-window.onload = function () {
+$(document).ready(function () {
     $('.selectpicker').selectpicker();
     $('.ex-disable').click(function () {
         $('.disable-example').prop('disabled', true);
@@ -9,8 +9,4 @@ window.onload = function () {
         $('.disable-example').selectpicker('refresh');
     });
 
-    // scrollYou
-    $('.scrollMe .dropdown-menu').scrollyou();
-
-    prettyPrint();
-};
+});

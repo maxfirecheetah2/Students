@@ -63,7 +63,7 @@
 
                                         <li><a href='<c:url value="/student/${student.id}"/>'>View profile</a></li>
                                         <li><a href='<c:url value="/feedback/${student.id}"/>'>Add feedback</a></li>
-                                        <li><a href="#">Add interview</a></li>
+                                        <li><a href='<c:url value="/interview/${student.id}"/>'>Add interview</a></li>
 
 
                                     <li class="divider"></li>

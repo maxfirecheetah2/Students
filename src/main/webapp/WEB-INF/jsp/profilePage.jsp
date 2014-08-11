@@ -54,7 +54,7 @@
  <%@ include file="profile_tab9.jsp" %>
 
 </div>
-    <form:button type="submit" class="btn btn-primary pull-right" value="Submit">Submit</form:button>
+    <form:button type="submit" class="btn btn-primary pull-right">Submit</form:button>
 </form:form>
 </div>
 </div>

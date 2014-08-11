@@ -10,7 +10,6 @@
     <title>Create User</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="<c:url value="/resources/style/css/bootstrap-select.css"/> ">
-    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="<c:url value="/resources/style/js/selectRoles.js" />"></script>
     <script src="<c:url value="/resources/style/js/validation.js" />"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.5.4/bootstrap-select.js"></script>

@@ -62,6 +62,9 @@
     <bean id="generalInfoDao" class="com.exadel.dao.daoImpl.GeneralInfoDaoImpl"/>
     <bean id="generalInfoService" class="com.exadel.service.serviceImpl.GeneralInfoServiceImpl"/>
 
+    <bean id="interviewDao" class="com.exadel.dao.daoImpl.InterviewDaoImpl"/>
+    <bean id="interviewService" class="com.exadel.service.serviceImpl.InterviewServiceImpl"/>
+
 
 
 

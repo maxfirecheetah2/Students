@@ -7,6 +7,9 @@ import com.exadel.entity.Student;
 import com.exadel.entity.Tutor;
 import com.exadel.service.*;
 import org.hibernate.Hibernate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
@@ -15,8 +18,11 @@ import java.util.List;
 /**
  * Created by Вадим on 31.07.2014.
  */
+@Service
 public class InterviewServiceImpl implements InterviewService {
 
+    @Autowired
+    @Qualifier("interviewDao")
     private InterviewDao interviewDao;
 
     public InterviewDao getInterviewDao() {

@@ -8,22 +8,22 @@
 <head>
     <meta charset="utf-8">
     <title>Feedback Form</title>
+
 </head>
 <body>
-<div class="container">
+<div class="col-md-10">
     <div class="row">
-        <div>
-        <%--<div class="col-md-8">--%>
+        <div class="col-md-8">
             <div class="well well-sm">
-                <form:form method="POST" commandName="feedback" action="/add">
                     <div class="row">
-                        <%--<div class="col-md-6">--%>
+                        <form:form method="POST" commandName="feedback" action="/add">
+                        <div class="col-md-6">
                         <div>
                             <div class="form-group">
                                 <label for="aptitude">
                                     Aptitude
                                 </label>
-                                <%--<form:input type="text" class="form-control" id="aptitude" placeholder="Type here" path="aptitude"/>--%>
+                                <form:input type="text" class="form-control" id="aptitude" placeholder="Type here" path="profLevel"/>
                             </div>
                             <div class="form-group">
                                 <label for="attitude">
@@ -97,6 +97,7 @@
                                 </div>
                             </div>
                         </div>
+                        </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="feedback">
@@ -117,13 +118,11 @@
                                 Send Feedback
                             </button>
                         </div>
-
+                        </form:form>
                     </div>
-                </form>
             </div>
         </div>
-        <div class="col-md-12 ">
-            <form>
+        <div class="col-md-4">
                 <h3><span class="glyphicon glyphicon-user"></span> Student info</h3>
                 <hr/>
                 <address>
@@ -136,10 +135,8 @@
                     Arsene Wenger<br/>
                     Mikel Arteta<br/>
                 </address>
-                <form:button type="submit" class="btn btn-primary pull-right">Submit</form:button>
-               </form:form>
         </div>
-    </div>
+</div>
 </div>
 </body>
 </html>

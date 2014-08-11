@@ -7,7 +7,7 @@
                 <h3 class="panel-title">Skills information</h3>
 
                 <div class="pull-right">
-                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>
+                    <button type="button" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>
                         Edit
                     </button>
                 </div>
