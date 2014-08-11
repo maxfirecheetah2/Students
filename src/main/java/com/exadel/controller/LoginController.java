@@ -20,7 +20,6 @@ public class LoginController extends BaseController{
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginLoad() {
         System.out.println("Login form is loading");
-       
         return "login";
     }
 
