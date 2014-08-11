@@ -19,33 +19,32 @@
                     <div class=" col-md-9 col-lg-9 ">
                         <table class="table">
                             <tbody class="filters">
-                            <%--<tr>--%>
-                            <%--<td>Current technology</td>--%>
-                            <%--<td><textarea class="form-control" disabled><c:out--%>
-                            <%--value="${userForEdit.getCurrentTechs()}"/></textarea></td>--%>
-                            <%--</tr>--%>
-                            <%--<tr>--%>
-                            <%--<td>Future technology</td>--%>
-                            <%--<td><textarea class="form-control" disabled><c:out--%>
-                            <%--value="${userForEdit.getFutureTechs()}"/></textarea></td>--%>
-                            <%--</tr>--%>
                             <tr>
                                 <td>English level</td>
-                                <td><form:input type="text" class="form-control"
-                                                path="generalInfo.enLevel"/></td>
+                                <td>
+                                    <form:select cssClass="selectpicker"  path="" id="englishLevel">
+                                        <form:option selected="selected" value="1">Beginner</form:option>
+                                        <form:option value="2">Elementary</form:option>
+                                        <form:option value="3">Pre-Intermediate</form:option>
+                                        <form:option value="4">Intermediate</form:option>
+                                        <form:option value="5">Upper Intermediate</form:option>
+                                        <form:option value="6">Pre-advanced</form:option>
+                                        <form:option value="7">Advanced</form:option>
+                                        <form:option value="8">Very Advanced</form:option>
+                                    </form:select>
+                                </td>
                             </tr>
-                            <!--This is not an input!!!-->
                             <tr>
                                 <td>Exadel's tranings</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.training"/></td>
+                                <td><form:input type="text" class="form-control" path="generalInfo.training" disabled="true"/></td>
                             </tr>
                             <tr>
                                 <td>Certificates</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.certificates"/></td>
+                                <td><form:input type="text" class="form-control" path="generalInfo.certificates" disabled="true"/></td>
                             </tr>
                             <tr>
                                 <td>English lessons</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.enCourses"/></td>
+                                <td><form:input type="text" class="form-control" path="generalInfo.enCourses" disabled="true"/></td>
                             </tr>
                             </tbody>
                         </table>

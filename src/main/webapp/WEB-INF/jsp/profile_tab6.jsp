@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <div class="tab-pane" id="tab6">
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
         <div class="panel panel-info filterable">
@@ -20,32 +21,24 @@
                             <tbody class="filters">
                             <tr>
                                 <td>Previous projects</td>
-                                <td><form:textarea path="listLastPrj" class="form-control"/></td>
                             </tr>
                             <tr>
                                 <td>Current project</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.currentPrj"/></td>
                             </tr>
-
                             <tr>
                                 <td>Begin course</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.courseWhenAccepted"/></td>
                             </tr>
                             <tr>
                                 <td>Role</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.cur_prj_role" /></td>
                             </tr>
                             <tr>
                                 <td>TeamLead</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.teamLead"/></td>
                             </tr>
                             <tr>
                                 <td>Project manager</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.prjManager"/></td>
                             </tr>
                             <tr>
                                 <td>Changing project</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.getWannaChangePrj"/></td>
                             </tr>
                             </tbody>
                         </table>

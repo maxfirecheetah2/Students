@@ -86,14 +86,16 @@
                 <tr>
                     <td>Select roles</td>
                     <td>
+                        <div class="input-group" data-validate="select">
                             <form:select cssClass="selectpicker" path="roles" id="roleOptions">
-
-                                <form:option  value="1">Student</form:option>
+                                <form:option selected="selected" value="1">Student</form:option>
                                 <form:option value="2">Tutor</form:option>
                                 <form:option value="3">Interviewer</form:option>
                                 <form:option value="4">Moderator</form:option>
-
                             </form:select>
+                            <span class="input-group-addon danger"><span
+                                class="glyphicon glyphicon-remove"></span></span>
+                            </div>
                     </td>
                 </tr>
                 </tbody>
