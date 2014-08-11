@@ -11,16 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="<c:url value="/resources/style/css/profilePageStyle.css"/> ">
-    <script src="<c:url value="/resources/style/js/editFields.js" />"></script>
     <link rel="stylesheet" href="<c:url value="/resources/style/css/bootstrap-select.css"/> ">
-    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="<c:url value="/resources/style/js/selectRoles.js" />"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.5.4/bootstrap-select.js"></script>
     <script src="<c:url value="/resources/style/js/editFields.js" />"></script>
 </head>
 
 <body>
-<div class="container">
+<div class="col-md-10">
 <div class="row">
 
 
@@ -55,6 +53,7 @@
 
 </div>
     <form:button type="submit" class="btn btn-primary pull-right">Submit</form:button>
+    <button type="submit" class="btn btn-primary pull-right">Submit</button>
 </form:form>
 </div>
 </div>
