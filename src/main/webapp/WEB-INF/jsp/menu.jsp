@@ -80,6 +80,8 @@
                                         Create user</a></li>
                                     <li><a href='<c:url value="/email"/>'><span class="glyphicon glyphicon-envelope"></span>
                                         Send messages</a></li>
+                                    <li><a href='<c:url value="/statistics"/>'><span class="glyphicon glyphicon-print"></span>
+                                        PDF statistics</a></li>
                                 </ul>
                             </div>
                         </li>
