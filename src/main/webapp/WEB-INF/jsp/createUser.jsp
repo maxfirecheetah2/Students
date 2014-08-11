@@ -10,7 +10,6 @@
     <title>Create User</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="<c:url value="/resources/style/css/bootstrap-select.css"/> ">
-    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="<c:url value="/resources/style/js/selectRoles.js" />"></script>
     <script src="<c:url value="/resources/style/js/validation.js" />"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.5.4/bootstrap-select.js"></script>
@@ -86,14 +85,16 @@
                 <tr>
                     <td>Select roles</td>
                     <td>
+                        <div class="input-group" data-validate="select">
                             <form:select cssClass="selectpicker" path="roles" id="roleOptions">
-
-                                <form:option  value="1">Student</form:option>
+                                <form:option selected="selected" value="1">Student</form:option>
                                 <form:option value="2">Tutor</form:option>
                                 <form:option value="3">Interviewer</form:option>
                                 <form:option value="4">Moderator</form:option>
-
                             </form:select>
+                            <span class="input-group-addon danger"><span
+                                class="glyphicon glyphicon-remove"></span></span>
+                            </div>
                     </td>
                 </tr>
                 </tbody>

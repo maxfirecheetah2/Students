@@ -114,7 +114,7 @@ public class StudentController extends BaseController{
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String studentListForwarding() {
         System.out.println(priorityResolver());
-        return "forward:/student/list/" + priorityResolver();
+        return "redirect:/student/list/" + priorityResolver();
     }
 
 

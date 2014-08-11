@@ -7,7 +7,7 @@
                  <h3 class="panel-title">Education</h3>
 
                  <div class="pull-right">
-                     <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>
+                     <button type="button" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>
                          Edit
                      </button>
                  </div>
@@ -21,32 +21,32 @@
                              <tbody class="filters">
                              <tr>
                                  <td>University</td>
-                                 <td><form:input type="text" class="form-control" path="generalInfo.institution" disabled="disabled"/></td>
+                                 <td><form:input type="text" class="form-control" path="generalInfo.institution" disabled="true"/></td>
                              </tr>
                              <tr>
                                  <td>Faculty</td>
                                  <td><form:input type="text" class="form-control"
-                                                 path="generalInfo.faculty"/></td>
+                                                 path="generalInfo.faculty" disabled="true"/></td>
                              </tr>
                              <tr>
                                  <td>Specialty</td>
                                  <td><form:input type="text" class="form-control"
-                                                 path="generalInfo.speciality"/></td>
+                                                 path="generalInfo.speciality" disabled="true"/></td>
                              </tr>
                              <tr>
                                  <td>Course</td>
                                  <td><form:input type="text" class="form-control"
-                                                 path="generalInfo.course"/></td>
+                                                 path="generalInfo.course" disabled="true"/></td>
                              </tr>
                              <tr>
                                  <td>Group</td>
                                  <td><form:input type="text" class="form-control"
-                                                 path="generalInfo.group"/></td>
+                                                 path="generalInfo.group" disabled="true"/></td>
                              </tr>
                              <tr>
                                  <td>Graduation</td>
                                  <td><form:input type="text" class="form-control"
-                                                 path="generalInfo.graduationYear"/></td>
+                                                 path="generalInfo.graduationYear" disabled="true"/></td>
                              </tr>
 
 

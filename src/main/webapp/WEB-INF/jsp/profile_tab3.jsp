@@ -7,7 +7,7 @@
                 <h3 class="panel-title">GPA</h3>
 
                 <div class="pull-right">
-                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>
+                    <button type="button" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>
                         Edit
                     </button>
                 </div>
@@ -21,43 +21,43 @@
                             <tbody class="filters">
                             <tr>
                                 <td>Session 1</td>
-                                <td><form:input type="text" class="form-control" path=""/></td>
+                                <td><form:input type="text" class="form-control" path="" disabled="true"/></td>
                             </tr>
                             <tr>
                                 <td>Session 2</td>
-                                <td><form:input type="text" class="form-control" path=""/></td>
+                                <td><form:input type="text" class="form-control" path="" disabled="true"/></td>
                             </tr>
                             <tr>
                                 <td>Session 3</td>
-                                <td><form:input type="text" class="form-control" path=""/></td>
+                                <td><form:input type="text" class="form-control" path="" disabled="true"/></td>
                             </tr>
                             <tr>
                                 <td>Session 4</td>
-                                <td><form:input type="text" class="form-control" path=""/></td>
+                                <td><form:input type="text" class="form-control" path="" disabled="true"/></td>
                             </tr>
                             <tr>
                                 <td>Session 5</td>
-                                <td><form:input type="text" class="form-control" path=""/></td>
+                                <td><form:input type="text" class="form-control" path="" disabled="true"/></td>
                             </tr>
                             <tr>
                                 <td>Session 6</td>
-                                <td><form:input type="text" class="form-control" path=""/></td>
+                                <td><form:input type="text" class="form-control" path="" disabled="true"/></td>
                             </tr>
                             <tr>
                                 <td>Session 7</td>
-                                <td><form:input type="text" class="form-control" path=""/></td>
+                                <td><form:input type="text" class="form-control" path="" disabled="true"/></td>
                             </tr>
                             <tr>
                                 <td>Session 8</td>
-                                <td><form:input type="text" class="form-control" path=""/></td>
+                                <td><form:input type="text" class="form-control" path="" disabled="true"/></td>
                             </tr>
                             <tr>
                                 <td>Session 9</td>
-                                <td><form:input type="text" class="form-control" path=""/></td>
+                                <td><form:input type="text" class="form-control" path="" disabled="true"/></td>
                             </tr>
                             <tr>
                                 <td>Session 10</td>
-                                <td><form:input type="text" class="form-control" path=""/></td>
+                                <td><form:input type="text" class="form-control" path="" disabled="true"/></td>
                             </tr>
                             </tbody>
                         </table>

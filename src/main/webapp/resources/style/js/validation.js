@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('.input-group input').on('keyup change', function() {
+    $('.input-group input, .input-group select').on('keyup change', function() {
         var $form = $(this).closest('form'),
             $group = $(this).closest('.input-group'),
             $addon = $group.find('.input-group-addon'),
@@ -16,11 +16,8 @@ $(document).ready(function() {
             state = $(this).val().length >= $group.data('length') ? true : false;
         }else if ($group.data('validate') == "number") {
             state = !isNaN(parseFloat($(this).val())) && isFinite($(this).val());
-        }else if ($group.data('validate') == "selection"){
-           if($(this).val() == "Nothing selected"){
-               state = false;
-           }
-
+        }else if($group.data('validate') == "select") {
+            state = $(this).val() ? true : false;
         }
 
         if (state) {
@@ -40,7 +37,6 @@ $(document).ready(function() {
         }
     });
 
-    $('.input-group input').trigger('change');
-
+    $('.input-group input, .input-group select').trigger('change');
 
 });

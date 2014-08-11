@@ -6,7 +6,7 @@
                 <h3 class="panel-title">Work in Exadel</h3>
 
                 <div class="pull-right">
-                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>
+                    <button type="button" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>
                         Edit
                     </button>
                 </div>
@@ -20,31 +20,21 @@
                             <tbody class="filters">
                             <tr>
                                 <td>Hire date</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.acceptionDate"/></td>
+                                <td><form:input type="text" class="form-control" path="generalInfo.acceptionDate" disabled="true"/></td>
                             </tr>
                             <tr>
                                 <td>Probation</td>
                                 <td><form:input type="text" class="form-control"
-                                                path="generalInfo.probationB4Acception"/></td>
+                                                path="generalInfo.probationB4Acception" disabled="true"/></td>
                             </tr>
                             <tr>
                                 <td>Begin course</td>
                                 <td><form:input type="text" class="form-control"
-                                                path="generalInfo.courseWhenAccepted"/></td>
+                                                path="generalInfo.courseWhenAccepted" disabled="true"/></td>
                             </tr>
-                            <!--We don't have such fields in the table!-->
-                            <%--<tr>--%>
-                                <%--<td>Working hours</td>--%>
-                                <%--<td><form:input type="text" class="form-control" path=""/></td>--%>
-                            <%--</tr>--%>
-                            <%--<tr>--%>
-                                <%--<td>Expecting working hour</td>--%>
-                                <%--<td><form:input type="text" class="form-control" path=""/></td>--%>
-                            <%--</tr>--%>
-                            <!--checkbox-->
                             <tr>
                                 <td>Billable</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.billable"/></td>
+                                <td><form:input type="text" class="form-control" path="generalInfo.billable" disabled="true"/></td>
                             </tr>
                             </tbody>
                         </table>
