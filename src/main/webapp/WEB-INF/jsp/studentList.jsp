@@ -23,41 +23,36 @@
                     <th><input type="text" class="form-control" placeholder="Name" disabled></th>
                     <th><input type="text" class="form-control" placeholder="Surname" disabled></th>
                     <th><input type="text" class="form-control" placeholder="Skype" disabled></th>
-                    <c:if test="${role == 'student'}">
-                        <th><input type="text" class="form-control" placeholder="Hired" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Faculty" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Course" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Hours a day" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Billable" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Role" disabled></th>
+
+                    <th><input type="text" class="form-control" placeholder="Hired" disabled></th>
+                    <th><input type="text" class="form-control" placeholder="Faculty" disabled></th>
+                    <th><input type="text" class="form-control" placeholder="Course" disabled></th>
+                    <th><input type="text" class="form-control" placeholder="Hours a day" disabled></th>
+                    <th><input type="text" class="form-control" placeholder="Billable" disabled></th>
+                    <th><input type="text" class="form-control" placeholder="Role" disabled></th>
                         <%--<th><input type="text" class="form-control" placeholder="Techs" disabled></th>--%>
-                        <th><input type="text" class="form-control" placeholder="English" disabled></th>
-                    </c:if>
+                    <th><input type="text" class="form-control" placeholder="English" disabled></th>
 
                     <th></th>
                 </tr>
                 </thead>
                 <tbody>
 
-                <c:forEach items="${users}" var="el">
+                <c:forEach items="${users}" var="student">
                     <tr>
-                        <c:if test="${role != 'student'}">
-                            <td><c:out value="${el.name}"/></td>
-                            <td><c:out value="${el.surname}"/></td>
-                            <td><c:out value="${el.skype}"/></td>
-                        </c:if>
-                        <c:if test="${role == 'student'}">
-                            <td><c:out value="${el.user.name}"/></td>
-                            <td><c:out value="${el.user.surname}"/></td>
-                            <td><c:out value="${el.user.skype}"/></td>
-                            <td><c:out value="${el.generalInfo.acceptionDate}"/></td>
-                            <td><c:out value="${el.generalInfo.faculty}"/></td>
-                            <td><c:out value="${el.generalInfo.course}"/></td>
-                            <td><c:out value="${el.generalInfo.billable}"/></td>
-                            <td><c:out value="${el.generalInfo.curPrjRole}"/></td>
-                            <td><c:out value="${el.generalInfo.currentTechs}"/></td>
-                            <td><c:out value="${el.generalInfo.enLevel}"/></td>
-                        </c:if>
+
+
+                            <td><c:out value="${student.user.name}"/></td>
+                            <td><c:out value="${student.user.surname}"/></td>
+                            <td><c:out value="${student.user.skype}"/></td>
+                            <td><c:out value="${student.generalInfo.acceptionDate}"/></td>
+                            <td><c:out value="${student.generalInfo.faculty}"/></td>
+                            <td><c:out value="${student.generalInfo.course}"/></td>
+                            <td><c:out value="${student.generalInfo.billable}"/></td>
+                            <td><c:out value="${student.generalInfo.curPrjRole}"/></td>
+                            <td><c:out value="${student.generalInfo.currentTechs}"/></td>
+                            <td><c:out value="${student.generalInfo.enLevel}"/></td>
+
                         <td>
                             <div class="dropdown">
                                 <a role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="/page.html">
@@ -65,22 +60,14 @@
                                 </a>
                                 <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
 
-                                    <c:if test="${role == 'student'}">
-                                        <li><a href='<c:url value="/student/${el.id}"/>'>View profile</a></li>
-                                        <li><a href="#">Send Notification</a></li>
-                                        <li><a href="#">Add feedback</a></li>
+
+                                        <li><a href='<c:url value="/student/${student.id}"/>'>View profile</a></li>
+                                        <li><a href='<c:url value="/feedback/${student.id}"/>'>Add feedback</a></li>
                                         <li><a href="#">Add interview</a></li>
-                                    </c:if>
-                                    <c:if test="${role == 'tutor'}">
-                                        <li><a href="#">View students</a></li>
-                                        <li><a href="#">View feedbacks</a></li>
-                                    </c:if>
-                                    <c:if test="${role == 'interviewer'}">
-                                        <li><a href="#">View students</a></li>
-                                        <li><a href="#">View interviews</a></li>
-                                    </c:if>
+
+
                                     <li class="divider"></li>
-                                    <%--<li><a href="#">Fire user</a></li>--%>
+
                                 </ul>
                             </div>
                         </td>

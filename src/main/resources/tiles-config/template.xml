@@ -12,12 +12,20 @@
         <put-attribute name="body" value="/WEB-INF/jsp/studentList.jsp"/>
     </definition>
 
+    <definition name="userList" extends="basicLayout">
+        <put-attribute name="body" value="/WEB-INF/jsp/userList.jsp"/>
+    </definition>
+
     <definition name="studentProfile" extends="basicLayout">
         <put-attribute name="body" value="/WEB-INF/jsp/profilePage.jsp"/>
     </definition>
 
     <definition name="createUser"  extends="basicLayout">
         <put-attribute name="body" value="/WEB-INF/jsp/createUser.jsp"/>
+    </definition>
+
+    <definition name="addFeedback"  extends="basicLayout">
+        <put-attribute name="body" value="/WEB-INF/jsp/feedback.jsp"/>
     </definition>
 
 

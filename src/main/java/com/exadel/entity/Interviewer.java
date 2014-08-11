@@ -22,8 +22,14 @@ public class Interviewer {
     @GenericGenerator(name = "gen", strategy = "foreign",parameters = @org.hibernate.annotations.Parameter(name = "property", value = "user"))
     private int id;
 
-    @ManyToMany(mappedBy = "interviewers")
-     private List<Interview> interviews;
+    @OneToMany(mappedBy = "interviewer",fetch = FetchType.LAZY)
+    private List<Interview> interviews;
+
+    /////////////////
+    @ManyToMany
+    @JoinTable(name="interview")
+    private List <Student> students;
+    ////////////
 
     @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
@@ -54,5 +60,13 @@ public class Interviewer {
 
     public void setInterviews(List<Interview> interviews) {
         this.interviews = interviews;
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
     }
 }

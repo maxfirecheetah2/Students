@@ -22,12 +22,12 @@ public class Tutor  {
     private List <Feedback> feedbacks;
 
     @ManyToMany
-    @JoinTable(name="feedback")
+    @JoinTable(name="student_tutor")
     private List <Student> students;
 
     @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
-    User user;
+    private User user;
 
     public int getId() {
         return id;

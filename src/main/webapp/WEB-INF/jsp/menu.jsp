@@ -55,7 +55,7 @@
                             <div class="collapse" id="toggleDemo" style="height: 0px;">
                                 <ul class="nav nav-list">
 
-                                    <li><a href='<c:url value="/student/list"/>'><span
+                                    <li><a href='<c:url value="/student/list/full_access"/>'><span
                                             class="glyphicon glyphicon-user"></span> Students</a></li>
                                     <li><a href='<c:url value="/tutors"/>'><span
                                             class="glyphicon glyphicon-user"></span> Tutors</a></li>
@@ -82,9 +82,9 @@
                             </div>
                         </li>
 
-                        <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Messages <span
-                                class="badge pull-right">42</span></a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-search"></span> Advanced Search</a></li>
+                        <%--<li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Messages <span--%>
+                                <%--class="badge pull-right">42</span></a></li>--%>
+                        <%--<li><a href="#"><span class="glyphicon glyphicon-search"></span> Advanced Search</a></li>--%>
 
                     </sec:authorize>
 

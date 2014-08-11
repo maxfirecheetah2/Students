@@ -2,7 +2,12 @@ package com.exadel.service.serviceImpl;
 
 import com.exadel.dao.InterviewDao;
 import com.exadel.entity.Interview;
+import com.exadel.entity.Interviewer;
+import com.exadel.entity.Student;
+import com.exadel.entity.Tutor;
 import com.exadel.service.*;
+import org.hibernate.Hibernate;
+import org.springframework.transaction.annotation.Transactional;
 
 
 import java.util.List;
@@ -32,4 +37,6 @@ public class InterviewServiceImpl implements InterviewService {
     public void delete(Interview interview) {
            getInterviewDao().delete(interview);
     }
+
+
 }

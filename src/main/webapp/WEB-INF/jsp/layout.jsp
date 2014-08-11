@@ -10,15 +10,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="<c:url value="/resources/style/css/bootstrap.css"/> ">
-    <link rel="stylesheet" href="<c:url value="/resources/style/css/bootstrap.min.css"/> ">
+
+     <link rel="stylesheet" href="<c:url value="/resources/style/css/bootstrap.css"/> ">
+     <link rel="stylesheet" href="<c:url value="/resources/style/css/bootstrap.min.css"/> ">
     <link rel="stylesheet" href="<c:url value="/resources/style/css/menuStyle.css"/> ">
 
 
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="<c:url value="/resources/style/js/bootstrap.min.js" />"></script>
-    <script src="<c:url value="/resources/style/js/showFeedback.js" />"></script>
-    <script src="<c:url value="/resources/style/js/tabHistory.js" />"></script>
+    <script src='<c:url value="/resources/style/js/bootstrap.min.js"/>'></script>
+    <script src="<c:url value="/resources/style/js/showFeedback.js"/>"></script>
+    <script src="<c:url value="/resources/style/js/tabHistory.js"/>"></script>
 
 
 </head>

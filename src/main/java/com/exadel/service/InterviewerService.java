@@ -2,6 +2,7 @@ package com.exadel.service;
 
 import com.exadel.entity.Interview;
 import com.exadel.entity.Interviewer;
+import com.exadel.entity.Student;
 
 import java.util.List;
 
@@ -13,4 +14,5 @@ public interface InterviewerService {
     public Integer saveInterviewer(Interviewer interviewer);
     public List<Interviewer> getInterviewerList();
     public void delete(Interviewer interviewer);
+    public List<Student> getStudentsByInterviewerId(Integer id);
 }

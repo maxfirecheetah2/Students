@@ -38,8 +38,8 @@ public class HomeController extends BaseController {
     public ModelAndView moderators(){
         ModelAndView modelAndView = createGeneralModelAndView();
         modelAndView.addObject("users", userService.getUsersByRole(4));
-        modelAndView.addObject("role", "moderator");
-        modelAndView.setViewName("studentList");
+        modelAndView.addObject("role", "Moderators");
+        modelAndView.setViewName("userList");
         return modelAndView;
     }
 
@@ -47,8 +47,8 @@ public class HomeController extends BaseController {
     public ModelAndView interviewers(){
         ModelAndView modelAndView = createGeneralModelAndView();
         modelAndView.addObject("users", userService.getUsersByRole(3));
-        modelAndView.addObject("role", "interviewer");
-        modelAndView.setViewName("studentList");
+        modelAndView.addObject("role", "Interviewers");
+        modelAndView.setViewName("userList");
         return modelAndView;
     }
 
@@ -56,8 +56,8 @@ public class HomeController extends BaseController {
     public ModelAndView tutors(){
         ModelAndView modelAndView = createGeneralModelAndView();
         modelAndView.addObject("users", userService.getUsersByRole(2));
-        modelAndView.addObject("role", "tutor");
-        modelAndView.setViewName("studentList");
+        modelAndView.addObject("role", "Tutors");
+        modelAndView.setViewName("userList");
         return modelAndView;
     }
 }

@@ -15,8 +15,10 @@
         <security:intercept-url pattern="/login*" access="isAnonymous()" />
         <security:intercept-url pattern="/logoutSuccess*" access="isAnonymous()" />
 
-        <security:intercept-url pattern="/**" access="hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR')" />
-        <!--<security:intercept-url pattern="/**" access="permitAll"/>-->
+        <!--<security:intercept-url pattern="/**" access="hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR')" />-->
+        <security:intercept-url pattern="/list/student" access="hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR','ROLE_TUTOR','ROLE_INTERVIEWER')"/>
+        <security:intercept-url pattern="/feedback/*" access="hasAnyRole('ROLE_ADMIN','ROLE_TUTOR')"/>
+        <!--hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR','ROLE_TUTOR','ROLE_INTERVIEWER')-->
 
         <!-- Override default login and logout pages -->
         <security:form-login login-page="/login"
@@ -30,7 +32,7 @@
 
     <security:authentication-manager>
         <security:authentication-provider user-service-ref="authService">
-            <!--<security:password-encoder hash="sha-256"/>-->
+            <security:password-encoder hash="sha-256" base64="true"/>
         </security:authentication-provider>
     </security:authentication-manager>
 

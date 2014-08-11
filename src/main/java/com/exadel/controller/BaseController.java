@@ -1,15 +1,21 @@
 package com.exadel.controller;
 
+import com.exadel.entity.Role;
 import com.exadel.entity.User;
 import com.exadel.service.UserService;
 import com.exadel.service.serviceImpl.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class BaseController{
@@ -27,5 +33,26 @@ public class BaseController{
         return modelAndView;
     }
 
+
+    public String priorityResolver(){
+
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        List<SimpleGrantedAuthority> roles = (List<SimpleGrantedAuthority>) auth.getAuthorities();
+        if(roles.contains(new SimpleGrantedAuthority("ROLE_ADMIN"))) {
+            return "full_access";
+        }
+        else if(roles.contains(new SimpleGrantedAuthority("ROLE_TUTOR"))){
+            return "tutor_access";
+        }
+        else if(roles.contains(new SimpleGrantedAuthority("ROLE_INTERVIEWER"))){
+            return "interviewer_access";
+        }
+        else if(roles.contains(new SimpleGrantedAuthority("ROLE_TUTOR")) &&
+                roles.contains(new SimpleGrantedAuthority("ROLE_INTERVIEWER"))){
+            return "double_access";
+        }
+        return "access_none";
+
+    }
 
 }

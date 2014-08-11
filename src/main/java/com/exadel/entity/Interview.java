@@ -25,9 +25,15 @@ public class Interview implements Serializable {
     @JoinColumn(name="student_id")
     private Student student;
 
-    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinTable(name="interview_interviewer")
-    private List<Interviewer> interviewers;
+    ///////////////////////////
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name="interviewer_id")
+    private Interviewer interviewer;
+    /////////////////////////////////////////
+
+//    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+//    @JoinTable(name="interview_interviewer")
+//    private List<Interviewer> interviewers;
 
     @OneToMany(mappedBy = "interview",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List <Mark> marks;
@@ -81,14 +87,14 @@ public class Interview implements Serializable {
         this.id = id;
     }
 
-    public List<Interviewer> getInterviewers() {
-
-        return interviewers;
-    }
-
-    public void setInterviewers(List<Interviewer> interviewers) {
-        this.interviewers = interviewers;
-    }
+//    public List<Interviewer> getInterviewers() {
+//
+//        return interviewers;
+//    }
+//
+//    public void setInterviewers(List<Interviewer> interviewers) {
+//        this.interviewers = interviewers;
+//    }
 
 
 

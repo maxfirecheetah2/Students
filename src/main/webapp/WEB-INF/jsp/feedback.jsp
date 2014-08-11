@@ -1,42 +1,50 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>FeedbackForm</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Feedback Form</title>
 </head>
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
+        <div>
+        <%--<div class="col-md-8">--%>
             <div class="well well-sm">
-                <form>
+                <form:form method="POST" commandName="feedback" action="/add">
                     <div class="row">
-                        <div class="col-md-6">
+                        <%--<div class="col-md-6">--%>
+                        <div>
                             <div class="form-group">
                                 <label for="aptitude">
                                     Aptitude
                                 </label>
-                                <input type="text" class="form-control" id="aptitude" placeholder="Type here"/>
+                                <%--<form:input type="text" class="form-control" id="aptitude" placeholder="Type here" path="aptitude"/>--%>
                             </div>
                             <div class="form-group">
                                 <label for="attitude">
                                     Attitude to work
                                 </label>
-                                <input type="text" class="form-control" id="attitude" placeholder="Type here"/>
+                                <form:input type="text" class="form-control" id="attitude" placeholder="Type here" path="diligence"/>
                             </div>
                             <div class="form-group">
                                 <label for="sociability">
                                     Sociability
                                 </label>
-                                <input type="text" class="form-control" id="sociability" placeholder="Type here"/>
+                                <form:input type="text" class="form-control" id="sociability" placeholder="Type here" path="sociability"/>
                             </div>
+
                             <div class="form-group">
                                 <label for="progress">
                                     Progress in professional questions
                                 </label>
-                                <input type="text" class="form-control" id="progress" placeholder="Type here"/>
+                                <form:input type="text" class="form-control" id="progress" placeholder="Type here" path="profProgress"/>
                             </div>
+
                             <div class="form-group">
                                 <label for="hours">
                                     Do need more work hours
@@ -45,10 +53,10 @@
                                 <div class="bs-example">
                                     <div class="btn-group" data-toggle="buttons">
                                         <label class="btn btn-primary">
-                                            <input type="radio" name="options" id="option1"> YES
+                                            <form:radiobutton name="options" value="1" id="option1" path="promotionNecessity"/> YES
                                         </label>
                                         <label class="btn btn-primary">
-                                            <input type="radio" name="options" id="option2"> NO
+                                            <form:radiobutton name="options" value="0" id="option2" path="promotionNecessity"/> NO
                                         </label>
                                     </div>
                                 </div>
@@ -61,10 +69,10 @@
                                 <div class="bs-example">
                                     <div class="btn-group" data-toggle="buttons">
                                         <label class="btn btn-primary">
-                                            <input type="radio" name="options" id="option1"> YES
+                                            <form:radiobutton  name="options" value="1" id="option1" path="realPrj"/> YES
                                         </label>
                                         <label class="btn btn-primary">
-                                            <input type="radio" name="options" id="option2"> NO
+                                            <form:radiobutton name="options" value="0" id="option2" path="realPrj"/> NO
                                         </label>
                                     </div>
                                 </div>
@@ -77,10 +85,10 @@
                                 <div class="bs-example">
                                     <div class="btn-group" data-toggle="buttons">
                                         <label class="btn btn-primary">
-                                            <input type="radio" name="options" id="option1"> YES
+                                            <form:radiobutton  name="options" value="1" id="option1" path="billable"/> YES
                                         </label>
                                         <label class="btn btn-primary">
-                                            <input type="radio" name="options" id="option2"> NO
+                                            <form:radiobutton name="options" value="0" id="option2" path="billable"/> NO
                                         </label>
                                     </div>
                                 </div>
@@ -91,14 +99,14 @@
                                 <label for="feedback">
                                     Feedback
                                 </label>
-                                <textarea name="message" id="feedback" class="form-control" rows="9" cols="25"
-                                          placeholder="Feedback"></textarea>
+                                <form:textarea name="message" id="feedback" class="form-control" rows="9" cols="25"
+                                          placeholder="Feedback" path="text"/>
                             </div>
                             <div class="form-group">
                                 <label for="date">
                                     Date
                                 </label>
-                                <input type="date" class="form-control" id="date" placeholder="Enter date here"/>
+                                <form:input type="date" class="form-control" id="date" placeholder="Enter date here" path="date"/>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -125,7 +133,8 @@
                     Arsene Wenger<br/>
                     Mikel Arteta<br/>
                 </address>
-            </form>
+                <form:button type="submit" class="btn btn-primary pull-right">Submit</form:button>
+               </form:form>
         </div>
     </div>
 </div>
