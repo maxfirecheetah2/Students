@@ -78,6 +78,8 @@
                                 <ul class="nav nav-list">
                                     <li><a href='<c:url value="/user"/>'><span class="glyphicon glyphicon-plus"></span>
                                         Create user</a></li>
+                                    <li><a href='<c:url value="/email"/>'><span class="glyphicon glyphicon-envelope"></span>
+                                        Send messages</a></li>
                                 </ul>
                             </div>
                         </li>

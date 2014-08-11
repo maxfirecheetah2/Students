@@ -1,5 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <html>
 <head>
     <title>Send Email</title>
@@ -10,15 +13,15 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="well well-sm">
-                <form class="form-horizontal" action="" method="post">
+                <form:form class="form-horizontal" action="/email" method="POST" commandName="emailDto">
                     <fieldset>
                         <legend class="text-center">Send message</legend>
                         <div class="form-group">
                             <label class="col-md-3 control-label" for="topic">Topic</label>
 
                             <div class="col-md-9">
-                                <input id="topic" name="topic" type="text" placeholder="Message topic"
-                                       class="form-control">
+                                <form:input id="topic" path="title" name="topic" type="text" placeholder="Message topic"
+                                       class="form-control"/>
                             </div>
                         </div>
 
@@ -26,18 +29,18 @@
                             <label class="col-md-3 control-label" for="message">Your message</label>
 
                             <div class="col-md-9">
-                                <textarea class="form-control" id="message" name="message"
-                                          placeholder="Please enter your message here..." rows="5"></textarea>
+                                <form:textarea class="form-control" path="text" id="message" name="message"
+                                          placeholder="Please enter your message here..." rows="5"/>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-md-12 text-right">
-                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                                <form:button type="submit" class="btn btn-primary">Submit</form:button>
                             </div>
                         </div>
                     </fieldset>
-                </form>
+                </form:form>
             </div>
         </div>
     </div>

@@ -28,5 +28,10 @@
         <put-attribute name="body" value="/WEB-INF/jsp/feedback.jsp"/>
     </definition>
 
+    <definition name="sendEmail"  extends="basicLayout">
+        <put-attribute name="body" value="/WEB-INF/jsp/sendEmail.jsp"/>
+    </definition>
+
+
 
 </tiles-definitions>
