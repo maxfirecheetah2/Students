@@ -8,6 +8,7 @@ public class StatisticsDTO {
     private boolean university;
     private boolean billable;
     private boolean notbillable;
+    private boolean englishLevel;
 
 
     public boolean getFaculty() {
@@ -50,5 +51,9 @@ public class StatisticsDTO {
         this.notbillable = notbillable;
     }
 
+    public void setEnglishLevel(boolean englishLevel) {
+        this.englishLevel = englishLevel;
+    }
 
+    public boolean getEnglishLevel(){return englishLevel;}
 }

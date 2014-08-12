@@ -53,7 +53,6 @@
 
 </div>
     <form:button type="submit" class="btn btn-primary pull-right">Submit</form:button>
-    <button type="submit" class="btn btn-primary pull-right">Submit</button>
 </form:form>
 </div>
 </div>
