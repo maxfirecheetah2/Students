@@ -44,6 +44,11 @@
                                         <form:checkbox path="notbillable"/> Time when not billable
                                     </label>
                                 </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <form:checkbox path="englishLevel"/> English Level
+                                    </label>
+                                </div>
                                 <form:button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Save .PDF</form:button>
 
                             </div>

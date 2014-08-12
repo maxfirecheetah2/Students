@@ -18,7 +18,7 @@
                 <prop key="hibernate.bytecode.use_reflection_optimizer">false</prop>
                 <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
                 <prop key="hibernate.connection.username">root</prop>
-                <prop key="hibernate.connection.password">280993</prop>
+                <prop key="hibernate.connection.password">root</prop>
                 <prop key="hibernate.connection.url">dbc:mysql://localhost:3306/exadel</prop>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
@@ -56,7 +56,8 @@
     <bean id="feedbackDao" class="com.exadel.dao.daoImpl.FeedbackDaoImpl"/>
     <bean id="feedbackService" class="com.exadel.service.serviceImpl.FeedbackServiceImpl"/>
 
-    <!--<bean id="statisticsService" class="com.exadel.service.serviceImpl.StatisticsService"/>-->
+    <!--<bean id="statisticsService" class="com.exadel.service.serviceImpl.StatisticsService"/>&ndash;&gt;-->
+
     <bean id="mailService" class="com.exadel.service.serviceImpl.MailService"/>
 
     <bean id="generalInfoDao" class="com.exadel.dao.daoImpl.GeneralInfoDaoImpl"/>
@@ -64,8 +65,6 @@
 
     <bean id="interviewDao" class="com.exadel.dao.daoImpl.InterviewDaoImpl"/>
     <bean id="interviewService" class="com.exadel.service.serviceImpl.InterviewServiceImpl"/>
-
-
 
 
 </beans>
