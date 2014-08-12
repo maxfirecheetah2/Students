@@ -48,6 +48,11 @@ public class InterviewerServiceImpl implements InterviewerService {
            getInterviewerDao().delete(interviewer);
     }
 
+    @Transactional
+    @Override
+    public Interviewer getInterviewer(int id){
+        return getInterviewerDao().get(id);
+    }
 
 }
 

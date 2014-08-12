@@ -1,5 +1,6 @@
 package com.exadel.util;
 
+import com.exadel.entity.Statistics;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;

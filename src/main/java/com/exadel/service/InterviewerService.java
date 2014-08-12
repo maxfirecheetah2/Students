@@ -14,5 +14,6 @@ public interface InterviewerService {
     public Integer saveInterviewer(Interviewer interviewer);
     public List<Interviewer> getInterviewerList();
     public void delete(Interviewer interviewer);
+    public Interviewer getInterviewer(int id);
 
 }

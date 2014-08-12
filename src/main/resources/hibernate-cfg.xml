@@ -49,6 +49,14 @@
     <bean id="interviewerDao" class="com.exadel.dao.daoImpl.InterviewerDaoImpl"/>
     <bean id="interviewerService" class="com.exadel.service.serviceImpl.InterviewerServiceImpl"/>
 
+    <bean id="interviewDao" class="com.exadel.dao.daoImpl.InterviewDaoImpl"/>
+    <bean id="interviewService" class="com.exadel.service.serviceImpl.InterviewServiceImpl"/>
+
+    <bean id="markDao" class="com.exadel.dao.daoImpl.MarkDaoImpl"/>
+    <bean id="markService" class="com.exadel.service.serviceImpl.MarkServiceImpl"/>
+
+    <bean id="skillDao" class="com.exadel.dao.daoImpl.SkillDaoImpl"/>
+    <bean id="skillService" class="com.exadel.service.serviceImpl.SkillServiceImpl"/>
 
     <bean id="studentDao" class="com.exadel.dao.daoImpl.StudentDaoImpl"/>
     <bean id="studentService" class="com.exadel.service.serviceImpl.StudentServiceImpl"/>
@@ -56,9 +64,8 @@
     <bean id="feedbackDao" class="com.exadel.dao.daoImpl.FeedbackDaoImpl"/>
     <bean id="feedbackService" class="com.exadel.service.serviceImpl.FeedbackServiceImpl"/>
 
-    <!--<bean id="statisticsService" class="com.exadel.service.serviceImpl.StatisticsService"/>&ndash;&gt;-->
-
     <bean id="mailService" class="com.exadel.service.serviceImpl.MailService"/>
+    <bean id="statisticsService" class="com.exadel.service.serviceImpl.StatisticsService"/>
 
     <bean id="generalInfoDao" class="com.exadel.dao.daoImpl.GeneralInfoDaoImpl"/>
     <bean id="generalInfoService" class="com.exadel.service.serviceImpl.GeneralInfoServiceImpl"/>
