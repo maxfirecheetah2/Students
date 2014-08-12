@@ -56,7 +56,7 @@
     <bean id="feedbackDao" class="com.exadel.dao.daoImpl.FeedbackDaoImpl"/>
     <bean id="feedbackService" class="com.exadel.service.serviceImpl.FeedbackServiceImpl"/>
 
-    <bean id="statisticsService" class="com.exadel.service.serviceImpl.StatisticsService"/>
+    <!--<bean id="statisticsService" class="com.exadel.service.serviceImpl.StatisticsService"/>-->
     <bean id="mailService" class="com.exadel.service.serviceImpl.MailService"/>
 
     <bean id="generalInfoDao" class="com.exadel.dao.daoImpl.GeneralInfoDaoImpl"/>

@@ -2,15 +2,10 @@ package com.exadel.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * User: X
- * Date: 18.07.14
- * Time: 16:17
- * To change this template use File | Settings | File Templates.
- */
+
 
 @Entity
 @Table(name = "interview")
@@ -25,15 +20,11 @@ public class Interview implements Serializable {
     @JoinColumn(name="student_id")
     private Student student;
 
-    ///////////////////////////
+
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name="interviewer_id")
     private Interviewer interviewer;
-    /////////////////////////////////////////
 
-//    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-//    @JoinTable(name="interview_interviewer")
-//    private List<Interviewer> interviewers;
 
     @OneToMany(mappedBy = "interview",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List <Mark> marks;
@@ -43,6 +34,9 @@ public class Interview implements Serializable {
 
     @Column(name = "text")
     private String text;
+
+    @Column(name="date")
+    private Timestamp date;
 
     public String getText() {
         return text;
@@ -87,14 +81,21 @@ public class Interview implements Serializable {
         this.id = id;
     }
 
-//    public List<Interviewer> getInterviewers() {
-//
-//        return interviewers;
-//    }
-//
-//    public void setInterviewers(List<Interviewer> interviewers) {
-//        this.interviewers = interviewers;
-//    }
+    public Interviewer getInterviewer() {
+        return interviewer;
+    }
+
+    public Timestamp getDate() {
+        return date;
+    }
+
+    public void setDate(Timestamp date) {
+        this.date = date;
+    }
+
+    public void setInterviewer(Interviewer interviewer) {
+        this.interviewer = interviewer;
+    }
 
 
 

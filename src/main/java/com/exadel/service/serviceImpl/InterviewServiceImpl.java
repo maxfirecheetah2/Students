@@ -45,4 +45,10 @@ public class InterviewServiceImpl implements InterviewService {
     }
 
 
+    public Interview getInterview(Integer id) {
+        return getInterviewDao().get(id);
+    }
+
+
+
 }

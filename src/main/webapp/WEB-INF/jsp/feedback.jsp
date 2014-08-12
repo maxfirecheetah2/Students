@@ -16,7 +16,7 @@
         <div class="col-md-8">
             <div class="well well-sm">
                     <div class="row">
-                        <form:form method="POST" commandName="feedback" action="/add">
+                        <form:form method="POST" commandName="feedback" action="add/${studId}">
                         <div class="col-md-6">
                         <div>
                             <div class="form-group">
@@ -106,12 +106,12 @@
                                 <form:textarea name="message" id="feedback" class="form-control" rows="9" cols="25"
                                           placeholder="Feedback" path="text"/>
                             </div>
-                            <div class="form-group">
-                                <label for="date">
-                                    Date
-                                </label>
-                                <form:input type="date" class="form-control" id="date" placeholder="Enter date here" path="date"/>
-                            </div>
+                            <%--<div class="form-group">--%>
+                                <%--<label for="date">--%>
+                                    <%--Date--%>
+                                <%--</label>--%>
+                                <%--<form:input type="date" class="form-control" id="date" placeholder="Enter date here" path="date"/>--%>
+                            <%--</div>--%>
                         </div>
                         <div class="col-md-12">
                             <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
