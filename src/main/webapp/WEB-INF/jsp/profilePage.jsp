@@ -37,10 +37,9 @@
 </ul>
 <br/>
 
-<form:form  method="post" commandName="student" action="/student/edit">
+
 <div class="tab-content">
-
-
+<form:form id="generalInfoForm"  method="post" commandName="student" action="/student/edit">
  <%@ include file="profile_tab1.jsp" %>
  <%@ include file="profile_tab2.jsp" %>
  <%@ include file="profile_tab3.jsp" %>
@@ -48,12 +47,21 @@
  <%@ include file="profile_tab5.jsp" %>
  <%@ include file="profile_tab6.jsp" %>
  <%@ include file="profile_tab7.jsp" %>
+<form:button type="submit" class="btn btn-primary pull-right">Submit</form:button>
+ </form:form>
+
+<form:form id="feedbackListForm"  method="post" commandName="feedbackList" action="/feedback/list">
  <%@ include file="profile_tab8.jsp" %>
- <%@ include file="profile_tab9.jsp" %>
+<form:button type="submit" class="btn btn-primary pull-right">Submit</form:button>
+</form:form>
+
+<form:form id="interviewListForm"  method="post" commandName="interviewList" action="/interview/list">
+<%@ include file="profile_tab9.jsp" %>
+<form:button type="submit" class="btn btn-primary pull-right">Submit</form:button>
+</form:form>
 
 </div>
-    <form:button type="submit" class="btn btn-primary pull-right">Submit</form:button>
-</form:form>
+
 </div>
 </div>
 </div>

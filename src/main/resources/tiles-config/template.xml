@@ -40,5 +40,8 @@
         <put-attribute name="body" value="/WEB-INF/jsp/interview.jsp"/>
     </definition>
 
+    <definition name="errorPage"  extends="basicLayout">
+        <put-attribute name="body" value="/WEB-INF/jsp/errorPage.jsp"/>
+    </definition>
 
 </tiles-definitions>

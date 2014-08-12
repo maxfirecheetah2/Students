@@ -41,7 +41,7 @@
                         </div>
                     </li>
 
-                    <sec:authorize access="hasRole('ROLE_ADMIN')">
+                    <%--<sec:authorize access="hasRole('ROLE_ADMIN')">--%>
 
 
                         <li>
@@ -54,15 +54,18 @@
 
                             <div class="collapse" id="toggleDemo" style="height: 0px;">
                                 <ul class="nav nav-list">
-
+                                    <sec:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR','ROLE_TUTOR','ROLE_INTERVIEWER')">
                                     <li><a href='<c:url value="/student/list"/>'><span
                                             class="glyphicon glyphicon-user"></span> Students</a></li>
+                                    </sec:authorize>
+                                     <sec:authorize access="hasRole('ROLE_ADMIN')">
                                     <li><a href='<c:url value="/tutors"/>'><span
                                             class="glyphicon glyphicon-user"></span> Tutors</a></li>
                                     <li><a href='<c:url value="/interviewers"/>'><span
                                             class="glyphicon glyphicon-user"></span> Interviewers</a></li>
                                     <li><a href='<c:url value="/moderators"/>'><span
                                             class="glyphicon glyphicon-user"></span> Moderators</a></li>
+                                    </sec:authorize>
 
                                 </ul>
                             </div>
@@ -90,7 +93,7 @@
                                 <%--class="badge pull-right">42</span></a></li>--%>
                         <%--<li><a href="#"><span class="glyphicon glyphicon-search"></span> Advanced Search</a></li>--%>
 
-                    </sec:authorize>
+                    <%--</sec:authorize>--%>
 
                 </ul>
             </div>
