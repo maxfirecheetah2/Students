@@ -1,7 +1,7 @@
 package com.exadel.controller;
 
 import com.exadel.entity.Interview;
-import com.exadel.service.InterviewService;
+import com.exadel.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -30,6 +30,7 @@ public class InterviewController extends BaseController {
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public ModelAndView addInterview(@ModelAttribute("interview") Interview interview, ModelAndView modelAndView){
+
         modelAndView.setViewName("addInterview");
         return  modelAndView;
     }

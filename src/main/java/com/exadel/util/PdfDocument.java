@@ -1,20 +1,16 @@
-package com.exadel.service.serviceImpl;
+package com.exadel.util;
 
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
-import org.springframework.security.access.annotation.Secured;
-import org.springframework.stereotype.Service;
 
 import java.io.FileOutputStream;
-import java.util.ArrayList;
 
 /**
  * Created by Вадим on 06.08.2014.
  */
-
-public class PdfDocumentService {
+public class PdfDocument {
 
 
     private static Font catFont = new Font(Font.FontFamily.TIMES_ROMAN, 20,
@@ -26,14 +22,14 @@ public class PdfDocumentService {
     private static Font smallBold = new Font(Font.FontFamily.TIMES_ROMAN, 12,
             Font.BOLD);
 
-    public PdfDocumentService(String FILE, ArrayList<String> headers, StatisticsService statisticsService) {
+    public PdfDocument(String FILE, Statistics statistics) {
 
         try {
             Document document = new Document();
             PdfWriter.getInstance(document, new FileOutputStream(FILE));
             document.open();
             addMetaData(document);
-            createTables(document,headers,statisticsService);
+            createTables(document,statistics);
 
             document.close();
         } catch (Exception e) {
@@ -50,13 +46,13 @@ public class PdfDocumentService {
 
 
 
-    private static void createTables(Document document,ArrayList<String> headers,StatisticsService statistics)
+    private static void createTables(Document document,Statistics statistics)
             throws BadElementException {
 
         int temp=0;
-     for(int j=0;j<headers.size();j++) {
+     for(int j=0;j<statistics.getHeaders().size();j++) {
 
-          Paragraph paragraph=new Paragraph("Statistic on "+headers.get(j),catFont);
+          Paragraph paragraph=new Paragraph("Statistic on "+statistics.getHeaders().get(j),catFont);
            paragraph.setAlignment(Element.ALIGN_CENTER);
            addEmptyLine(paragraph,1);
          try {

@@ -32,8 +32,13 @@
         <put-attribute name="body" value="/WEB-INF/jsp/sendEmail.jsp"/>
     </definition>
 
+    <definition name="getStatistics"  extends="basicLayout">
+        <put-attribute name="body" value="/WEB-INF/jsp/statistic.jsp"/>
+    </definition>
+
     <definition name="addInterview"  extends="basicLayout">
         <put-attribute name="body" value="/WEB-INF/jsp/interview.jsp"/>
     </definition>
+
 
 </tiles-definitions>

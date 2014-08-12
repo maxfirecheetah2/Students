@@ -3,17 +3,14 @@ package com.exadel.controller;
 import com.exadel.dao.GenericDao;
 import com.exadel.dao.StudentDao;
 import com.exadel.dao.UserDao;
-import com.exadel.entity.Feedback;
-import com.exadel.entity.GeneralInfo;
-import com.exadel.entity.Student;
-import com.exadel.entity.User;
+import com.exadel.entity.*;
 import com.exadel.service.FeedbackService;
 
 import com.exadel.service.*;
 import com.exadel.service.StudentService;
 import com.exadel.service.UserService;
 import com.exadel.service.serviceImpl.GeneralInfoServiceImpl;
-import com.exadel.util.StudentCopier;
+import com.exadel.service.serviceImpl.TutorServiceImpl;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -22,8 +19,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 
@@ -72,7 +67,7 @@ public class StudentController extends BaseController{
         ModelAndView modelAndView = createGeneralModelAndView();
         modelAndView.setViewName("studentList");
         User user =  (User) modelAndView.getModel().get("curUser");
-        List<Student> students = interviewerService.getStudentsByInterviewerId(user.getId());
+        List<Student> students = studentService.getStudentList();
         modelAndView.addObject("users", students);
         modelAndView.addObject("role", "student");
         return modelAndView;
