@@ -25,31 +25,35 @@ public class FeedbackServiceImpl implements FeedbackService {
     }
 
 
+    @Transactional
     @Override
     @Transactional
     public Integer saveFeedback(Feedback feedback) {
         return getFeedbackDao().save(feedback);
     }
 
-
+    @Transactional
     @Override
     @Transactional
     public List<Feedback> getFeedbackList() {
         return getFeedbackDao().getAll();
     }
 
+    @Transactional
     @Override
     @Transactional
     public void delete(Feedback feedback) {
            getFeedbackDao().delete(feedback);
     }
 
+    @Transactional
     @Override
     @Transactional
     public void update(Feedback persistentObject) {
         getFeedbackDao().update(persistentObject);
     }
 
+    @Transactional
     @Override
     @Transactional
     public void saveOrUpdate(Feedback persistentObject) {

@@ -14,9 +14,9 @@
     <div class="row">
         <div class="col-sm-9 col-md-10">
             <div class="well well-sm">
-            <form:form method="POST" commandName="interview" action="/add">
+            <form:form method="POST" commandName="interview" action="add/${studId}">
                     <div class="skills">
-                        <label>Skills:</label>
+                        <label>Skills</label>
                         <div class="form-group multiple-form-group input-group">
                             <div class="input-group-btn input-group-select">
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
