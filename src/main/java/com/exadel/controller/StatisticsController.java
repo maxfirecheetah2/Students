@@ -2,7 +2,7 @@ package com.exadel.controller;
 
 
 import com.exadel.entity.dto.*;
-import com.exadel.service.serviceImpl.StatisticsService;
+import com.exadel.service.serviceImpl.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -15,9 +15,9 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/statistics")
 public class StatisticsController extends BaseController {
 
-    @Autowired
-    @Qualifier("statisticsService")
-    private StatisticsService statisticsService;
+//    @Autowired
+//    @Qualifier("statisticsService")
+//    private StatisticsService statisticsService;
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView getStatisticsForm(){

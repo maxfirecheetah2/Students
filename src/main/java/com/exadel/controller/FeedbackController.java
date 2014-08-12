@@ -1,7 +1,9 @@
 package com.exadel.controller;
 
 import com.exadel.entity.Feedback;
-import com.exadel.service.FeedbackService;
+import com.exadel.entity.Student;
+import com.exadel.entity.Tutor;
+import com.exadel.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -19,10 +21,22 @@ public class FeedbackController extends BaseController {
     @Qualifier("feedbackService")
     private FeedbackService feedbackService;
 
+    @Autowired
+    @Qualifier("studentService")
+    private StudentService studentService;
+
+    @Autowired
+    @Qualifier("tutorService")
+    private TutorService tutorService;
+
+    public FeedbackController() {
+    }
+
     @RequestMapping(value = "/{studId}", method = RequestMethod.GET)
-    public ModelAndView getFeedbackForm(@PathVariable Integer studId){
+    public ModelAndView getFeedbackForm(@PathVariable("studId") Integer studId){
         ModelAndView modelAndView = createGeneralModelAndView();
         modelAndView.addObject("studId", studId);
+        modelAndView.addObject("tutorId", studId);
         modelAndView.addObject("feedback", new Feedback());
         modelAndView.setViewName("addFeedback");
         return modelAndView;
@@ -31,6 +45,11 @@ public class FeedbackController extends BaseController {
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public ModelAndView addFeedback(@ModelAttribute("feedback") Feedback feedback, ModelAndView modelAndView){
         modelAndView.setViewName("addFeedback");
+//        Integer studId = (Integer)modelAndView.getModel().get("studId");
+//        Student student = studentService.get(studId);
+
+//        Tutor tutor =
+
         return  modelAndView;
     }
 

@@ -69,7 +69,7 @@ public class StudentController extends BaseController{
         ModelAndView modelAndView = createGeneralModelAndView();
         modelAndView.setViewName("studentList");
         User user =  (User) modelAndView.getModel().get("curUser");
-        List<Student> students = interviewerService.getStudentsByInterviewerId(user.getId());
+        List<Student> students = studentService.getStudentList();
         modelAndView.addObject("users", students);
         modelAndView.addObject("role", "student");
         return modelAndView;
