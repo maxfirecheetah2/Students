@@ -6,6 +6,7 @@ package com.exadel.service.serviceImpl;
 import com.exadel.dao.GeneralInfoDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -33,6 +34,7 @@ public class StatisticsService {
     }
 
     @Transactional
+    @Secured({"ROLE_ADMIN"})
     public void startStatisticsService( String nameColumn){
 
 
@@ -86,6 +88,7 @@ public class StatisticsService {
     }
 
     @Transactional
+    @Secured({"ROLE_ADMIN"})
     public void startStatisticsServiceBillable(){
 
         List<Date> acceptionDates=generalInfoDao.getAcceptionDate();

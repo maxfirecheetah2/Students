@@ -22,6 +22,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -34,21 +36,62 @@ public class StudentController extends BaseController{
     private StudentService studentService;
 
     @Autowired
+    @Qualifier("tutorService")
+    private TutorService tutorService;
+
+    @Autowired
+    @Qualifier("interviewerService")
+    private InterviewerService interviewerService;
+
+    @Autowired
     @Qualifier("generalInfoService")
     private GeneralInfoService generalInfoService;
+
+
     private StudentService getStudentService(){
         return studentService;
     }
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public ModelAndView studentList(){
+
+
+    @RequestMapping(value = "/list/full_access", method = RequestMethod.GET)
+    public ModelAndView fullStudentList(){
+
         ModelAndView modelAndView = createGeneralModelAndView();
         modelAndView.setViewName("studentList");
-        List<Student> list = studentService.getStudentList();
+        List<Student> list =  studentService.getStudentList();
         modelAndView.addObject("users", list);
         modelAndView.addObject("role", "student");
         return modelAndView;
+
     }
+
+    @RequestMapping(value = "/list/interviewer_access", method = RequestMethod.GET)
+    public ModelAndView studentListForInterviewer(){
+
+        ModelAndView modelAndView = createGeneralModelAndView();
+        modelAndView.setViewName("studentList");
+        User user =  (User) modelAndView.getModel().get("curUser");
+        List<Student> students = interviewerService.getStudentsByInterviewerId(user.getId());
+        modelAndView.addObject("users", students);
+        modelAndView.addObject("role", "student");
+        return modelAndView;
+
+    }
+
+    @RequestMapping(value = "/list/tutor_access", method = RequestMethod.GET)
+    public ModelAndView studentListForTutor(){
+
+        ModelAndView modelAndView = createGeneralModelAndView();
+        modelAndView.setViewName("studentList");
+        User user =  (User) modelAndView.getModel().get("curUser");
+        List<Student> students = tutorService.getStudentsByTutorId(user.getId());
+        modelAndView.addObject("users", students);
+        modelAndView.addObject("role", "student");
+        return modelAndView;
+
+    }
+
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ModelAndView viewStudent(@PathVariable Integer id){
@@ -70,6 +113,13 @@ public class StudentController extends BaseController{
         modelAndView.setViewName("studentProfile");
         return modelAndView;
     }
+
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public String studentListForwarding() {
+        System.out.println(priorityResolver());
+        return "redirect:/student/list/" + priorityResolver();
+    }
+
 
 
 }
