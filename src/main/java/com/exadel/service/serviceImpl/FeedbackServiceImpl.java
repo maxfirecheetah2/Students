@@ -13,6 +13,7 @@ import java.util.List;
 /**
  * Created by Вадим on 31.07.2014.
  */
+
 public class FeedbackServiceImpl implements FeedbackService {
 
     @Autowired
@@ -48,8 +49,9 @@ public class FeedbackServiceImpl implements FeedbackService {
         getFeedbackDao().update(persistentObject);
     }
 
-    @Transactional
+
     @Override
+    @Transactional
     public void saveOrUpdate(Feedback persistentObject) {
         getFeedbackDao().saveOrUpdate(persistentObject);
     }

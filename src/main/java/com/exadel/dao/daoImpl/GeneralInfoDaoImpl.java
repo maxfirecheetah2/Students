@@ -19,20 +19,44 @@ public class GeneralInfoDaoImpl extends GenericDaoImpl<GeneralInfo, Integer> imp
 
     @Override
     @Transactional
-    public List<Object> getDataColumn(String nameColumn) {
-         return (List<Object>)getCurrentSession().createQuery("select "+nameColumn+" from GeneralInfo order by "+nameColumn).list();
+    public List<Date> getAcceptionDates() {
+        return (List<Date>)getCurrentSession().createQuery("select acceptionDate from GeneralInfo where billable=1" ).list();
 
     }
 
     @Override
     @Transactional
-    public List<Date> getAcceptionDate() {
-        return (List<Date>)getCurrentSession().createQuery("select acceptionDate from GeneralInfo " ).list();
-
+    public List<Date> getBillableDates() {
+         return (List<Date>)getCurrentSession().createQuery("select billableSince from GeneralInfo where billable=1").list();
     }
 
     @Override
-    public List<Date> getBillableDate() {
-         return (List<Date>)getCurrentSession().createQuery("select billableSince from GeneralInfo ").list();
+    @Transactional
+    public List<Object> getFaculties() {
+        return (List<Object>)getCurrentSession().createQuery("select faculty from GeneralInfo order by faculty").list();
+    }
+
+    @Override
+    @Transactional
+    public List<Object> getCourses() {
+        return (List<Object>)getCurrentSession().createQuery("select course from GeneralInfo order by course").list();
+    }
+
+    @Override
+    @Transactional
+    public List<Object> getUniversities() {
+        return (List<Object>)getCurrentSession().createQuery("select institution from GeneralInfo order by institution").list();
+    }
+
+    @Override
+    @Transactional
+    public List<Object> getBillable() {
+        return (List<Object>)getCurrentSession().createQuery("select billable from GeneralInfo order by billable").list();
+    }
+
+    @Override
+    @Transactional
+    public List<Object> getEnglishLevels() {
+        return (List<Object>)getCurrentSession().createQuery("select enLevel from GeneralInfo order by enLevel").list();
     }
 }

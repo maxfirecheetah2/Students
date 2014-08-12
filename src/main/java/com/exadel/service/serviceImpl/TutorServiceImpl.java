@@ -7,6 +7,8 @@ import com.exadel.service.*;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
@@ -15,6 +17,7 @@ import java.util.List;
 /**
  * Created by Вадим on 31.07.2014.
  */
+@Service
 public class TutorServiceImpl implements TutorService {
 
     @Autowired
@@ -23,6 +26,7 @@ public class TutorServiceImpl implements TutorService {
 
 
     public TutorDao getTutorDao(){return this.tutorDao;}
+
 
 
     @Transactional
@@ -46,9 +50,7 @@ public class TutorServiceImpl implements TutorService {
     @Transactional
     @Override
     public Tutor get(Integer id) {
-        Tutor tutor =  getTutorDao().get(id);
-        Hibernate.initialize(tutor.getStudents());
-        return tutor;
+      return  getTutorDao().get(id);
     }
 
     @Transactional
@@ -59,13 +61,9 @@ public class TutorServiceImpl implements TutorService {
 
     @Transactional
     @Override
-    public List<Student> getStudentsByTutorId(Integer id){
-        Tutor tutor =  getTutorDao().get(id);
-        List<Student> students = tutor.getStudents();
-        Hibernate.initialize(students);
-        return students;
+    public List<Student> getStudentsByTutorId(Integer id) {
+        Tutor tutor=getTutorDao().get(id);
+        Hibernate.initialize(tutor.getStudents());
+        return tutor.getStudents();
     }
-
-
-
 }

@@ -1,8 +1,10 @@
 package com.exadel.controller;
 
 
+import com.exadel.entity.Statistics;
 import com.exadel.entity.dto.*;
 import com.exadel.service.serviceImpl.*;
+import com.exadel.util.PdfDocument;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -15,9 +17,9 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/statistics")
 public class StatisticsController extends BaseController {
 
-//    @Autowired
-//    @Qualifier("statisticsService")
-//    private StatisticsService statisticsService;
+    @Autowired
+    @Qualifier("statisticsService")
+    private StatisticsService statisticsService;
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView getStatisticsForm(){
@@ -30,6 +32,25 @@ public class StatisticsController extends BaseController {
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView printStatistics(@ModelAttribute("statisticsDto") StatisticsDTO statisticsDto, ModelAndView modelAndView){
         modelAndView.setViewName("getStatistics");
+
+
+        Statistics statistics=new Statistics();
+        if(statisticsDto.getBillable())
+            statisticsService.addStatisticsBillable(statistics);
+        if(statisticsDto.getCourse())
+            statisticsService.addStatisticsCourse(statistics);
+        if(statisticsDto.getEnglishLevel())
+            statisticsService.addStatisticsEnglishLevel(statistics);
+        if(statisticsDto.getFaculty())
+            statisticsService.addStatisticsFaculty(statistics);
+        if(statisticsDto.getUniversity())
+            statisticsService.addStatisticsUniversity(statistics);
+        if(statisticsDto.getNotbillable())
+            statisticsService.addStatisticsBillableSpec(statistics);
+
+        new PdfDocument("c:/temp/statistics.pdf",statistics);
+
+        modelAndView.addObject("succes",1);
         return modelAndView;
     }
 

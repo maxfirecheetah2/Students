@@ -12,7 +12,12 @@ import java.util.List;
 @Repository
 public interface GeneralInfoDao extends GenericDao<GeneralInfo, Integer> {
 
-      public List<Object> getDataColumn( String nameColumn);
-      public List<Date> getAcceptionDate();
-      public List<Date> getBillableDate();
+
+      public List<Date> getAcceptionDates();
+      public List<Date> getBillableDates();
+      public List<Object> getFaculties();
+      public List<Object> getCourses();
+      public List<Object> getUniversities();
+      public List<Object> getBillable();
+      public List<Object> getEnglishLevels();
 }

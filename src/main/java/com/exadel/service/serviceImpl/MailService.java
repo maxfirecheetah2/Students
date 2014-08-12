@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 
 
@@ -15,7 +16,7 @@ public class MailService{
         private MailSender mailSender;
 
 
-
+    @Secured({"ROLE_ADMIN"})
     public void sendMail(final String to, final String subject, final String body){
         Thread th = new Thread(new Runnable() {
             @Override
