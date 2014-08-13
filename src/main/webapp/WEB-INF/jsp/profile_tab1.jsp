@@ -57,6 +57,10 @@
                             </tbody>
 
                         </table>
+                        <div class="browse-button">
+                            <button type="button" class="btn btn-info">Change avatar</button>
+                            <input type="file" id="image">
+                        </div>
                         <a href="#myModal" class="btn btn-success pull-right" data-toggle="modal">Change password</a>
                         <div id="myModal" class="modal fade">
                             <div class="modal-dialog">

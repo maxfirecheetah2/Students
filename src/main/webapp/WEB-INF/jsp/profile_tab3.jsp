@@ -21,43 +21,39 @@
                             <tbody class="filters">
                             <tr>
                                 <td>Session 1</td>
-                                <td><form:input type="text" class="form-control" path="" disabled="true"/></td>
+                                <td><form:input type="text" class="form-control" path="generalInfo.session1" disabled="true"/></td>
                             </tr>
                             <tr>
                                 <td>Session 2</td>
-                                <td><form:input type="text" class="form-control" path="" disabled="true"/></td>
+                                <td><form:input type="text" class="form-control" path="generalInfo.session2" disabled="true"/></td>
                             </tr>
                             <tr>
                                 <td>Session 3</td>
-                                <td><form:input type="text" class="form-control" path="" disabled="true"/></td>
+                                <td><form:input type="text" class="form-control" path="generalInfo.session3" disabled="true"/></td>
                             </tr>
                             <tr>
                                 <td>Session 4</td>
-                                <td><form:input type="text" class="form-control" path="" disabled="true"/></td>
+                                <td><form:input type="text" class="form-control" path="generalInfo.session4" disabled="true"/></td>
                             </tr>
                             <tr>
                                 <td>Session 5</td>
-                                <td><form:input type="text" class="form-control" path="" disabled="true"/></td>
+                                <td><form:input type="text" class="form-control" path="generalInfo.session5" disabled="true"/></td>
                             </tr>
                             <tr>
                                 <td>Session 6</td>
-                                <td><form:input type="text" class="form-control" path="" disabled="true"/></td>
+                                <td><form:input type="text" class="form-control" path="generalInfo.session6" disabled="true"/></td>
                             </tr>
                             <tr>
                                 <td>Session 7</td>
-                                <td><form:input type="text" class="form-control" path="" disabled="true"/></td>
+                                <td><form:input type="text" class="form-control" path="generalInfo.session7" disabled="true"/></td>
                             </tr>
                             <tr>
                                 <td>Session 8</td>
-                                <td><form:input type="text" class="form-control" path="" disabled="true"/></td>
+                                <td><form:input type="text" class="form-control" path="generalInfo.session8" disabled="true"/></td>
                             </tr>
                             <tr>
                                 <td>Session 9</td>
-                                <td><form:input type="text" class="form-control" path="" disabled="true"/></td>
-                            </tr>
-                            <tr>
-                                <td>Session 10</td>
-                                <td><form:input type="text" class="form-control" path="" disabled="true"/></td>
+                                <td><form:input type="text" class="form-control" path="generalInfo.session9" disabled="true"/></td>
                             </tr>
                             </tbody>
                         </table>

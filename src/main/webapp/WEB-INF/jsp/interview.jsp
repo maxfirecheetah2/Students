@@ -8,9 +8,10 @@
 <head>
     <title>Interview</title>
     <script src="<c:url value="/resources/style/js/addSkill.js" />"></script>
+    <script src="<c:url value="/resources/style/js/createJSON.js" />"></script>
 </head>
 <body>
-<div class="container">
+<div class="col-md-10">
     <div class="row">
         <div class="col-sm-9 col-md-10">
             <div class="well well-sm">
@@ -30,9 +31,9 @@
                                     <li><a href="#skill5">PHP</a></li>
                                     <li><a href="#skill6">Spring</a></li>
                                 </ul>
-                                <form:input type="hidden" name="skills['type'][]" class="input-group-select-val" path=""/>
+                                <form:input type="hidden" name="skillNum" class="input-group-select-val" path=""/>
                             </div>
-                            <form:input type="text" name="skills['type'][]" class="form-control" path="marks"/>
+                            <input type="text" name="1" class="form-control data"/>
                                 <span class="input-group-btn">
                                     <button type="button" class="btn btn-success btn-add">+</button>
                                 </span>
@@ -45,7 +46,7 @@
                         <form:textarea name="message" class="form-control" id="note" path="text" rows="6" cols="25"/>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary" id="btnSendInterview">
+                        <button type="button" class="btn btn-primary" id="sendJSON">
                             Send Interview
                         </button>
                     </div>
