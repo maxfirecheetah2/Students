@@ -58,7 +58,6 @@
                                                 path="user.phone" disabled="true"/></td>
                             </tr>
                             </tbody>
-
                         </table>
                         <a href="#myModal" class="btn btn-success pull-right" data-toggle="modal">Change password</a>
                         <div id="myModal" class="modal fade">

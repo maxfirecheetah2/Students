@@ -12,7 +12,9 @@
 
     <link rel="stylesheet" href="<c:url value="/resources/style/css/profilePageStyle.css"/> ">
     <link rel="stylesheet" href="<c:url value="/resources/style/css/bootstrap-select.css"/> ">
+    <link rel="stylesheet" href="<c:url value="/resources/style/css/updateAvatar.css"/> ">
     <script src="<c:url value="/resources/style/js/selectRoles.js" />"></script>
+    <script src="<c:url value="/resources/style/js/avaratChange.js" />"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.5.4/bootstrap-select.js"></script>
     <script src="<c:url value="/resources/style/js/editFields.js" />"></script>
 </head>

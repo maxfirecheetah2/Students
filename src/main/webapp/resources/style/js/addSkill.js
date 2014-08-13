@@ -1,6 +1,5 @@
 $(document).ready(function(){
     var addFormGroup = function (event) {
-        event.preventDefault();
 
         var $formGroup = $(this).closest('.form-group');
         var $multipleFormGroup = $formGroup.closest('.multiple-form-group');
@@ -21,7 +20,6 @@ $(document).ready(function(){
     };
 
     var removeFormGroup = function (event) {
-        event.preventDefault();
 
         var $formGroup = $(this).closest('.form-group');
         var $multipleFormGroup = $formGroup.closest('.multiple-form-group');
@@ -35,14 +33,14 @@ $(document).ready(function(){
     };
 
     var selectFormGroup = function (event) {
-        event.preventDefault();
-
+        var $formGroup = $(this).closest('.form-group');
         var $selectGroup = $(this).closest('.input-group-select');
-        var param = $(this).attr("href").replace("#", "");
+        var param = $(this).attr("href").replace("#skill", "");
         var concept = $(this).text();
 
         $selectGroup.find('.concept').text(concept);
         $selectGroup.find('.input-group-select-val').val(param);
+        $formGroup.find('input').attr("name",param);
 
     }
 
@@ -53,5 +51,7 @@ $(document).ready(function(){
     $(document).on('click', '.btn-add', addFormGroup);
     $(document).on('click', '.btn-remove', removeFormGroup);
     $(document).on('click', '.dropdown-menu a', selectFormGroup);
+
+
 
 });

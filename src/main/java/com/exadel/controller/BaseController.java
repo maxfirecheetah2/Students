@@ -4,6 +4,7 @@ import com.exadel.entity.Role;
 import com.exadel.entity.User;
 import com.exadel.service.UserService;
 import com.exadel.service.serviceImpl.AuthService;
+import org.hibernate.engine.jdbc.spi.SqlExceptionHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.Authentication;
@@ -56,21 +57,12 @@ public class BaseController{
         return "access_none";
 
     }
-
+//
 //    @ExceptionHandler(Exception.class)
 //    public ModelAndView handleException(Exception ex){
-//       ModelAndView modelAndView = new ModelAndView("errorPage") ;
-//       ex.printStackTrace();
-//       modelAndView.addObject("msg", "Something went wrong!");
-//       return modelAndView;
-//    }
-
-//    @ExceptionHandler(SQLDataException.class)
-//    public ModelAndView createUserException(Exception ex){
 //        ModelAndView modelAndView = new ModelAndView("errorPage") ;
-//        modelAndView.addObject("msg", "Blablabla");
+//        modelAndView.addObject("msg", "Something went wrong!");
 //        return modelAndView;
 //    }
-
 
 }

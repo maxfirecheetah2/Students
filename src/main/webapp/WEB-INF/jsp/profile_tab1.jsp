@@ -57,6 +57,7 @@
                             </tbody>
 
                         </table>
+
                         <%--<a href="#myModal" class="btn btn-success pull-right" data-toggle="modal">Change password</a>--%>
                         <%--<div id="myModal" class="modal fade">--%>
                             <%--<div class="modal-dialog">--%>
@@ -81,6 +82,7 @@
                                 <%--</div>--%>
                             <%--</div>--%>
                         <%--</div>--%>
+
                     </div>
                 </div>
             </div>
