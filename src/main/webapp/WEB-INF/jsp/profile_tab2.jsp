@@ -21,32 +21,32 @@
                              <tbody class="filters">
                              <tr>
                                  <td>University</td>
-                                 <td><form:input type="text" class="form-control" path="generalInfo.institution" disabled="true"/></td>
+                                 <td><form:input type="text" class="form-control" path="generalInfo.institution"/></td>
                              </tr>
                              <tr>
                                  <td>Faculty</td>
                                  <td><form:input type="text" class="form-control"
-                                                 path="generalInfo.faculty" disabled="true"/></td>
+                                                 path="generalInfo.faculty" /></td>
                              </tr>
                              <tr>
                                  <td>Specialty</td>
                                  <td><form:input type="text" class="form-control"
-                                                 path="generalInfo.speciality" disabled="true"/></td>
+                                                 path="generalInfo.speciality" /></td>
                              </tr>
                              <tr>
                                  <td>Course</td>
                                  <td><form:input type="text" class="form-control"
-                                                 path="generalInfo.course" disabled="true"/></td>
+                                                 path="generalInfo.course" /></td>
                              </tr>
                              <tr>
                                  <td>Group</td>
                                  <td><form:input type="text" class="form-control"
-                                                 path="generalInfo.group" disabled="true"/></td>
+                                                 path="generalInfo.group" /></td>
                              </tr>
                              <tr>
                                  <td>Graduation</td>
                                  <td><form:input type="text" class="form-control"
-                                                 path="generalInfo.graduationYear" disabled="true"/></td>
+                                                 path="generalInfo.graduationYear" /></td>
                              </tr>
 
 
@@ -57,5 +57,5 @@
              </div>
          </div>
      </div>
-     <form:button type="submit" class="btn btn-primary pull-right">Submit</form:button>
+
  </div>

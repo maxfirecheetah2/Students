@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="tab-pane" id="tab7">
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
@@ -20,12 +21,12 @@
                             <tbody class="filters">
                             <tr>
                                 <td>Type</td>
-                                <td><input type="text" class="form-control" value="Vacation" disabled="true"></td>
+                                <td><form:textarea type="text" class="form-control" path="absent"/></td>
                             </tr>
-                            <tr>
-                                <td>Date</td>
-                                <td><input type="text" class="form-control" value="24.07.2014-04.08.2014" disabled="true"></td>
-                            </tr>
+                            <%--<tr>--%>
+                                <%--<td>Date</td>--%>
+                                <%--<td><input type="text" class="form-control" value="24.07.2014-04.08.2014" disabled="true"></td>--%>
+                            <%--</tr>--%>
                             </tbody>
                         </table>
                     </div>
@@ -33,5 +34,5 @@
             </div>
         </div>
     </div>
-    <form:button type="submit" class="btn btn-primary pull-right">Submit</form:button>
+
 </div>

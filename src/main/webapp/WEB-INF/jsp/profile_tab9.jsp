@@ -21,11 +21,11 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="skill">Label:</label>
-                            <input id="skill" class="form-control" disabled value="i'm batman">
+                            <input id="skill" class="form-control"  value="i'm batman">
                         </div>
                         <div class="form-group">
                             <label for="skill2">Label:</label>
-                            <input id="skill2" class="form-control" disabled value="i'm batman">
+                            <input id="skill2" class="form-control"  value="i'm batman">
                         </div>
                         <div class="form-group">
                             <label for="skill3">Label:</label>

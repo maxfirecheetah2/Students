@@ -22,29 +22,28 @@
                             <tr>
                                 <td>English level</td>
                                 <td>
-                                    <form:select cssClass="selectpicker"  path="" id="englishLevel">
-                                        <form:option selected="selected" value="1">Beginner</form:option>
-                                        <form:option value="2">Elementary</form:option>
-                                        <form:option value="3">Pre-Intermediate</form:option>
-                                        <form:option value="4">Intermediate</form:option>
-                                        <form:option value="5">Upper Intermediate</form:option>
-                                        <form:option value="6">Pre-advanced</form:option>
-                                        <form:option value="7">Advanced</form:option>
-                                        <form:option value="8">Very Advanced</form:option>
+                                    <form:select cssClass="selectpicker"  path="generalInfo.enLevel" id="englishLevel">
+                                        <form:option selected="selected" value="BEGINNER">Beginner</form:option>
+                                        <form:option value="ELEMENTARY">Elementary</form:option>
+                                        <form:option value="PRE-INTERMEDIATE">Pre-Intermediate</form:option>
+                                        <form:option value="INTERMEDIATE">Intermediate</form:option>
+                                        <form:option value="UPPER-INTERMEDIATE">Upper-Intermediate</form:option>
+                                        <form:option value="ADVANCED">Advanced</form:option>
+                                        <form:option value="PROFICIENT">Proficient</form:option>
                                     </form:select>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Exadel's tranings</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.training" disabled="true"/></td>
+                                <td><form:textarea type="text" class="form-control" path="generalInfo.training" /></td>
                             </tr>
                             <tr>
                                 <td>Certificates</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.certificates" disabled="true"/></td>
+                                <td><form:input type="text" class="form-control" path="generalInfo.certificates" /></td>
                             </tr>
                             <tr>
                                 <td>English lessons</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.enCourses" disabled="true"/></td>
+                                <td><form:input type="text" class="form-control" path="generalInfo.enCourses" /></td>
                             </tr>
                             </tbody>
                         </table>
@@ -53,5 +52,5 @@
             </div>
         </div>
     </div>
-    <form:button type="submit" class="btn btn-primary pull-right">Submit</form:button>
+
 </div>

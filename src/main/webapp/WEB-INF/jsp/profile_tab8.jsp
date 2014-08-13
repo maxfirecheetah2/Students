@@ -38,7 +38,7 @@
             </div>
             <div class="row user-infos user2">
                 <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1">
-                    <textarea class="form-control" disabled>Feedback bla-bla-bla</textarea>
+                    <form:textarea class="form-control" disabled="true" path=""/>
                 </div>
             </div>
         </div>

@@ -31,60 +31,60 @@
                             <tr>
                                 <td>Skype</td>
                                 <td><form:input type="text" class="form-control"
-                                                path="user.skype" disabled="true"/></td>
+                                                path="user.skype"/></td>
                             </tr>
                             <tr>
                                 <td>Email</td>
                                 <td><form:input type="text" class="form-control"
-                                                path="user.email" disabled="true" /></td>
+                                                path="user.email"  /></td>
                             </tr>
                             <tr>
                                 <td>Phone Number</td>
                                 <td><form:input type="text" class="form-control"
-                                                path="user.phone" disabled="true"/></td>
+                                                path="user.phone" /></td>
                             </tr>
-                            <tr>
-                            <td>Tutors</td>
-                            <td>
-                                <form:select cssClass="selectpicker" path="" id="tutorsSelector">
-                                    <form:option selected="selected" value="1">Tutor1</form:option>
-                                    <form:option value="2">Tutor2</form:option>
-                                    <form:option value="3">Tutor3</form:option>
-                                    <form:option value="4">Tutor4</form:option>
-                                </form:select>
-                            </td>
-                            </tr>
+                            <%--<tr>--%>
+                            <%--<td>Tutors</td>--%>
+                            <%--<td>--%>
+                                <%--<form:select cssClass="selectpicker" path="" id="tutorsSelector">--%>
+                                    <%--<form:option selected="selected" value="1">Tutor1</form:option>--%>
+                                    <%--<form:option value="2">Tutor2</form:option>--%>
+                                    <%--<form:option value="3">Tutor3</form:option>--%>
+                                    <%--<form:option value="4">Tutor4</form:option>--%>
+                                <%--</form:select>--%>
+                            <%--</td>--%>
+                            <%--</tr>--%>
                             </tbody>
 
                         </table>
-                        <a href="#myModal" class="btn btn-success pull-right" data-toggle="modal">Change password</a>
-                        <div id="myModal" class="modal fade">
-                            <div class="modal-dialog">
-                                <div class="modal-content" style="background-color: #f8f8f8">
-                                    <form  method="post" commandName="" action="">
-                                        <div class="modal-header" style="background-color: #575757">
-                                            <h4 class="modal-title" style="color: #ffffff">Change Password</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <label>Old password</label>
-                                            <form:input type="password" class="form-control" path="" />
-                                            <label>New password</label>
-                                            <form:input type="password" class="form-control" path="" />
-                                            <label>Repeat</label>
-                                            <form:input type="password" class="form-control" path="" />
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary">Save changes</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                        <%--<a href="#myModal" class="btn btn-success pull-right" data-toggle="modal">Change password</a>--%>
+                        <%--<div id="myModal" class="modal fade">--%>
+                            <%--<div class="modal-dialog">--%>
+                                <%--<div class="modal-content" style="background-color: #f8f8f8">--%>
+                                    <%--<form  method="post" commandName="" action="">--%>
+                                        <%--<div class="modal-header" style="background-color: #575757">--%>
+                                            <%--<h4 class="modal-title" style="color: #ffffff">Change Password</h4>--%>
+                                        <%--</div>--%>
+                                        <%--<div class="modal-body">--%>
+                                            <%--<label>Old password</label>--%>
+                                            <%--<form:input type="password" class="form-control" path="" />--%>
+                                            <%--<label>New password</label>--%>
+                                            <%--<form:input type="password" class="form-control" path="" />--%>
+                                            <%--<label>Repeat</label>--%>
+                                            <%--<form:input type="password" class="form-control" path="" />--%>
+                                        <%--</div>--%>
+                                        <%--<div class="modal-footer">--%>
+                                            <%--<form:button type="button" class="btn btn-default" data-dismiss="modal">Close</form:button>--%>
+                                            <%--<form:button type="submit" class="btn btn-primary">Save changes</form:button>--%>
+                                        <%--</div>--%>
+                                    <%--</form>--%>
+                                <%--</div>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <form:button type="submit" class="btn btn-primary pull-right">Submit</form:button>
+
 </div>
