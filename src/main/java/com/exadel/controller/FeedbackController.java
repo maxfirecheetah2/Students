@@ -40,6 +40,8 @@ public class FeedbackController extends BaseController {
     public ModelAndView getFeedbackForm(@PathVariable("studId") Integer studId){
         ModelAndView modelAndView = createGeneralModelAndView();
         modelAndView.addObject("studId", studId);
+        Student stud = studentService.get(studId);
+        modelAndView.addObject("student", stud);
         modelAndView.addObject("feedback", new Feedback());
         modelAndView.setViewName("addFeedback");
         return modelAndView;

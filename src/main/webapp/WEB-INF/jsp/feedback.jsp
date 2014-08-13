@@ -126,13 +126,13 @@
                 <h3><span class="glyphicon glyphicon-user"></span> Student info</h3>
                 <hr/>
                 <address>
-                    <strong>Aaron Ramsey</strong><br>
-                    BSU, FAMCS<br>
-                    3rd course, 8th group<br/>
-                    Application Math <br/>
-                    Graduation: 2017 <br/><br/>
+                    <strong>${student.user.name} ${student.user.surname}</strong><br>
+                    ${student.generalInfo.faculty}<br>
+                    ${student.generalInfo.course}, ${student.generalInfo.group} group<br/>
+                    ${student.generalInfo.speciality} <br/>
+                    Graduation: ${student.generalInfo.graduationYear} <br/><br/>
                     <strong>Curators:</strong><br/>
-                    Arsene Wenger<br/>
+                    ${studId}<br/>
                     Mikel Arteta<br/>
                 </address>
         </div>

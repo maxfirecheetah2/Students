@@ -46,13 +46,13 @@
 
                         <li>
                             <a href="#" data-toggle="collapse" data-target="#toggleDemo" data-parent="#sidenav01"
-                               id="userCats" class="collapsed tab">
+                               id="userCats" class="collapsed">
                                 <span class="glyphicon glyphicon-list"></span> User categories<span
                                     class="caret pull-right"></span>
                             </a>
 
 
-                            <div class="collapse" id="toggleDemo" style="height: 0px;">
+                            <div class="collapse tab" id="toggleDemo" style="height: 0px;">
                                 <ul class="nav nav-list">
                                     <sec:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR','ROLE_TUTOR','ROLE_INTERVIEWER')">
                                     <li><a href='<c:url value="/student/list"/>'><span
@@ -72,7 +72,7 @@
                         </li>
                         <li>
                             <a href="#" data-toggle="collapse" data-target="#toggleDemo2" data-parent="#sidenav01"
-                               class="collapsed tab" id="actions">
+                               class="collapsed" id="actions">
                                 <span class="glyphicon glyphicon-list"></span> Actions<span
                                     class="caret pull-right"></span>
                             </a>

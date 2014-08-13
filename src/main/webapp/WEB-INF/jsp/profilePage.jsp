@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>${student.user.name} ${student.user.surname}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="<c:url value="/resources/style/css/profilePageStyle.css"/> ">
@@ -19,52 +19,39 @@
 
 <body>
 <div class="col-md-10">
-<div class="row">
+    <div class="row">
 
 
-<div class="col-sm-9 col-md-10">
-<div class="tabbable">
-<ul class="nav nav-tabs">
-    <li class="active"><a href="#tab1" data-toggle="tab">Basic Info</a></li>
-    <li><a href="#tab2" data-toggle="tab">Education</a></li>
-    <li><a href="#tab3" data-toggle="tab">Progress</a></li>
-    <li><a href="#tab4" data-toggle="tab">Skills</a></li>
-    <li><a href="#tab5" data-toggle="tab">Company</a></li>
-    <li><a href="#tab6" data-toggle="tab">Projects</a></li>
-    <li><a href="#tab7" data-toggle="tab">Recreation</a></li>
-    <li><a href="#tab8" data-toggle="tab">Feedbacks</a></li>
-    <li><a href="#tab9" data-toggle="tab">Interviews</a></li>
-</ul>
-<br/>
+        <div class="col-sm-9 col-md-10">
+            <div class="tabbable">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab1" data-toggle="tab">Basic Info</a></li>
+                    <li><a href="#tab2" data-toggle="tab">Education</a></li>
+                    <li><a href="#tab3" data-toggle="tab">Progress</a></li>
+                    <li><a href="#tab4" data-toggle="tab">Skills</a></li>
+                    <li><a href="#tab5" data-toggle="tab">Company</a></li>
+                    <li><a href="#tab6" data-toggle="tab">Projects</a></li>
+                    <li><a href="#tab7" data-toggle="tab">Recreation</a></li>
+                    <li><a href="#tab8" data-toggle="tab">Feedbacks</a></li>
+                    <li><a href="#tab9" data-toggle="tab">Interviews</a></li>
+                </ul>
+                <br/>
 
-
-<div class="tab-content">
-<form:form id="generalInfoForm"  method="post" commandName="student" action="/student/edit">
- <%@ include file="profile_tab1.jsp" %>
- <%@ include file="profile_tab2.jsp" %>
- <%@ include file="profile_tab3.jsp" %>
- <%@ include file="profile_tab4.jsp" %>
- <%@ include file="profile_tab5.jsp" %>
- <%@ include file="profile_tab6.jsp" %>
- <%@ include file="profile_tab7.jsp" %>
-<form:button type="submit" class="btn btn-primary pull-right">Submit</form:button>
- </form:form>
-
-<form:form id="feedbackListForm"  method="post" commandName="feedbackList" action="/feedback/list">
- <%@ include file="profile_tab8.jsp" %>
-<form:button type="submit" class="btn btn-primary pull-right">Submit</form:button>
-</form:form>
-
-<form:form id="interviewListForm"  method="post" commandName="interviewList" action="/interview/list">
-<%@ include file="profile_tab9.jsp" %>
-<form:button type="submit" class="btn btn-primary pull-right">Submit</form:button>
-</form:form>
-
-</div>
-
-</div>
-</div>
-</div>
+                <form:form  method="post" name="edit" commandName="student" action="/student/edit">
+                    <div class="tab-content">
+                            <%@ include file="profile_tab1.jsp" %>
+                            <%@ include file="profile_tab2.jsp" %>
+                            <%@ include file="profile_tab3.jsp" %>
+                            <%@ include file="profile_tab4.jsp" %>
+                            <%@ include file="profile_tab5.jsp" %>
+                            <%@ include file="profile_tab6.jsp" %>
+                            <%@ include file="profile_tab7.jsp" %>
+                            <%@ include file="profile_tab8.jsp" %>
+                            <%@ include file="profile_tab9.jsp" %>
+                    </div>
+                </form:form>
+            </div>
+    </div>
 </div>
 </body>
 </html>

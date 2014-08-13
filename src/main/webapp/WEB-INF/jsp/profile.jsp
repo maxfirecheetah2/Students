@@ -1,10 +1,24 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-<div class="tab-pane active" id="tab1">
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<html>
+<head>
+    <title>Profile info</title>
+    <link rel="stylesheet" href="<c:url value="/resources/style/css/profilePageStyle.css"/> ">
+    <link rel="stylesheet" href="<c:url value="/resources/style/css/bootstrap-select.css"/> ">
+    <script src="<c:url value="/resources/style/js/selectRoles.js" />"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.5.4/bootstrap-select.js"></script>
+    <script src="<c:url value="/resources/style/js/editFields.js" />"></script>
+</head>
+<body>
+<div class="col-md-10">
+<div class="row">
+<div class="col-sm-9 col-md-10 toppad">
         <div class="panel panel-info filterable">
             <div class="panel-heading">
-                <h3 class="panel-title">${student.user.name} ${student.user.surname}</h3>
+                <h3 class="panel-title">${user.name} ${user.surname}</h3>
                 <div class="pull-right">
                     <button type="button" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>
                         Edit
@@ -43,17 +57,6 @@
                                 <td><form:input type="text" class="form-control"
                                                 path="user.phone" disabled="true"/></td>
                             </tr>
-                            <tr>
-                            <td>Tutors</td>
-                            <td>
-                                <form:select cssClass="selectpicker" path="" id="tutorsSelector">
-                                    <form:option selected="selected" value="1">Tutor1</form:option>
-                                    <form:option value="2">Tutor2</form:option>
-                                    <form:option value="3">Tutor3</form:option>
-                                    <form:option value="4">Tutor4</form:option>
-                                </form:select>
-                            </td>
-                            </tr>
                             </tbody>
 
                         </table>
@@ -86,5 +89,6 @@
             </div>
         </div>
     </div>
-    <form:button type="submit" class="btn btn-primary pull-right">Submit</form:button>
 </div>
+</body>
+</html>
