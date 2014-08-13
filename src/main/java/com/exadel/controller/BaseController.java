@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.sql.SQLDataException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,6 +63,13 @@ public class BaseController{
 //       ex.printStackTrace();
 //       modelAndView.addObject("msg", "Something went wrong!");
 //       return modelAndView;
+//    }
+
+//    @ExceptionHandler(SQLDataException.class)
+//    public ModelAndView createUserException(Exception ex){
+//        ModelAndView modelAndView = new ModelAndView("errorPage") ;
+//        modelAndView.addObject("msg", "Blablabla");
+//        return modelAndView;
 //    }
 
 

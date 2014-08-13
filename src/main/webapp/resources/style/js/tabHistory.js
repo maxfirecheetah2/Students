@@ -7,22 +7,10 @@ $(document).ready(function () {
         tab.className = "in";
         tab.style.height = "auto";
     }
-
     if (localStorage["actions"]){
         tab2.className = "in";
         tab2.style.height = "auto";
     }
-
-//    $('.tab a').click(function(){
-//        var id = (this).id;
-//        if(localStorage[id]){
-//            localStorage.removeItem(id);
-//        }
-//        else{
-//            localStorage[id] = true;
-//        }
-//    });
-
     $('#userCats').click(function(){
         if(localStorage["userCats"]){
             localStorage.removeItem("userCats");
@@ -31,7 +19,6 @@ $(document).ready(function () {
             localStorage["userCats"] = true;
         }
     });
-
     $('#actions').click(function(){
         if(localStorage["actions"]){
             localStorage.removeItem("actions");
@@ -40,4 +27,21 @@ $(document).ready(function () {
             localStorage["actions"] = true;
         }
     });
+
+//    var $div = document.getElementsByClassName("tab");
+//    var $a = $div.parent("li").child("a");
+//
+//    if (localStorage[$a.id]){
+//        $div.className = "in";
+//        $div.style.height = "auto";
+//    }
+//    $a.click(function(){
+//        if(localStorage[$a.id]){
+//            localStorage.removeItem($a.id);
+//        }
+//        else{
+//            localStorage[$a.id] = true;
+//        }
+//    });
+
 });

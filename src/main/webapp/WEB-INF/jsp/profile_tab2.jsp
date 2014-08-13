@@ -57,4 +57,5 @@
              </div>
          </div>
      </div>
+     <form:button type="submit" class="btn btn-primary pull-right">Submit</form:button>
  </div>

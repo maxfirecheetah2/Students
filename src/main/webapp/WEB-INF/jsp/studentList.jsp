@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <title>Students</title>
     <link rel="stylesheet" href="<c:url value="/resources/style/css/usersListStyle.css"/> ">
     <script src="<c:url value="/resources/style/js/filter.js" />"></script>
 </head>
