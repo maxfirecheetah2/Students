@@ -23,8 +23,6 @@ public class StatisticsService {
 
     public void addStatisticsFaculty(Statistics statistics){
 
-
-        statistics.addHeader("faculty");
         List<Object> data=generalInfoDao.getFaculties();
 
         for(int i=0;i<data.size();i++){
@@ -32,15 +30,15 @@ public class StatisticsService {
                 data.remove(i);
         }
 
-        generateStatistics(data,statistics);
-
+      if(data.size()!=0){
+      statistics.addHeader("faculty");
+      generateStatistics(data, statistics);
+      }
 
     }
 
     public void addStatisticsUniversity(Statistics statistics){
 
-
-        statistics.addHeader("university");
         List<Object> data=generalInfoDao.getUniversities();
 
         for(int i=0;i<data.size();i++){
@@ -48,106 +46,100 @@ public class StatisticsService {
                 data.remove(i);
         }
 
-        generateStatistics(data,statistics);
-
+        if(data.size()!=0) {
+         statistics.addHeader("university");
+         generateStatistics(data, statistics);
+        }
 
 
     }
 
     public void addStatisticsCourse(Statistics statistics){
 
-
-        statistics.addHeader("course");
         List<Object> data=generalInfoDao.getCourses();
 
         for(int i=0;i<data.size();i++){
             if(data.get(i)==null)
                 data.remove(i);
         }
-
-        generateStatistics(data,statistics);
-
+        if(data.size()!=0) {
+            statistics.addHeader("course");
+            generateStatistics(data, statistics);
+        }
 
 
     }
 
     public void addStatisticsBillable(Statistics statistics){
 
-
-        statistics.addHeader("billable");
         List<Object> data=generalInfoDao.getBillable();
 
         for(int i=0;i<data.size();i++){
             if(data.get(i)==null)
                 data.remove(i);
         }
+       if(data.size()!=0) {
 
-        String temp=data.get(0).toString();
-        int count=1;
-        for(int i=1;i<data.size();i++) {
-            String temp2=data.get(i).toString();
-            if(temp.equalsIgnoreCase(temp2))
-            {
-                count++;
-            }
-            else{
-                if(temp.equals("0")) {
-                    statistics.addField("No billable");
-                }
-                else{
-                    statistics.addField("Billable");
-                }
-                statistics.addValue(new Integer(count).toString());
-                statistics.addPercent(new Double(count*100/data.size()).toString()+"%");
+           statistics.addHeader("billable");
+           String temp = data.get(0).toString();
+           int count = 1;
+           for (int i = 1; i < data.size(); i++) {
+               String temp2 = data.get(i).toString();
+               if (temp.equalsIgnoreCase(temp2)) {
+                   count++;
+               } else {
+                   if (temp.equals("0")) {
+                       statistics.addField("No billable");
+                   } else {
+                       statistics.addField("Billable");
+                   }
+                   statistics.addValue(new Integer(count).toString());
+                   statistics.addPercent(new Double(count * 100 / data.size()).toString() + "%");
 
-                count=1;
-                temp=data.get(i).toString();
-            }
+                   count = 1;
+                   temp = data.get(i).toString();
+               }
 
-        }
+           }
 
-        int c = 1;
-        for (int i = data.size() - 2;i>=0 ; i--) {
-            String t2 = data.get(i).toString();
-            if (temp.equalsIgnoreCase(t2)) {
-                c++;
-            } else {
+           int c = 1;
+           for (int i = data.size() - 2; i >= 0; i--) {
+               String t2 = data.get(i).toString();
+               if (temp.equalsIgnoreCase(t2)) {
+                   c++;
+               } else {
 
-                if(temp.equals("0")) {
-                    statistics.addField("No billable");
-                }
-                else{
-                    statistics.addField("Billable");
-                }
-                statistics.addValue(new Integer(c).toString());
-                statistics.addPercent(new Double(c*100/data.size()).toString()+"%");
-                break;
+                   if (temp.equals("0")) {
+                       statistics.addField("No billable");
+                   } else {
+                       statistics.addField("Billable");
+                   }
+                   statistics.addValue(new Integer(c).toString());
+                   statistics.addPercent(new Double(c * 100 / data.size()).toString() + "%");
+                   break;
 
-            }
-        }
-        if(c==data.size()){
-            if(temp.equals("0")) {
-                statistics.addField("No billable");
-            }
-            else{
-                statistics.addField("Billable");
-            }
-            statistics.addValue(new Integer(data.size()).toString());
-            statistics.addPercent(new Double(100)+"%");
-        }
+               }
+           }
+           if (c == data.size()) {
+               if (temp.equals("0")) {
+                   statistics.addField("No billable");
+               } else {
+                   statistics.addField("Billable");
+               }
+               statistics.addValue(new Integer(data.size()).toString());
+               statistics.addPercent(new Double(100) + "%");
+           }
 
-        statistics.addField("Total ");
-        statistics.addValue(new Integer(data.size()).toString());
-        statistics.addPercent(new Double(100).toString()+"%");
+           statistics.addField("Total ");
+           statistics.addValue(new Integer(data.size()).toString());
+           statistics.addPercent(new Double(100).toString() + "%");
 
-
+       }
 
     }
 
     public void addStatisticsEnglishLevel(Statistics statistics){
 
-
-        statistics.addHeader("english level");
         List<Object> data=generalInfoDao.getEnglishLevels();
 
         for(int i=0;i<data.size();i++){
@@ -155,92 +147,90 @@ public class StatisticsService {
                 data.remove(i);
         }
 
-        generateStatistics(data,statistics);
-
+        if(data.size()!=0) {
+            statistics.addHeader("english level");
+            generateStatistics(data, statistics);
+        }
 
 
     }
 
     public void addStatisticsBillableSpec(Statistics statistics){
 
-
-
-        statistics.addHeader("period of time when not billable");
         List<Date> acceptionDates=generalInfoDao.getAcceptionDates();
         List<Date> billableDates=generalInfoDao.getBillableDates();
 
-        ArrayList<String> data=new ArrayList<String>();
+         ArrayList<String> data=new ArrayList<String>();
 
 
-
-        for(int i=0;i<acceptionDates.size();i++) {
-            int temp=( billableDates.get(i).getYear() - acceptionDates.get(i).getYear()) * 12 + ( billableDates.get(i).getMonth() - acceptionDates.get(i).getMonth());
-            if(temp<=6 ){
-                data.add("0.5 year and less");
-            }
-            if(temp>6 && temp<=12){
-                data.add("From 0.5 year to 1 year");
-            }
-            if(temp>12 && temp<=18){
-                data.add("From 1 year to 1.5 year");
-            }
-            if(temp>18 && temp<=24){
-                data.add("From 1.5 year to 2 years");
-            }
-            if(temp>24){
-                data.add("More than 2 years");
-            }
-
-
-        }
-        Collections.sort(data);
+    if(data.size()!=0) {
+     statistics.addHeader("period of time when not billable");
+      for (int i = 0; i < acceptionDates.size(); i++) {
+          int temp = (billableDates.get(i).getYear() - acceptionDates.get(i).getYear()) * 12 + (billableDates.get(i).getMonth() - acceptionDates.get(i).getMonth());
+          if (temp <= 6) {
+              data.add("0.5 year and less");
+          }
+          if (temp > 6 && temp <= 12) {
+              data.add("From 0.5 year to 1 year");
+          }
+          if (temp > 12 && temp <= 18) {
+              data.add("From 1 year to 1.5 year");
+          }
+          if (temp > 18 && temp <= 24) {
+              data.add("From 1.5 year to 2 years");
+          }
+          if (temp > 24) {
+              data.add("More than 2 years");
+          }
 
 
-        String temp=data.get(0).toString();
-        int count=1;
-        for(int i=1;i<data.size();i++) {
-            String temp2=data.get(i).toString();
-            if(temp.equalsIgnoreCase(temp2))
-            {
-                count++;
-            }
-            else{
-                statistics.addField(temp);
-                statistics.addValue(new Integer(count).toString());
-                statistics.addPercent(new Double(count*100/data.size()).toString()+"%");
-
-                count=1;
-                temp=data.get(i).toString();
-            }
-
-        }
-
-        int c = 1;
-        for (int i = data.size() - 2;i>=0 ; i--) {
-            String t2 = data.get(i).toString();
-            if (temp.equalsIgnoreCase(t2)) {
-                c++;
-            } else {
-
-                statistics.addField(temp);
-                statistics.addValue(new Integer(c).toString());
-                statistics.addPercent(new Double(c*100/data.size()).toString()+"%");
-                break;
-
-            }
-        }
-        if(c==data.size()){
-            statistics.addField(temp);
-            statistics.addValue(new Integer(data.size()).toString());
-            statistics.addPercent(new Double(100)+"%");
-        }
-
-        statistics.addField("Total ");
-        statistics.addValue(new Integer(data.size()).toString());
-        statistics.addPercent(new Double(100).toString()+"%");
+      }
+      Collections.sort(data);
 
 
+      String temp = data.get(0).toString();
+      int count = 1;
+      for (int i = 1; i < data.size(); i++) {
+          String temp2 = data.get(i).toString();
+          if (temp.equalsIgnoreCase(temp2)) {
+              count++;
+          } else {
+              statistics.addField(temp);
+              statistics.addValue(new Integer(count).toString());
+              statistics.addPercent(new Double(count * 100 / data.size()).toString() + "%");
 
+              count = 1;
+              temp = data.get(i).toString();
+          }
+
+      }
+
+      int c = 1;
+      for (int i = data.size() - 2; i >= 0; i--) {
+          String t2 = data.get(i).toString();
+          if (temp.equalsIgnoreCase(t2)) {
+              c++;
+          } else {
+
+              statistics.addField(temp);
+              statistics.addValue(new Integer(c).toString());
+              statistics.addPercent(new Double(c * 100 / data.size()).toString() + "%");
+              break;
+
+          }
+      }
+      if (c == data.size()) {
+          statistics.addField(temp);
+          statistics.addValue(new Integer(data.size()).toString());
+          statistics.addPercent(new Double(100) + "%");
+      }
+
+      statistics.addField("Total ");
+      statistics.addValue(new Integer(data.size()).toString());
+      statistics.addPercent(new Double(100).toString() + "%");
+
+
+  }
 
     }
 

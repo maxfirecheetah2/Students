@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -43,7 +44,14 @@ public class UserController extends BaseController {
         System.out.println(pass_encoded);
 
         userDto.getUser().setPassword(pass_encoded);
-        userService.saveUser(userDto);
+        try {
+            userService.saveUser(userDto);
+        }
+        catch (Exception ex){
+             modelAndView.setViewName("errorPage");
+             modelAndView.addObject("msg", "Error while trying to add a user : "+ex.getMessage());
+             return modelAndView;
+        }
         modelAndView.setViewName("createUser");
         return modelAndView;
     }
