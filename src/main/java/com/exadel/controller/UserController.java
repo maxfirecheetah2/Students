@@ -11,6 +11,7 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -36,11 +37,7 @@ public class UserController extends BaseController {
     public ModelAndView createUser(@ModelAttribute("userDto") UserDTO userDto){
 
         ModelAndView modelAndView = createGeneralModelAndView();
-        String pass_encoded = null;
-
-        pass_encoded =  PasswordEncoder.getEncryptedPassword(DEFAULT_PASSWORD);
-        System.out.println(pass_encoded);
-
+        String pass_encoded =  PasswordEncoder.getEncryptedPassword(DEFAULT_PASSWORD);
         userDto.getUser().setPassword(pass_encoded);
         userService.saveUser(userDto);
         modelAndView.setViewName("createUser");
@@ -51,12 +48,18 @@ public class UserController extends BaseController {
     public ModelAndView obtainForm(){
         ModelAndView modelAndView = createGeneralModelAndView();
         UserDTO userDto = new UserDTO(new User(), new ArrayList<Integer>());
-        userDto.getUser().setRoles(new ArrayList<Role>()); //TODO:
+        userDto.getUser().setRoles(new ArrayList<Role>());
         modelAndView.addObject("userDto", userDto);
         modelAndView.setViewName("createUser");
         return modelAndView;
     }
 
+
+    @RequestMapping("/myprofile/{id]")
+    public ModelAndView getMyProfileForm(@PathVariable Integer id){
+        ModelAndView modelAndView = createGeneralModelAndView();
+        return modelAndView;
+    }
 
 
 }

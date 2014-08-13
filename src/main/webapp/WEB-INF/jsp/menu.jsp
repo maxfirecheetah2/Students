@@ -58,6 +58,10 @@
                                     <li><a href='<c:url value="/student/list"/>'><span
                                             class="glyphicon glyphicon-user"></span> Students</a></li>
                                     </sec:authorize>
+                                    <sec:authorize access="hasRole('ROLE_TUTOR')">
+                                        <%--<li><a href='<c:url value="/tutors"/>'><span--%>
+                                                <%--class="glyphicon glyphicon-user"></span> Tutors</a></li>--%>
+                                    </sec:authorize>
                                      <sec:authorize access="hasRole('ROLE_ADMIN')">
                                     <li><a href='<c:url value="/tutors"/>'><span
                                             class="glyphicon glyphicon-user"></span> Tutors</a></li>
@@ -71,6 +75,8 @@
                             </div>
                         </li>
                         <li>
+
+                            <sec:authorize access="hasRole('ROLE_ADMIN')">
                             <a href="#" data-toggle="collapse" data-target="#toggleDemo2" data-parent="#sidenav01"
                                class="collapsed tab" id="actions">
                                 <span class="glyphicon glyphicon-list"></span> Actions<span
@@ -87,6 +93,8 @@
                                         PDF statistics</a></li>
                                 </ul>
                             </div>
+                            </sec:authorize>
+
                         </li>
 
                         <%--<li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Messages <span--%>
