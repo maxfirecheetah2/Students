@@ -1,6 +1,7 @@
 package com.exadel.controller;
 
 import com.exadel.entity.*;
+import com.exadel.entity.dto.InterviewDTO;
 import com.exadel.service.*;
 import com.exadel.service.serviceImpl.InterviewerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ public class InterviewController extends BaseController {
     public ModelAndView getInterviewForm(@PathVariable Integer studId){
         ModelAndView modelAndView = createGeneralModelAndView();
         modelAndView.addObject("studId", studId);
-        modelAndView.addObject("interview", new Interview());
+        modelAndView.addObject("interviewDto", new InterviewDTO());
         modelAndView.setViewName("addInterview");
         return modelAndView;
     }

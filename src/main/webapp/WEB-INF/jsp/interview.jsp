@@ -8,14 +8,13 @@
 <head>
     <title>Interview</title>
     <script src="<c:url value="/resources/style/js/addSkill.js" />"></script>
-    <script src="<c:url value="/resources/style/js/createJSON.js" />"></script>
 </head>
 <body>
-<div class="col-md-10">
+<div class="container">
     <div class="row">
         <div class="col-sm-9 col-md-10">
             <div class="well well-sm">
-            <form:form method="POST" commandName="interview" action="add/${studId}">
+            <form:form method="POST" commandName="interviewDto" action="add/${studId}">
                     <div class="skills">
                         <label>Skills</label>
                         <div class="form-group multiple-form-group input-group">
@@ -31,9 +30,8 @@
                                     <li><a href="#skill5">PHP</a></li>
                                     <li><a href="#skill6">Spring</a></li>
                                 </ul>
-                                <form:input type="hidden" name="skillNum" class="input-group-select-val" path=""/>
-                            </div>
-                            <input type="text" name="1" class="form-control data"/>
+                              </div>
+                            <form:input type="text" class="form-control" path="marks['type']"/>
                                 <span class="input-group-btn">
                                     <button type="button" class="btn btn-success btn-add">+</button>
                                 </span>
@@ -46,9 +44,9 @@
                         <form:textarea name="message" class="form-control" id="note" path="text" rows="6" cols="25"/>
                     </div>
                     <div class="form-group">
-                        <button type="button" class="btn btn-primary" id="sendJSON">
+                        <form:button type="submit" class="btn btn-primary" id="btnSendInterview">
                             Send Interview
-                        </button>
+                        </form:button>
                     </div>
                 </form:form>
             </div>

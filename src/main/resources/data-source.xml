@@ -9,6 +9,7 @@
     <property name="url" value="jdbc:mysql://localhost:3306/Exadel" />
     <property name="username" value="root" />
     <property name="password" value="280993" />
+
 </bean>
 
 
