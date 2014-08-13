@@ -53,20 +53,32 @@ public class GeneralInfo implements Serializable, Cloneable {
     @Column(name = "graduation_year")
     private short graduationYear;
 
-    @Column(name = "gpa11_12s")
-    private double gpa1112S;
+    @Column(name = "session1")
+    private double session1;
 
-    @Column(name = "gpa12_13w")
-    private double gpa1213W;
+    @Column(name = "session2")
+    private double session2;
 
-    @Column(name = "gpa12_13s")
-    private double gpa1213S;
+    @Column(name = "session3")
+    private double session3;
 
-    @Column(name = "gpa13_14w")
-    private double gpa1314W;
+    @Column(name = "session4")
+    private double session4;
 
-    @Column(name = "gpa13_14s")
-    private double gpa1314S;
+    @Column(name = "session5")
+    private double session5;
+
+    @Column(name = "session6")
+    private double session6;
+
+    @Column(name = "session7")
+    private double session7;
+
+    @Column(name = "session8")
+    private double session8;
+
+    @Column(name = "session9")
+    private double session9;
 
     @Column(name = "list_last_prj")
     private String listLastPrj;
@@ -344,48 +356,75 @@ public class GeneralInfo implements Serializable, Cloneable {
         this.listLastPrj = listLastPrj;
     }
 
-    public double getGpa1314S() {
-
-        return gpa1314S;
+    public double getSession1() {
+        return session1;
     }
 
-    public void setGpa1314S(double gpa1314S) {
-        this.gpa1314S = gpa1314S;
+    public void setSession1(double session1) {
+        this.session1 = session1;
     }
 
-    public double getGpa1314W() {
-
-        return gpa1314W;
+    public double getSession2() {
+        return session2;
     }
 
-    public void setGpa1314W(double gpa1314W) {
-        this.gpa1314W = gpa1314W;
+    public void setSession2(double session2) {
+        this.session2 = session2;
     }
 
-    public double getGpa1213S() {
-
-        return gpa1213S;
+    public double getSession3() {
+        return session3;
     }
 
-    public void setGpa1213S(double gpa1213S) {
-        this.gpa1213S = gpa1213S;
+    public void setSession3(double session3) {
+        this.session3 = session3;
     }
 
-    public double getGpa1213W() {
-
-        return gpa1213W;
+    public double getSession4() {
+        return session4;
     }
 
-    public void setGpa1213W(double gpa1213W) {
-        this.gpa1213W = gpa1213W;
+    public void setSession4(double session4) {
+        this.session4 = session4;
     }
 
-    public double getGpa1112S() {
-
-        return gpa1112S;
+    public double getSession5() {
+        return session5;
     }
 
-    public void setGpa1112S(double gpa1112S) {
-        this.gpa1112S = gpa1112S;
+    public void setSession5(double session5) {
+        this.session5 = session5;
+    }
+
+    public double getSession6() {
+        return session6;
+    }
+
+    public void setSession6(double session6) {
+        this.session6 = session6;
+    }
+
+    public double getSession7() {
+        return session7;
+    }
+
+    public void setSession7(double session7) {
+        this.session7 = session7;
+    }
+
+    public double getSession8() {
+        return session8;
+    }
+
+    public void setSession8(double session8) {
+        this.session8 = session8;
+    }
+
+    public double getSession9() {
+        return session9;
+    }
+
+    public void setSession9(double session9) {
+        this.session9 = session9;
     }
 }
