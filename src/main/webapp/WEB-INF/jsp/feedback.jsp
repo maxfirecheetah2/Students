@@ -128,12 +128,11 @@
                 <address>
                     <strong>${student.user.name} ${student.user.surname}</strong><br>
                     ${student.generalInfo.faculty}<br>
-                    ${student.generalInfo.course}, ${student.generalInfo.group} group<br/>
+                    ${student.generalInfo.course} course, ${student.generalInfo.group} group<br/>
                     ${student.generalInfo.speciality} <br/>
                     Graduation: ${student.generalInfo.graduationYear} <br/><br/>
                     <strong>Curators:</strong><br/>
-                    ${studId}<br/>
-                    Mikel Arteta<br/>
+
                 </address>
         </div>
 </div>

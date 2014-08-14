@@ -32,7 +32,7 @@
                                     <li><a id="#skill6">Spring</a></li>
                                 </ul>
                               </div>
-                            <form:input type="text" class="form-control" path="marks[1]"/>
+                            <form:input type="text"  class="form-control field" placeholder="Enter mark here(1-10)" path="marks[1]"/>
                                 <span class="input-group-btn">
                                     <button type="button" class="btn btn-success btn-add">+</button>
                                 </span>

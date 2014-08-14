@@ -113,7 +113,7 @@ public class StudentController extends BaseController{
 
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
     public ModelAndView editStudent(@ModelAttribute("student") Student student){
-        List<Feedback> feedbacks = studentService.getFeedbackList();
+        List<Feedback> feedbacks = feedbackService.getFeedbackList();
         System.out.println(feedbacks + " feedbacks!");
 //        List<Interview> interviews = interviewerService.getInterviewList();
         ModelAndView modelAndView = createGeneralModelAndView();
