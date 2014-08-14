@@ -48,7 +48,7 @@
                             <td>
                                 <form:select cssClass="selectpicker" path="" id="tutorsSelector">
                                     <c:forEach items="${tutors}" var="tutor">
-                                        <form:option value="${tutor.id}">${tutor.name} ${tutor.surname}</form:option>
+                                        <form:option value="${tutor.id}">${tutor.user.name} ${tutor.user.surname}</form:option>
                                     </c:forEach>
                                 </form:select>
                             </td>

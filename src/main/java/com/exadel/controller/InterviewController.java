@@ -66,7 +66,7 @@ public class InterviewController extends BaseController {
     }
 
     @RequestMapping(value = "/add/{studId}", method = RequestMethod.POST)
-    public ModelAndView addFeedback(@ModelAttribute("interviewDto") InterviewDTO interviewDto,
+    public String addFeedback(@ModelAttribute("interviewDto") InterviewDTO interviewDto,
                                     @PathVariable Integer studId){
         ModelAndView modelAndView = createGeneralModelAndView();
         Student student = studentService.get(studId);
@@ -78,8 +78,8 @@ public class InterviewController extends BaseController {
         interview.setStudent(student);
         interview.setInterviewer(interviewer);
         interviewService.saveInterview(interview);
-        modelAndView.setViewName("addInterview");
-        return  modelAndView;
+//        modelAndView.setViewName("addInterview");
+        return  "redirect:/interview/" + studId;
     }
 
 }

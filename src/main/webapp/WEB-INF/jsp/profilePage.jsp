@@ -48,7 +48,7 @@
                             <%@ include file="profile_tab5.jsp" %>
                             <%@ include file="profile_tab6.jsp" %>
                             <%@ include file="profile_tab7.jsp" %>
-                            <%@ include file="profile_tab8.jsp" %>
+                            <%--<%@ include file="profile_tab8.jsp" %>--%>
                             <%--<%@ include file="profile_tab9.jsp" %>--%>
                     </div>
                     <form:button type="submit" class="btn btn-primary pull-right">Submit</form:button>

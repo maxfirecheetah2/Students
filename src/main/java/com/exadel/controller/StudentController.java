@@ -101,6 +101,10 @@ public class StudentController extends BaseController{
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ModelAndView viewStudent(@PathVariable Integer id){
         ModelAndView modelAndView = createGeneralModelAndView();
+        List<Feedback> feedbacks = feedbackService.getFeedbackList();
+        List<Tutor> tutors = tutorService.getTutorList();
+        modelAndView.addObject("tutors", tutors);
+        modelAndView.addObject("feedbacks", feedbacks);
         Student student = studentService.get(id);
         System.out.println(student);
         if(student.getGeneralInfo() == null) {
@@ -112,16 +116,13 @@ public class StudentController extends BaseController{
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
-    public ModelAndView editStudent(@ModelAttribute("student") Student student){
-        List<Feedback> feedbacks = feedbackService.getFeedbackList();
-        System.out.println(feedbacks + " feedbacks!");
+    public String editStudent(@ModelAttribute("student") Student student){
+
 //        List<Interview> interviews = interviewerService.getInterviewList();
         ModelAndView modelAndView = createGeneralModelAndView();
         student.getGeneralInfo().setStudent(student);
         studentService.update(student);
-        modelAndView.setViewName("studentProfile");
-        modelAndView.addObject("feedbacks", feedbacks);
-        return modelAndView;
+        return "redirect:/student/" + student.getUser().getId();
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
