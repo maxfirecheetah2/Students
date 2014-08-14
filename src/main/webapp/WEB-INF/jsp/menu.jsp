@@ -22,8 +22,8 @@
                            class="collapsed">
                             <h4>
                                 <img alt="User Pic"
-                                     src=${curUser.image}
-                                     class="img-circle" width="100" height="100">
+                                     src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100"
+                                     class="img-circle img-responsive">
                                 <br/>
                                 ${curUser.name} ${curUser.surname}
                                 <br>

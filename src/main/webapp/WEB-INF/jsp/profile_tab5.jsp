@@ -4,7 +4,7 @@
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
         <div class="panel panel-info filterable">
             <div class="panel-heading">
-                <h3 class="panel-title">Work in exadel</h3>
+                <h3 class="panel-title">Work in Exadel</h3>
 
                 <div class="pull-right">
                     <button type="button" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>
@@ -17,12 +17,42 @@
                     <div class="col-md-3 col-lg-3 " align="center">
                     </div>
                     <div class=" col-md-9 col-lg-9 ">
-                        <table class="table">
+                        <table class="table table-user-information">
                             <tbody class="filters">
-                            <%--<tr>--%>
-                              <%--<form:input path="generalInfo.billable"/>--%>
-                            <%--</tr>--%>
+                            <tr>
+                            <label>Billable</label>
+                            <div class="bs-example">
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-primary">
+                                        <form:radiobutton  name="options" value="1" id="option1" path="generalInfo.billable"/> YES
+                                    </label>
+                                    <label class="btn btn-primary">
+                                        <form:radiobutton name="options" value="0" id="option2" path="generalInfo.billable"/> NO
+                                    </label>
+                                </div>
+                            </div>
 
+                            </tr>
+
+
+                            <tr>
+                                <td>Billable since</td>
+                                <td><form:input type="date" class="form-control" path="generalInfo.billable"/></td>
+                            </tr>
+                            <tr>
+                                <label>Probation before acception</label>
+                                <div class="bs-example">
+                                    <div class="btn-group" data-toggle="buttons">
+                                        <label class="btn btn-primary">
+                                            <form:radiobutton  name="options" value="1" id="option1" path="generalInfo.probationB4Acception"/> YES
+                                        </label>
+                                        <label class="btn btn-primary">
+                                            <form:radiobutton name="options" value="0" id="option2" path="generalInfo.probationB4Acception"/> NO
+                                        </label>
+                                    </div>
+                                </div>
+                            </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>

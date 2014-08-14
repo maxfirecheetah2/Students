@@ -53,5 +53,9 @@ $(document).ready(function(){
     $(document).on('click', '.dropdown-menu a', selectFormGroup);
 
 
+    var skillId = function (){
+        var param = $(this).attr("href").replace("#skill", "");
+        return parseInt(param, 10);
+    };
 
 });

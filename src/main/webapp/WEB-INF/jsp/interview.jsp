@@ -8,6 +8,7 @@
 <head>
     <title>Interview</title>
     <script src="<c:url value="/resources/style/js/addSkill.js" />"></script>
+
 </head>
 <body>
 <div class="container">
@@ -31,7 +32,7 @@
                                     <li><a href="#skill6">Spring</a></li>
                                 </ul>
                               </div>
-                            <form:input type="text" class="form-control" path="marks['type']"/>
+                            <form:input type="text" class="form-control" path="marks[${getSkillId}]"/>
                                 <span class="input-group-btn">
                                     <button type="button" class="btn btn-success btn-add">+</button>
                                 </span>

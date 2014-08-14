@@ -59,8 +59,6 @@ public class User implements Serializable {
     @NotNull
     private String phone;
 
-    @Column(name="image")
-    private String image;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "user_role")
@@ -103,13 +101,6 @@ public class User implements Serializable {
         this.name = name;
     }
 
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
 
     public String getSurname() {
         return surname;

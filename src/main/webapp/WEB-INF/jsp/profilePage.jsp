@@ -29,7 +29,7 @@
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#tab1" data-toggle="tab">Basic Info</a></li>
                     <li><a href="#tab2" data-toggle="tab">Education</a></li>
-                    <li><a href="#tab3" data-toggle="tab">Progress</a></li>
+                    <%--<li><a href="#tab3" data-toggle="tab">Progress</a></li>--%>
                     <li><a href="#tab4" data-toggle="tab">Skills</a></li>
                     <li><a href="#tab5" data-toggle="tab">Company</a></li>
                     <li><a href="#tab6" data-toggle="tab">Projects</a></li>
@@ -43,7 +43,7 @@
                     <div class="tab-content">
                             <%@ include file="profile_tab1.jsp" %>
                             <%@ include file="profile_tab2.jsp" %>
-                            <%@ include file="profile_tab3.jsp" %>
+                            <%--<%@ include file="profile_tab3.jsp" %>--%>
                             <%@ include file="profile_tab4.jsp" %>
                             <%@ include file="profile_tab5.jsp" %>
                             <%@ include file="profile_tab6.jsp" %>

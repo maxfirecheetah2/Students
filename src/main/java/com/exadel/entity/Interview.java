@@ -29,14 +29,21 @@ public class Interview implements Serializable {
     @OneToMany(mappedBy = "interview",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List <Mark> marks;
 
-    @Column(name = "en_level")
-    private String englishLevel;
+//    @Column(name = "en_level")
+//    private String englishLevel;
 
     @Column(name = "text")
     private String text;
 
     @Column(name="date")
     private Timestamp date;
+
+    public Interview(){}
+
+    public Interview(List<Mark> marks, String text){
+        this.marks = marks;
+        this.text = text;
+    }
 
     public String getText() {
         return text;
@@ -46,14 +53,14 @@ public class Interview implements Serializable {
         this.text = text;
     }
 
-    public String getEnglishLevel() {
-
-        return englishLevel;
-    }
-
-    public void setEnglishLevel(String englishLevel) {
-        this.englishLevel = englishLevel;
-    }
+//    public String getEnglishLevel() {
+//
+//        return englishLevel;
+//    }
+//
+//    public void setEnglishLevel(String englishLevel) {
+//        this.englishLevel = englishLevel;
+//    }
 
     public List<Mark> getMarks() {
         return marks;

@@ -12,4 +12,5 @@ public interface SkillService {
     public Integer saveSkill(Skill skill);
     public List<Skill> getSkillList();
     public void delete(Skill skill);
+    public Skill getSkill(Integer id);
 }

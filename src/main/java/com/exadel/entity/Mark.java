@@ -21,7 +21,7 @@ public class Mark implements Serializable{
     private int id;
 
     @Column(name = "value")
-    private int value;
+    private String value;
 
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name="interview_id")
@@ -31,6 +31,14 @@ public class Mark implements Serializable{
     @JoinColumn(name="skill_id")
     private Skill skill;
 
+
+    public Mark(){}
+
+    public Mark(Skill skill, String value){
+        this.skill = skill;
+        this.value = value;
+    }
+
     public Interview getInterview() {
         return interview;
     }
@@ -39,11 +47,11 @@ public class Mark implements Serializable{
         this.interview = interview;
     }
 
-    public int getValue() {
+    public String getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    public void setValue(String value) {
         this.value = value;
     }
 

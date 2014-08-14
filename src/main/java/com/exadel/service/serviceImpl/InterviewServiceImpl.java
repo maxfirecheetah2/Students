@@ -28,22 +28,26 @@ public class InterviewServiceImpl implements InterviewService {
         return interviewDao;
     }
 
+    @Transactional
     @Override
     public Integer saveInterview(Interview interview) {
         return getInterviewDao().save(interview);
     }
 
+    @Transactional
     @Override
     public List<Interview> getInterviewList() {
         return getInterviewDao().getAll();
     }
 
+    @Transactional
     @Override
     public void delete(Interview interview) {
            getInterviewDao().delete(interview);
     }
 
-
+    @Transactional
+    @Override
     public Interview getInterview(Integer id) {
         return getInterviewDao().get(id);
     }

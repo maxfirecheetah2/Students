@@ -71,4 +71,5 @@
     <bean id="generalInfoService" class="com.exadel.service.serviceImpl.GeneralInfoServiceImpl"/>
 
 
+
 </beans>

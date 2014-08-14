@@ -20,8 +20,7 @@
                         <table class="table table-user-information">
                             <tbody class="filters">
                             <tr>
-                                <td>Type</td>
-                                <td><form:textarea type="text" class="form-control" path="absent"/></td>
+                                <td><form:textarea type="text" class="form-control" path="generalInfo.absent"/></td>
                             </tr>
                             <%--<tr>--%>
                                 <%--<td>Date</td>--%>

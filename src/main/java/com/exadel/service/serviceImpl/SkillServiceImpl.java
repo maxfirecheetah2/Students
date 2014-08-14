@@ -40,4 +40,10 @@ public class SkillServiceImpl implements SkillService {
     public void delete(Skill skill) {
          getSkillDao().delete(skill);
     }
+
+    @Transactional
+    @Override
+    public Skill getSkill(Integer id) {
+        return getSkillDao().get(id);
+    }
 }
