@@ -35,7 +35,7 @@ $(document).ready(function(){
     var selectFormGroup = function (event) {
         var $formGroup = $(this).closest('.form-group');
         var $selectGroup = $(this).closest('.input-group-select');
-        var param = $(this).attr("href").replace("#skill", "");
+        var param = $(this).attr("id").replace("#skill", "");
         var concept = $(this).text();
 
         $selectGroup.find('.concept').text(concept);
