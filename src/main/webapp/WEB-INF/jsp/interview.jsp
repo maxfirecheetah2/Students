@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-sm-9 col-md-10">
             <div class="well well-sm">
-            <form:form method="POST" commandName="interviewDto" action="add/${studId}">
+            <form:form method="POST" commandName="interviewDto" action="/add/${studId}">
                     <div class="skills">
                         <label>Skills</label>
                         <div class="form-group multiple-form-group input-group">
@@ -24,15 +24,15 @@
                                     <span class="concept">English Level</span> <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#skill1">English Level</a></li>
-                                    <li><a href="#skill2">HTML/CSS</a></li>
-                                    <li><a href="#skill3">JavaScript</a></li>
-                                    <li><a href="#skill4">Basic Java</a></li>
-                                    <li><a href="#skill5">PHP</a></li>
-                                    <li><a href="#skill6">Spring</a></li>
+                                    <li><a id="#skill1">English Level</a></li>
+                                    <li><a id="#skill2">HTML/CSS</a></li>
+                                    <li><a id="#skill3">JavaScript</a></li>
+                                    <li><a id="#skill4">Basic Java</a></li>
+                                    <li><a id="#skill5">PHP</a></li>
+                                    <li><a id="#skill6">Spring</a></li>
                                 </ul>
                               </div>
-                            <form:input type="text" class="form-control" path="marks[${getSkillId}]"/>
+                            <form:input type="text" class="form-control" path="marks[1]"/>
                                 <span class="input-group-btn">
                                     <button type="button" class="btn btn-success btn-add">+</button>
                                 </span>

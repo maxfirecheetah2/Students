@@ -112,4 +112,10 @@ public class UserServiceImpl implements UserService {
         return getRoleDao().getUsersByRole(roleId);
     }
 
+    @Transactional
+    @Override
+    public User getUserById(Integer id) {
+       return getUserDao().get(id);
+    }
+
 }

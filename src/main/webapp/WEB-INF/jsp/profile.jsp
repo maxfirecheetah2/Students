@@ -13,6 +13,7 @@
     <script src="<c:url value="/resources/style/js/editFields.js" />"></script>
 </head>
 <body>
+<form:form method="POST" commandName="user" action="myprofile/${user.id}">
 <div class="col-md-10">
 <div class="row">
 <div class="col-sm-9 col-md-10 toppad">
@@ -34,28 +35,27 @@
                     </div>
                     <div class=" col-md-9 col-lg-9 ">
                         <table class="table table-user-information">
-                            <form:input type="hidden" class="form-control" path="id" disabled="disabled"/>
-                            <form:input type="hidden" class="form-control" path="generalInfo.id" disabled="disabled"/>
-                            <form:input type="hidden" class="form-control" path="user.id" disabled="disabled"/>
-                            <form:input type="hidden" class="form-control" path="user.name"/>
-                            <form:input type="hidden" class="form-control" path="user.surname" />
-                            <form:input type="hidden" class="form-control" path="user.login"/>
-                            <form:input type="hidden" class="form-control" path="user.password" />
+
+                            <form:input type="hidden" class="form-control" path="id"/>
+                            <form:input type="hidden" class="form-control" path="name"/>
+                            <form:input type="hidden" class="form-control" path="surname" />
+                            <form:input type="hidden" class="form-control" path="login"/>
+                            <form:input type="hidden" class="form-control" path="password" />
                             <tbody class="filters">
                             <tr>
                                 <td>Skype</td>
                                 <td><form:input type="text" class="form-control"
-                                                path="user.skype" disabled="true"/></td>
+                                                path="skype" disabled="true"/></td>
                             </tr>
                             <tr>
                                 <td>Email</td>
                                 <td><form:input type="text" class="form-control"
-                                                path="user.email" disabled="true" /></td>
+                                                path="email" disabled="true" /></td>
                             </tr>
                             <tr>
                                 <td>Phone Number</td>
                                 <td><form:input type="text" class="form-control"
-                                                path="user.phone" disabled="true"/></td>
+                                                path="phone" disabled="true"/></td>
                             </tr>
                             </tbody>
                         </table>
@@ -89,5 +89,7 @@
         </div>
     </div>
 </div>
+</div>
+</form:form>
 </body>
 </html>

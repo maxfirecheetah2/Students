@@ -35,12 +35,12 @@ $(document).ready(function(){
     var selectFormGroup = function (event) {
         var $formGroup = $(this).closest('.form-group');
         var $selectGroup = $(this).closest('.input-group-select');
-        var param = $(this).attr("href").replace("#skill", "");
+        var param = $(this).attr("id").replace("#skill", "");
         var concept = $(this).text();
 
         $selectGroup.find('.concept').text(concept);
         $selectGroup.find('.input-group-select-val').val(param);
-        $formGroup.find('input').attr("name",param);
+        $formGroup.find('input').attr("name","marks["+param+"]");
 
     }
 
@@ -54,7 +54,7 @@ $(document).ready(function(){
 
 
     var skillId = function (){
-        var param = $(this).attr("href").replace("#skill", "");
+        var param = $(this).attr("id").replace("#skill", "");
         return parseInt(param, 10);
     };
 

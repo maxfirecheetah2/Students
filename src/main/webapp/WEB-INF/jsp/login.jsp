@@ -58,7 +58,8 @@
                     </form>
                 </div>
                 <div class="panel-footer">
-                    panel footer
+                    <input type='checkbox' name='_spring_security_remember_me'/>
+                    <label>Remember me</label>
                 </div>
             </div>
         </div>

@@ -22,7 +22,7 @@
 
         <!-- Override default login and logout pages -->
         <security:form-login login-page="/login"
-                             default-target-url="/student/list"
+                             default-target-url="/user/myprofile"
                              always-use-default-target="true"
                              authentication-failure-url="/login?login_error=1" />
         <security:logout logout-url="/logout" logout-success-url="/login" />

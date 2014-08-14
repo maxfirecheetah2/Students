@@ -61,6 +61,7 @@ public class StudentController extends BaseController{
 
     }
 
+
     @RequestMapping(value = "/list/interviewer_access", method = RequestMethod.GET)
     public ModelAndView studentListForInterviewer(){
 
@@ -92,6 +93,7 @@ public class StudentController extends BaseController{
     public ModelAndView viewStudent(@PathVariable Integer id){
         ModelAndView modelAndView = createGeneralModelAndView();
         Student student = studentService.get(id);
+        System.out.println(student);
         if(student.getGeneralInfo() == null) {
             student.setGeneralInfo(new GeneralInfo());
         }

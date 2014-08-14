@@ -44,4 +44,8 @@
         <put-attribute name="body" value="/WEB-INF/jsp/errorPage.jsp"/>
     </definition>
 
+    <definition name="myProfile"  extends="basicLayout">
+        <put-attribute name="body" value="/WEB-INF/jsp/profile.jsp"/>
+    </definition>
+
 </tiles-definitions>

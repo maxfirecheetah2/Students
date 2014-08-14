@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.management.relation.RoleStatus;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -63,9 +64,14 @@ public class UserController extends BaseController {
     }
 
 
-    @RequestMapping("/myprofile/{id]")
-    public ModelAndView getMyProfileForm(@PathVariable Integer id){
+    @RequestMapping("/myprofile")
+    public ModelAndView getMyProfileForm(){
         ModelAndView modelAndView = createGeneralModelAndView();
+        User user = (User) modelAndView.getModel().get("curUser");
+        System.out.println(user);
+        modelAndView.setViewName("myProfile");
+        modelAndView.addObject("user", user);
+        System.out.println("Works!");
         return modelAndView;
     }
 
