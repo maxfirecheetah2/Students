@@ -45,10 +45,11 @@ public class StatisticsController extends BaseController {
             statisticsService.addStatisticsFaculty(statistics);
         if(statisticsDto.getUniversity())
             statisticsService.addStatisticsUniversity(statistics);
-        if(statisticsDto.getNotbillable())
+        if(statisticsDto.getNotbillable()){
             statisticsService.addStatisticsBillableSpec(statistics);
 
-        new PdfDocument("c:/temp/statistics.pdf",statistics);
+        }
+        new PdfDocument("c:/sta.pdf",statistics);
 
         modelAndView.addObject("succes",1);
         return modelAndView;

@@ -24,16 +24,13 @@
                     <th><input type="text" class="form-control" placeholder="Name" disabled></th>
                     <th><input type="text" class="form-control" placeholder="Surname" disabled></th>
                     <th><input type="text" class="form-control" placeholder="Skype" disabled></th>
-
                     <th><input type="text" class="form-control" placeholder="Hired" disabled></th>
                     <th><input type="text" class="form-control" placeholder="Faculty" disabled></th>
                     <th><input type="text" class="form-control" placeholder="Course" disabled></th>
                     <th><input type="text" class="form-control" placeholder="Hours a day" disabled></th>
                     <th><input type="text" class="form-control" placeholder="Billable" disabled></th>
                     <th><input type="text" class="form-control" placeholder="Role" disabled></th>
-                        <%--<th><input type="text" class="form-control" placeholder="Techs" disabled></th>--%>
                     <th><input type="text" class="form-control" placeholder="English" disabled></th>
-
                     <th></th>
                 </tr>
                 </thead>
@@ -49,10 +46,11 @@
                             <td><c:out value="${student.generalInfo.acceptionDate}"/></td>
                             <td><c:out value="${student.generalInfo.faculty}"/></td>
                             <td><c:out value="${student.generalInfo.course}"/></td>
+                            <td></td>
                             <td><c:out value="${student.generalInfo.billable}"/></td>
                             <td><c:out value="${student.generalInfo.curPrjRole}"/></td>
-                            <td><c:out value="${student.generalInfo.currentTechs}"/></td>
                             <td><c:out value="${student.generalInfo.enLevel}"/></td>
+
 
                         <td>
                             <div class="dropdown">
@@ -65,10 +63,6 @@
                                         <li><a href='<c:url value="/student/${student.id}"/>'>View profile</a></li>
                                         <li><a href='<c:url value="/feedback/${student.id}"/>'>Add feedback</a></li>
                                         <li><a href='<c:url value="/interview/${student.id}"/>'>Add interview</a></li>
-
-
-                                    <li class="divider"></li>
-
                                 </ul>
                             </div>
                         </td>

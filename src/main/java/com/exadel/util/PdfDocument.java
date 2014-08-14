@@ -26,11 +26,14 @@ public class PdfDocument {
     public PdfDocument(String FILE, Statistics statistics) {
 
         try {
+
             Document document = new Document();
             PdfWriter.getInstance(document, new FileOutputStream(FILE));
             document.open();
             addMetaData(document);
             createTables(document,statistics);
+
+
 
             document.close();
         } catch (Exception e) {

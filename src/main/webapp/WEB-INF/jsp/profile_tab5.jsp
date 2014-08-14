@@ -20,8 +20,14 @@
                         <table class="table table-user-information">
                             <tbody class="filters">
                             <tr>
-                            <label>Billable</label>
-                            <div class="bs-example">
+                                <td>Acception Date</td>
+                                <td>
+                                    <form:input type="date" class="form-control" path="generalInfo.acceptionDate"/>
+                                </td>
+                            </tr>
+                            <tr>
+                            <td>Billable</td>
+                            <td><div class="bs-example">
                                 <div class="btn-group" data-toggle="buttons">
                                     <label class="btn btn-primary">
                                         <form:radiobutton  name="options" value="1" id="option1" path="generalInfo.billable"/> YES
@@ -30,18 +36,15 @@
                                         <form:radiobutton name="options" value="0" id="option2" path="generalInfo.billable"/> NO
                                     </label>
                                 </div>
-                            </div>
-
+                            </div></td>
                             </tr>
-
-
                             <tr>
                                 <td>Billable since</td>
-                                <td><form:input type="date" class="form-control" path="generalInfo.billable"/></td>
+                                <td><form:input type="date" class="form-control" path="generalInfo.billableSince"/></td>
                             </tr>
                             <tr>
-                                <label>Probation before acception</label>
-                                <div class="bs-example">
+                                <td>Probation before acception</td>
+                                <td><div class="bs-example">
                                     <div class="btn-group" data-toggle="buttons">
                                         <label class="btn btn-primary">
                                             <form:radiobutton  name="options" value="1" id="option1" path="generalInfo.probationB4Acception"/> YES
@@ -51,6 +54,7 @@
                                         </label>
                                     </div>
                                 </div>
+                                </td>
                             </tr>
                             </tbody>
                         </table>

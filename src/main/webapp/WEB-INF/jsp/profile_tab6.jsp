@@ -19,31 +19,34 @@
                     <div class=" col-md-9 col-lg-9 ">
                         <table class="table table-user-information">
                             <tbody class="filters">
-                            <%--<tr>--%>
-                                <%--<td>Previous projects</td>--%>
-                                <%--<td><form:textarea path="generalInfo.listLastPrj"/></td>--%>
-                            <%--</tr>--%>
-                            <%--<tr>--%>
-                                <%--<td>Current project</td>--%>
-                                <%--<td><form:input path="generalInfo.curPrj"/></td>--%>
-                            <%--</tr>--%>
-                            <%--<tr>--%>
-                                <%--<td>Begin course</td>--%>
-                                <%--<td><form:input path="generalInfo.curPrj"/></td>--%>
-                            <%--</tr>--%>
-                            <%--<tr>--%>
-                                <%--<td>Role</td>--%>
-                                <%--<td><form:input path="generalInfo.curPrjRole"/></td>--%>
-                            <%--</tr>--%>
-                            <%--<tr>--%>
-                                <%--<td>TeamLead</td>--%>
-                            <%--</tr>--%>
-                            <%--<tr>--%>
-                                <%--<td>Project manager</td>--%>
-                            <%--</tr>--%>
-                            <%--<tr>--%>
-                                <%--<td>Changing project</td>--%>
-                            <%--</tr>--%>
+
+                            <tr>
+                                <td>Previous projects</td>
+                                <td><form:textarea type="text" class="form-control" path="generalInfo.listLastPrj" /></td>
+                            </tr>
+                            <tr>
+                                <td>Current project</td>
+                                <td><form:input type="text  " class="form-control" path="generalInfo.currentPrj" /></td>
+                            </tr>
+                            <tr>
+                                <td>Begin course</td>
+                            </tr>
+                            <tr>
+                                <td>Role</td>
+                                <td><form:input type="text" class="form-control" path="generalInfo.curPrjRole" /></td>
+                            </tr>
+                            <tr>
+                                <td>TeamLead</td>
+                                <td><form:input type="text" class="form-control" path="generalInfo.teamLead" /></td>
+                            </tr>
+                            <tr>
+                                <td>Project manager</td>
+                                <td><form:input type="text" class="form-control" path="generalInfo.prjManager" /></td>
+                            </tr>
+                            <tr>
+                                <td>Changing project</td>
+                            </tr>
+
                             </tbody>
                         </table>
                     </div>

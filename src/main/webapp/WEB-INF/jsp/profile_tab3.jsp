@@ -5,7 +5,6 @@
         <div class="panel panel-info filterable">
             <div class="panel-heading">
                 <h3 class="panel-title">GPA</h3>
-
                 <div class="pull-right">
                     <button type="button" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>
                         Edit
@@ -22,6 +21,7 @@
                             <tr>
                                 <td>Session 1</td>
                                 <td><form:input type="text" class="form-control" path="generalInfo.session1"/></td>
+
                             </tr>
                             <tr>
                                 <td>Session 2</td>
@@ -55,7 +55,6 @@
                                 <td>Session 9</td>
                                 <td><form:input type="text" class="form-control" path="generalInfo.session9" /></td>
                             </tr>
-
                             </tbody>
                         </table>
                     </div>

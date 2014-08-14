@@ -5,6 +5,7 @@ import com.exadel.entity.Statistics;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import java.util.List;
 /**
  * Created by Вадим on 04.08.2014.
  */
+@Service
 public class StatisticsService {
 
      @Autowired
@@ -163,7 +165,7 @@ public class StatisticsService {
          ArrayList<String> data=new ArrayList<String>();
 
 
-    if(data.size()!=0) {
+
      statistics.addHeader("period of time when not billable");
       for (int i = 0; i < acceptionDates.size(); i++) {
           int temp = (billableDates.get(i).getYear() - acceptionDates.get(i).getYear()) * 12 + (billableDates.get(i).getMonth() - acceptionDates.get(i).getMonth());
@@ -185,6 +187,7 @@ public class StatisticsService {
 
 
       }
+    if(data.size()!=0) {
       Collections.sort(data);
 
 
