@@ -11,7 +11,7 @@
 
 </head>
 <body>
-<div class="com-md-10">
+<div class="container">
     <div class="row">
         <div class="col-sm-9 col-md-10">
             <div class="well well-sm">
