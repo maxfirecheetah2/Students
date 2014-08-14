@@ -40,7 +40,7 @@ $(document).ready(function(){
 
         $selectGroup.find('.concept').text(concept);
         $selectGroup.find('.input-group-select-val').val(param);
-        $formGroup.find('input').attr("name",param);
+        $formGroup.find('input').attr("name","marks["+param+"]");
 
     }
 

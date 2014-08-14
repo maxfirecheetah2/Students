@@ -43,17 +43,16 @@
                                 <td><form:input type="text" class="form-control"
                                                 path="user.phone" /></td>
                             </tr>
-                            <%--<tr>--%>
-                            <%--<td>Tutors</td>--%>
-                            <%--<td>--%>
-                                <%--<form:select cssClass="selectpicker" path="" id="tutorsSelector">--%>
-                                    <%--<form:option selected="selected" value="1">Tutor1</form:option>--%>
-                                    <%--<form:option value="2">Tutor2</form:option>--%>
-                                    <%--<form:option value="3">Tutor3</form:option>--%>
-                                    <%--<form:option value="4">Tutor4</form:option>--%>
-                                <%--</form:select>--%>
-                            <%--</td>--%>
-                            <%--</tr>--%>
+                            <tr>
+                            <td>Tutors</td>
+                            <td>
+                                <form:select cssClass="selectpicker" path="" id="tutorsSelector">
+                                    <c:forEach items="${tutors}" var="tutor">
+                                        <form:option value="${tutor.id}">${tutor.name} ${tutor.surname}</form:option>
+                                    </c:forEach>
+                                </form:select>
+                            </td>
+                            </tr>
                             </tbody>
 
                         </table>

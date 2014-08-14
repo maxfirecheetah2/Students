@@ -21,6 +21,7 @@
                             <tr>
                                 <td>Session 1</td>
                                 <td><form:input type="text" class="form-control" path="generalInfo.session1"/></td>
+
                             </tr>
                             <tr>
                                 <td>Session 2</td>
