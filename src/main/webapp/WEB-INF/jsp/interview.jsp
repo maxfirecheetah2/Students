@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-sm-9 col-md-10">
             <div class="well well-sm">
-            <form:form method="POST" commandName="interviewDto" action="/add/${studId}">
+            <form:form method="POST" commandName="interviewDto" action="add/${studId}">
                     <div class="skills">
                         <label>Skills</label>
                         <div class="form-group multiple-form-group input-group">

@@ -5,6 +5,7 @@
     <div class="panel panel-info filterable">
         <div class="panel-body">
         <c:forEach items="${feedbacks}" var="feedback">
+            ${feedback.id}
             <div class="row user-row">
                 <div class="col-xs-3 col-sm-2 col-md-1 col-lg-1">
                     <img class="img-circle"

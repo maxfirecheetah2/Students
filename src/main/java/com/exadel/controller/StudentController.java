@@ -19,6 +19,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -33,6 +34,14 @@ public class StudentController extends BaseController{
     @Autowired
     @Qualifier("tutorService")
     private TutorService tutorService;
+
+    @Autowired
+    @Qualifier("interviewService")
+    private InterviewService interviewService;
+
+    @Autowired
+    @Qualifier("feedbackService")
+    private FeedbackService feedbackService;
 
     @Autowired
     @Qualifier("interviewerService")
@@ -104,10 +113,14 @@ public class StudentController extends BaseController{
 
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
     public ModelAndView editStudent(@ModelAttribute("student") Student student){
+        List<Feedback> feedbacks = studentService.getFeedbackList();
+        System.out.println(feedbacks + " feedbacks!");
+//        List<Interview> interviews = interviewerService.getInterviewList();
         ModelAndView modelAndView = createGeneralModelAndView();
         student.getGeneralInfo().setStudent(student);
         studentService.update(student);
         modelAndView.setViewName("studentProfile");
+        modelAndView.addObject("feedbacks", feedbacks);
         return modelAndView;
     }
 
