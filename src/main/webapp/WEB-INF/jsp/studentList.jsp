@@ -38,8 +38,6 @@
 
                 <c:forEach items="${users}" var="student">
                     <tr>
-
-
                             <td><c:out value="${student.user.name}"/></td>
                             <td><c:out value="${student.user.surname}"/></td>
                             <td><c:out value="${student.user.skype}"/></td>
@@ -47,7 +45,14 @@
                             <td><c:out value="${student.generalInfo.faculty}"/></td>
                             <td><c:out value="${student.generalInfo.course}"/></td>
                             <td></td>
-                            <td><c:out value="${student.generalInfo.billable}"/></td>
+                            <td>
+                                <c:if test="${student.generalInfo.billable == 1}">
+                                    <c:out value="Yes"/>
+                                </c:if>
+                                <c:if test="${student.generalInfo.billable != 1}">
+                                    <c:out value="No"/>
+                                </c:if>
+                            </td>
                             <td><c:out value="${student.generalInfo.curPrjRole}"/></td>
                             <td><c:out value="${student.generalInfo.enLevel}"/></td>
 

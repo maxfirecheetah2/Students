@@ -48,14 +48,20 @@ $(document).ready(function(){
         return $form.find('.form-group').length;
     };
 
+    var mark;
+    var check = function(event){
+        $(this).val($(this).val().replace(/[^\d]/,''));
+        if(parseInt($(this).val(),10) <= 10){
+            mark = $(this).val();
+        }
+        if (parseInt($(this).val(),10) > 10){
+            $(this).val(mark);
+        }
+    };
+
     $(document).on('click', '.btn-add', addFormGroup);
     $(document).on('click', '.btn-remove', removeFormGroup);
     $(document).on('click', '.dropdown-menu a', selectFormGroup);
-
-
-    var skillId = function (){
-        var param = $(this).attr("href").replace("#skill", "");
-        return parseInt(param, 10);
-    };
+    $(document).on('keyup', '.field', check);
 
 });
