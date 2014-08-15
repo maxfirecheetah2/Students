@@ -34,7 +34,7 @@
 
                         <div class="collapse" id="toggleDemo0" style="height: 0px;">
                             <ul class="nav nav-list">
-                                <li><a href="<c:url value="/myprofile/${curUser.id}"/>"><span
+                                <li><a href="<c:url value="/user/myprofile"/>"><span
                                         class="glyphicon glyphicon-user"></span> View my profile</a></li>
                                 <%--<li><a href='<c:url value="/j_spring_security_logout"/>'><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>--%>
                             </ul>

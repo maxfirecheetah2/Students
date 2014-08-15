@@ -66,17 +66,23 @@ public class InterviewController extends BaseController {
     }
 
     @RequestMapping(value = "/add/{studId}", method = RequestMethod.POST)
-    public String addFeedback(@ModelAttribute("interviewDto") InterviewDTO interviewDto,
+    public String addInterview(@ModelAttribute("interviewDto") InterviewDTO interviewDto,
                                     @PathVariable Integer studId){
         ModelAndView modelAndView = createGeneralModelAndView();
         Student student = studentService.get(studId);
         User user = (User)modelAndView.getModel().get("curUser");
         Integer interviewerId = user.getId();
+        System.out.println(interviewerId);
         Interviewer interviewer = interviewerService.getInterviewer(interviewerId);//TODO:
         Interview interview = convertDtoIntoPOJO(interviewDto);
         interview.setDate(new Timestamp(System.currentTimeMillis()));
         interview.setStudent(student);
+
+        student.getInterviews().add(interview);
+        interviewer.getInterviews().add(interview);
         interview.setInterviewer(interviewer);
+        System.out.println("interviewerId : " + interviewer.getId());
+        System.out.println("studentId : " + student.getId());
         interviewService.saveInterview(interview);
 //        modelAndView.setViewName("addInterview");
         return  "redirect:/interview/" + studId;

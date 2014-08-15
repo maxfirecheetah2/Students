@@ -51,7 +51,8 @@ public class InterviewerServiceImpl implements InterviewerService {
     @Transactional
     @Override
     public Interviewer getInterviewer(int id){
-        return getInterviewerDao().get(id);
+        Interviewer interviewer = getInterviewerDao().get(id);
+        return interviewer;
     }
 
 }

@@ -5,11 +5,11 @@
         <div class="panel panel-info filterable">
             <div class="panel-heading">
                 <h3 class="panel-title">GPA</h3>
-                <div class="pull-right">
-                    <button type="button" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>
-                        Edit
-                    </button>
-                </div>
+                <%--<div class="pull-right">--%>
+                    <%--<button type="button" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>--%>
+                        <%--Edit--%>
+                    <%--</button>--%>
+                <%--</div>--%>
             </div>
             <div class="panel-body">
                 <div class="row">
@@ -20,40 +20,40 @@
                             <tbody class="filters">
                             <tr>
                                 <td>Session 1</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.session1"/></td>
+                                <td><form:input type="text" class="form-control" path="student.generalInfo.session1"/></td>
 
                             </tr>
                             <tr>
                                 <td>Session 2</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.session2"/></td>
+                                <td><form:input type="text" class="form-control" path="student.generalInfo.session2"/></td>
                             </tr>
                             <tr>
                                 <td>Session 3</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.session3"/></td>
+                                <td><form:input type="text" class="form-control" path="student.generalInfo.session3"/></td>
                             </tr>
                             <tr>
                                 <td>Session 4</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.session4"/></td>
+                                <td><form:input type="text" class="form-control" path="student.generalInfo.session4"/></td>
                             </tr>
                             <tr>
                                 <td>Session 5</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.session5"/></td>
+                                <td><form:input type="text" class="form-control" path="student.generalInfo.session5"/></td>
                             </tr>
                             <tr>
                                 <td>Session 6</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.session6"/></td>
+                                <td><form:input type="text" class="form-control" path="student.generalInfo.session6"/></td>
                             </tr>
                             <tr>
                                 <td>Session 7</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.session7"/></td>
+                                <td><form:input type="text" class="form-control" path="student.generalInfo.session7"/></td>
                             </tr>
                             <tr>
                                 <td>Session 8</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.session8"/></td>
+                                <td><form:input type="text" class="form-control" path="student.generalInfo.session8"/></td>
                             </tr>
                             <tr>
                                 <td>Session 9</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.session9" /></td>
+                                <td><form:input type="text" class="form-control" path="student.generalInfo.session9" /></td>
                             </tr>
                             </tbody>
                         </table>

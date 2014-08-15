@@ -48,7 +48,7 @@ public class FeedbackController extends BaseController {
     }
 
     @RequestMapping(value = "/add/{studId}", method = RequestMethod.POST)
-    public ModelAndView addFeedback(@ModelAttribute("feedback") Feedback feedback,
+    public String addFeedback(@ModelAttribute("feedback") Feedback feedback,
                                     @PathVariable Integer studId){
         ModelAndView modelAndView = createGeneralModelAndView();
         Student student = studentService.get(studId);
@@ -60,7 +60,7 @@ public class FeedbackController extends BaseController {
         feedback.setTutor(tutor);
         feedbackService.saveFeedback(feedback);
         modelAndView.setViewName("addFeedback");
-        return  modelAndView;
+        return  "redirect:/feedback/" + studId;
     }
 
 }

@@ -39,7 +39,7 @@
                 </ul>
                 <br/>
 
-                <form:form  method="POST" commandName="student" action="/student/edit">
+                <form:form  method="POST" commandName="studentDto" action="/student/edit">
                     <div class="tab-content">
                             <%@ include file="profile_tab1.jsp" %>
                             <%@ include file="profile_tab2.jsp" %>

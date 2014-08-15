@@ -25,11 +25,11 @@ public class Interviewer {
     @OneToMany(mappedBy = "interviewer",fetch = FetchType.LAZY)
     private List<Interview> interviews;
 
-    /////////////////
-    @ManyToMany
-    @JoinTable(name="interview")
-    private List <Student> students;
-    ////////////
+//    /////////////////
+//    @ManyToMany
+//    @JoinTable(name="interview")
+//    private List <Student> students;
+//    ////////////
 
     @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
@@ -62,11 +62,12 @@ public class Interviewer {
         this.interviews = interviews;
     }
 
-    public List<Student> getStudents() {
-        return students;
-    }
 
-    public void setStudents(List<Student> students) {
-        this.students = students;
-    }
+//    public List<Student> getStudents() {
+//        return students;
+//    }
+//
+//    public void setStudents(List<Student> students) {
+//        this.students = students;
+//    }
 }

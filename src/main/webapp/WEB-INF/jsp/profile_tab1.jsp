@@ -5,11 +5,11 @@
         <div class="panel panel-info filterable">
             <div class="panel-heading">
                 <h3 class="panel-title">${student.user.name} ${student.user.surname}</h3>
-                <div class="pull-right">
-                    <button type="button" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>
-                        Edit
-                    </button>
-                </div>
+                <%--<div class="pull-right">--%>
+                    <%--<button type="button" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>--%>
+                        <%--Edit--%>
+                    <%--</button>--%>
+                <%--</div>--%>
             </div>
             <div class="panel-body">
                 <div class="row">
@@ -20,33 +20,33 @@
                     </div>
                     <div class=" col-md-9 col-lg-9 ">
                         <table class="table table-user-information">
-                            <form:input type="hidden" class="form-control" path="id" disabled="disabled"/>
-                            <form:input type="hidden" class="form-control" path="generalInfo.id" disabled="disabled"/>
-                            <form:input type="hidden" class="form-control" path="user.id" disabled="disabled"/>
-                            <form:input type="hidden" class="form-control" path="user.name"/>
-                            <form:input type="hidden" class="form-control" path="user.surname" />
-                            <form:input type="hidden" class="form-control" path="user.login"/>
-                            <form:input type="hidden" class="form-control" path="user.password" />
+                            <form:input type="hidden" class="form-control" path="student.id" disabled="disabled"/>
+                            <form:input type="hidden" class="form-control" path="student.generalInfo.id" disabled="disabled"/>
+                            <form:input type="hidden" class="form-control" path="student.user.id" disabled="disabled"/>
+                            <form:input type="hidden" class="form-control" path="student.user.name"/>
+                            <form:input type="hidden" class="form-control" path="student.user.surname" />
+                            <form:input type="hidden" class="form-control" path="student.user.login"/>
+                            <form:input type="hidden" class="form-control" path="student.user.password" />
                             <tbody class="filters">
                             <tr>
                                 <td>Skype</td>
                                 <td><form:input type="text" class="form-control"
-                                                path="user.skype"/></td>
+                                                path="student.user.skype"/></td>
                             </tr>
                             <tr>
                                 <td>Email</td>
                                 <td><form:input type="text" class="form-control"
-                                                path="user.email"  /></td>
+                                                path="student.user.email"  /></td>
                             </tr>
                             <tr>
                                 <td>Phone Number</td>
                                 <td><form:input type="text" class="form-control"
-                                                path="user.phone" /></td>
+                                                path="student.user.phone" /></td>
                             </tr>
                             <tr>
                             <td>Tutors</td>
                             <td>
-                                <form:select cssClass="selectpicker" path="" id="tutorsSelector">
+                                <form:select cssClass="selectpicker" path="tutors" id="tutorsSelector">
                                     <c:forEach items="${tutors}" var="tutor">
                                         <form:option value="${tutor.id}">${tutor.user.name} ${tutor.user.surname}</form:option>
                                     </c:forEach>

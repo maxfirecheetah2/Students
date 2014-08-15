@@ -47,7 +47,9 @@ public class StudentServiceImpl implements StudentService {
     @Override
     @Transactional
     public Student get(Integer id) {
-       return getStudentDao().get(id);
+       Student student = getStudentDao().get(id);
+       Hibernate.initialize(student.getTutors());
+       return student;
     }
 
     @Override

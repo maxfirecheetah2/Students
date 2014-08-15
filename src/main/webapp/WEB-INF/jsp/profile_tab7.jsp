@@ -6,11 +6,11 @@
             <div class="panel-heading">
                 <h3 class="panel-title">Holidays</h3>
 
-                <div class="pull-right">
-                    <button type="button" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>
-                        Edit
-                    </button>
-                </div>
+                <%--<div class="pull-right">--%>
+                    <%--<button type="button" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>--%>
+                        <%--Edit--%>
+                    <%--</button>--%>
+                <%--</div>--%>
             </div>
             <div class="panel-body">
                 <div class="row">
@@ -20,7 +20,7 @@
                         <table class="table table-user-information">
                             <tbody class="filters">
                             <tr>
-                                <td><form:textarea type="text" class="form-control" path="generalInfo.absent"/></td>
+                                <td><form:textarea type="text" class="form-control" path="student.generalInfo.absent"/></td>
                             </tr>
                             <%--<tr>--%>
                                 <%--<td>Date</td>--%>

@@ -4,6 +4,7 @@ import com.exadel.dao.GenericDao;
 import com.exadel.dao.StudentDao;
 import com.exadel.dao.UserDao;
 import com.exadel.entity.*;
+import com.exadel.entity.dto.StudentDTO;
 import com.exadel.service.FeedbackService;
 
 import com.exadel.service.*;
@@ -110,17 +111,29 @@ public class StudentController extends BaseController{
         if(student.getGeneralInfo() == null) {
             student.setGeneralInfo(new GeneralInfo());
         }
-        modelAndView.addObject("student", student);
+        StudentDTO studentDto = new StudentDTO();
+        studentDto.setStudent(student);
+        studentDto.setTutors(new ArrayList<Integer>());
+        modelAndView.addObject("studentDto", studentDto);
         modelAndView.setViewName("studentProfile");
         return modelAndView;
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
-    public String editStudent(@ModelAttribute("student") Student student){
+    public String editStudent(@ModelAttribute("studentDto") StudentDTO studentDto){
 
 //        List<Interview> interviews = interviewerService.getInterviewList();
         ModelAndView modelAndView = createGeneralModelAndView();
+        Student student = studentDto.getStudent();
         student.getGeneralInfo().setStudent(student);
+        List<Integer>tuts = new ArrayList<Integer>();
+        List<Tutor>tutors = new ArrayList<Tutor>();
+        for(Integer id : tuts){
+            Tutor tutor = tutorService.get(id);
+            tutors.add(tutor);
+
+        }
+        student.setTutors(tutors);
         studentService.update(student);
         return "redirect:/student/" + student.getUser().getId();
     }

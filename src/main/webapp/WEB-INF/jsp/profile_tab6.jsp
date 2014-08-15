@@ -6,11 +6,11 @@
             <div class="panel-heading">
                 <h3 class="panel-title">Projects history</h3>
 
-                <div class="pull-right">
-                    <button type="button" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>
-                        Edit
-                    </button>
-                </div>
+                <%--<div class="pull-right">--%>
+                    <%--<button type="button" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>--%>
+                        <%--Edit--%>
+                    <%--</button>--%>
+                <%--</div>--%>
             </div>
             <div class="panel-body">
                 <div class="row">
@@ -22,30 +22,30 @@
 
                             <tr>
                                 <td>Previous projects</td>
-                                <td><form:textarea type="text" class="form-control" path="generalInfo.listLastPrj" /></td>
+                                <td><form:textarea type="text" class="form-control" path="student.generalInfo.listLastPrj" /></td>
                             </tr>
                             <tr>
                                 <td>Current project</td>
-                                <td><form:input type="text  " class="form-control" path="generalInfo.currentPrj" /></td>
+                                <td><form:input type="text  " class="form-control" path="student.generalInfo.currentPrj" /></td>
                             </tr>
-                            <tr>
-                                <td>Begin course</td>
-                            </tr>
+                            <%--<tr>--%>
+                                <%--<td>Begin course</td>--%>
+                            <%--</tr>--%>
                             <tr>
                                 <td>Role</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.curPrjRole" /></td>
+                                <td><form:input type="text" class="form-control" path="student.generalInfo.curPrjRole" /></td>
                             </tr>
                             <tr>
                                 <td>TeamLead</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.teamLead" /></td>
+                                <td><form:input type="text" class="form-control" path="student.generalInfo.teamLead" /></td>
                             </tr>
                             <tr>
                                 <td>Project manager</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.prjManager" /></td>
+                                <td><form:input type="text" class="form-control" path="student.generalInfo.prjManager" /></td>
                             </tr>
-                            <tr>
-                                <td>Changing project</td>
-                            </tr>
+                            <%--<tr>--%>
+                                <%--<td>Changing project</td>--%>
+                            <%--</tr>--%>
 
                             </tbody>
                         </table>

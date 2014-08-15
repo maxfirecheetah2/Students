@@ -6,11 +6,11 @@
             <div class="panel-heading">
                 <h3 class="panel-title">Skills information</h3>
 
-                <div class="pull-right">
-                    <button type="button" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>
-                        Edit
-                    </button>
-                </div>
+                <%--<div class="pull-right">--%>
+                    <%--<button type="button" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>--%>
+                        <%--Edit--%>
+                    <%--</button>--%>
+                <%--</div>--%>
             </div>
             <div class="panel-body">
                 <div class="row">
@@ -22,7 +22,7 @@
                             <tr>
                                 <td>English level</td>
                                 <td>
-                                    <form:select cssClass="selectpicker"  path="generalInfo.enLevel" id="englishLevel">
+                                    <form:select cssClass="selectpicker"  path="student.generalInfo.enLevel" id="englishLevel">
                                         <form:option selected="selected" value="BEGINNER">Beginner</form:option>
                                         <form:option value="ELEMENTARY">Elementary</form:option>
                                         <form:option value="PRE-INTERMEDIATE">Pre-Intermediate</form:option>
@@ -35,15 +35,15 @@
                             </tr>
                             <tr>
                                 <td>Exadel's tranings</td>
-                                <td><form:textarea type="text" class="form-control" path="generalInfo.training" /></td>
+                                <td><form:textarea type="text" class="form-control" path="student.generalInfo.training" /></td>
                             </tr>
                             <tr>
                                 <td>Certificates</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.certificates" /></td>
+                                <td><form:input type="text" class="form-control" path="student.generalInfo.certificates" /></td>
                             </tr>
                             <tr>
                                 <td>English lessons</td>
-                                <td><form:input type="text" class="form-control" path="generalInfo.enCourses" /></td>
+                                <td><form:input type="text" class="form-control" path="student.generalInfo.enCourses" /></td>
                             </tr>
                             </tbody>
                         </table>

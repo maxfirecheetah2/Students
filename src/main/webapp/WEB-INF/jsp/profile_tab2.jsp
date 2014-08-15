@@ -6,11 +6,11 @@
              <div class="panel-heading">
                  <h3 class="panel-title">Education</h3>
 
-                 <div class="pull-right">
-                     <button type="button" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>
-                         Edit
-                     </button>
-                 </div>
+                 <%--<div class="pull-right">--%>
+                     <%--<button type="button" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-edit"></span>--%>
+                         <%--Edit--%>
+                     <%--</button>--%>
+                 <%--</div>--%>
              </div>
              <div class="panel-body">
                  <div class="row">
@@ -21,32 +21,32 @@
                              <tbody class="filters">
                              <tr>
                                  <td>University</td>
-                                 <td><form:input type="text" class="form-control" path="generalInfo.institution"/></td>
+                                 <td><form:input type="text" class="form-control" path="student.generalInfo.institution"/></td>
                              </tr>
                              <tr>
                                  <td>Faculty</td>
                                  <td><form:input type="text" class="form-control"
-                                                 path="generalInfo.faculty" /></td>
+                                                 path="student.generalInfo.faculty" /></td>
                              </tr>
                              <tr>
                                  <td>Specialty</td>
                                  <td><form:input type="text" class="form-control"
-                                                 path="generalInfo.speciality" /></td>
+                                                 path="student.generalInfo.speciality" /></td>
                              </tr>
                              <tr>
                                  <td>Course</td>
                                  <td><form:input type="text" class="form-control"
-                                                 path="generalInfo.course" /></td>
+                                                 path="student.generalInfo.course" /></td>
                              </tr>
                              <tr>
                                  <td>Group</td>
                                  <td><form:input type="text" class="form-control"
-                                                 path="generalInfo.group" /></td>
+                                                 path="student.generalInfo.group" /></td>
                              </tr>
                              <tr>
                                  <td>Graduation</td>
                                  <td><form:input type="text" class="form-control"
-                                                 path="generalInfo.graduationYear" /></td>
+                                                 path="student.generalInfo.graduationYear" /></td>
                              </tr>
 
 
