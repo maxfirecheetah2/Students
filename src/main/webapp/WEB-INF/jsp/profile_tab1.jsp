@@ -45,6 +45,7 @@
                             </tr>
                             <tr>
                             <td>Tutors</td>
+
                             <td>
                                 <form:select cssClass="selectpicker" path="tutors" id="tutorsSelector">
                                     <c:forEach items="${tutors}" var="tutor">

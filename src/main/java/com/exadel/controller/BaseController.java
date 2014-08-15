@@ -57,12 +57,12 @@ public class BaseController{
         return "access_none";
 
     }
-//
-//    @ExceptionHandler(Exception.class)
-//    public ModelAndView handleException(Exception ex){
-//        ModelAndView modelAndView = new ModelAndView("errorPage") ;
-//        modelAndView.addObject("msg", "Something went wrong!");
-//        return modelAndView;
-//    }
+
+    @ExceptionHandler(Exception.class)
+    public ModelAndView handleException(Exception ex){
+        ModelAndView modelAndView = new ModelAndView("errorPage") ;
+        modelAndView.addObject("msg", "Something went wrong!");
+        return modelAndView;
+    }
 
 }

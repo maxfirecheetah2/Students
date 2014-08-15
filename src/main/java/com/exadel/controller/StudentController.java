@@ -102,10 +102,10 @@ public class StudentController extends BaseController{
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ModelAndView viewStudent(@PathVariable Integer id){
         ModelAndView modelAndView = createGeneralModelAndView();
-        List<Feedback> feedbacks = feedbackService.getFeedbackList();
+//        List<Feedback> feedbacks = feedbackService.getFeedbackList();
         List<Tutor> tutors = tutorService.getTutorList();
         modelAndView.addObject("tutors", tutors);
-        modelAndView.addObject("feedbacks", feedbacks);
+//        modelAndView.addObject("feedbacks", feedbacks);
         Student student = studentService.get(id);
         System.out.println(student);
         if(student.getGeneralInfo() == null) {
